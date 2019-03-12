@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
-import Button from './button';
+import Button from '../button';
 
 describe('button', ()=>{
   it('is div', ()=>{
