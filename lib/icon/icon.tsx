@@ -6,6 +6,7 @@ interface IconProps {
     name: string;
     size?: string;
     theme?: string;
+    onClick?: React.MouseEventHandler<SVGElement>
 }
 
 // export default class Icon extends React.Component<IconProps> {
@@ -18,7 +19,7 @@ interface IconProps {
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
     return (
-        <svg className='yuui-icon'>
+        <svg className='yuui-icon' onClick={props.onClick}>
           <use xlinkHref={`#${props.name}`}></use>
         </svg>
     )
