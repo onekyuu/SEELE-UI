@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist/lib'),
-    library: 'kui',
+    library: 'yuui',
     libraryTarget: 'umd',
   },
   module: {
@@ -21,6 +21,18 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
       },
+      {
+        test: /\.s([ac])ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [path.resolve(__dirname, 'stylesheets', 'include')]
+            }
+          }]
+      }
     ],
   }
 }
