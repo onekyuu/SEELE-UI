@@ -1,27 +1,21 @@
-import React from 'react';
+import React, { SVGAttributes } from 'react';
 import './importAll';
 import './icon.scss';
+import classes from '../helpers/classes';
 
-interface IconProps {
+interface IconProps extends SVGAttributes<SVGElement> {
     name: string;
     size?: string;
     theme?: string;
-    onClick?: React.MouseEventHandler<SVGElement>
 }
 
-// export default class Icon extends React.Component<IconProps> {
-//   render() {
-//     return (
-//       <span>{this.props.name}</span>
-//     );
-//   }
-// }
-
 const Icon: React.FunctionComponent<IconProps> = (props) => {
+    const {className, ...restProps} = props;
     return (
-        <svg className='yuui-icon' onClick={props.onClick}>
+        <svg className={classes('wui-icon', className)} {...restProps}>
           <use xlinkHref={`#${props.name}`}></use>
         </svg>
     )
 };
+
 export default Icon;
