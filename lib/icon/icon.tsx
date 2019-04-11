@@ -1,5 +1,5 @@
 import React, { SVGAttributes } from 'react';
-import './importAll';
+import '../utils/importAll';
 import './icon.scss';
 import classes from '../helpers/classes';
 
