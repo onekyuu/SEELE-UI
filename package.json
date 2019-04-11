@@ -1,6 +1,6 @@
 {
-  "name": "wheels",
-  "version": "1.0.0",
+  "name": "wheels-keyu.wang",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/wky0615/Wheels.git"
   },
+  "files": ["/dist/**/*"],
   "keywords": [],
   "author": "",
   "license": "ISC",
