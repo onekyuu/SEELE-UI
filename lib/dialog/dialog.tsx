@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment, ReactElement, ReactNode} from 'react';
 import './dialog.scss';
 import Icon from '../index';
 import classMaker from '../utils/classMaker';
@@ -55,17 +55,50 @@ Dialog.defaultProps = {
     closeOnClickBg: false,
 }
 
-const alert = (content: string) => {
-    const component = <Dialog visible={true} onClose={() => {
+const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+    const onCloseHandler = () => {
         ReactDOM.render(React.cloneElement(component, {visible: false}), div)
         ReactDOM.unmountComponentAtNode(div)
         div.remove()
-    }}>{content}</Dialog>
+    }
+    const component = 
+        <Dialog
+            visible={true}
+            buttons={buttons}
+            onClose={() => {
+                onCloseHandler();
+                afterClose && afterClose()}
+            }>
+            {content}
+        </Dialog>
     const div = document.createElement('div')
     document.body.append(div)
     ReactDOM.render(component, div)
+    return onCloseHandler;
 }
 
-export {alert}
+const alert = (content: string) => {
+    const buttons = [<button onClick={() => onClose()}>OK</button>]
+    const onClose = modal(content, buttons)
+}
+
+const confirm = (content: string, ok?: () => void, cancel?: () => void) => {
+    const onCancelHandler = () => {
+        onClose()
+        cancel && cancel()
+    }
+    const onOkHandler = () => {
+        onClose()
+        ok && ok()
+    }
+
+    const buttons = [
+        <button onClick={onCancelHandler}>cancel</button>,
+        <button onClick={onOkHandler}>ok</button>
+    ]
+    const onClose = modal(content, buttons, cancel)
+}
+
+export {alert, confirm, modal}
 
 export default Dialog;
