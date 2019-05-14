@@ -9,8 +9,9 @@
 }
 
 .wui-layout {
-    width: 600px;
+    width: 800px;
     color: #FFF;
+    text-align: center;
     &-header {
         background-color: #8abbe6;
     }
@@ -23,4 +24,5 @@
     &-aside {
         background-color: #569fe3;
     }
+    
 }
