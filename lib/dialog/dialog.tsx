@@ -1,8 +1,8 @@
 import React, { Fragment, ReactElement, ReactNode} from 'react';
 import './dialog.scss';
 import Icon from '../index';
-import classMaker from '../utils/classMaker';
 import ReactDOM from 'react-dom';
+import { classMaker } from '../helpers/classMaker';
 
 interface Props {
     visible: boolean;
@@ -24,7 +24,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         }
     }
 
-    const DialogNode = props.visible ?
+    const DialogNode = props.visible &&
         <Fragment>
             <div className={sc('bg')} onClick={closeOnClickBg}/>
             <div className={sc()}>   
@@ -43,8 +43,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                     )}
                 </footer>
             </div>
-        </Fragment> :
-        null
+        </Fragment>;
 
     return (
         ReactDOM.createPortal(DialogNode, document.body)

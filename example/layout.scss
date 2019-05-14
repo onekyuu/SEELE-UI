@@ -1,0 +1,26 @@
+@import '../lib/base/base';
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wui-layout {
+    width: 600px;
+    color: #FFF;
+    &-header {
+        background-color: #8abbe6;
+    }
+    &-panel {
+        background-color: #3e8ee2;
+    }
+    &-footer {
+        background-color: #8abbe6;
+    }
+    &-aside {
+        background-color: #569fe3;
+    }
+}

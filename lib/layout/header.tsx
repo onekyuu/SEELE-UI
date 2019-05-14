@@ -1,8 +1,13 @@
 import React from 'react';
+import { classMaker } from '../helpers/classMaker';
 
-const Header: React.FunctionComponent = () => {
+interface Props extends React.HTMLAttributes<HTMLElement> {}
+
+const sc = classMaker('wui-layout')
+const Header: React.FunctionComponent<Props> = (props) => {
+    const {className, ...rest} = props
     return (
-        <div>Header</div>
+        <div className={sc('header', {extra: className})} {...rest}>Header</div>
     )
 }
 

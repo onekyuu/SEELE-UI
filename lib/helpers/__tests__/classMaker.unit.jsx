@@ -1,4 +1,5 @@
-import classes from '../classes'
+import classes from '../classMaker'
+import { classMaker } from '../classMaker';
 
 describe('classes', () => {
     it('接受一个className', () => {
@@ -28,5 +29,16 @@ describe('classes', () => {
     it('接受空字符串', () => {
         const result = classes('')
         expect(result).toEqual('')
+    })
+})
+
+describe('classMaker', () => {
+    it('接受字符串或对象', () => {
+        const sc = classMaker('wui-layout')
+        expect(sc('')).toEqual('wui-layout')
+        expect(sc('a')).toEqual('wui-layout-a')
+        expect(sc({'a': true, 'b': false})).toEqual('wui-layout-a')
+        expect(sc({'a': true, 'b': true})).toEqual('wui-layout-a wui-layout-b')
+        expect(sc({'a': true, 'b': true}, {extra: 'hi'})).toEqual('wui-layout-a wui-layout-b hi')
     })
 })

@@ -1,0 +1,13 @@
+@import '../base/base';
+
+.wui-layout {
+    display: flex;
+    flex-direction: column;
+    &-panel {
+        flex-grow: 1;
+    }
+    & & {
+        flex-grow: 1;
+        flex-direction: row;
+    }
+}
