@@ -4,9 +4,10 @@ import Dialog, {alert, confirm, modal} from '../lib/dialog/dialog';
 const DialogExample:React.FunctionComponent = () => {
     const [x, setX] = useState(false);
     const openModal = () => {
-        const close = modal(<h1>Hi
-            <button onClick={() => close()}>close</button>
-        </h1>)
+        const close = modal(<div>
+                <h1>Hi, there are a h1 and a button</h1>
+                <button onClick={() => close()}>close</button>
+            </div>)
     }
 
     return (

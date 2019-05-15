@@ -7,7 +7,7 @@ const sc = classMaker('wui-layout')
 const Header: React.FunctionComponent<Props> = (props) => {
     const {className, ...rest} = props
     return (
-        <div className={sc('header', {extra: className})} {...rest}>Header</div>
+        <div className={sc('header', {extra: className})} {...rest}>{props.children}</div>
     )
 }
 

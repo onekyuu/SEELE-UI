@@ -32,6 +32,12 @@ module.exports = {
               includePaths: [path.resolve(__dirname, 'stylesheets', 'include')]
             }
           }]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
+          'file-loader',
+        ]
       }
     ],
   }

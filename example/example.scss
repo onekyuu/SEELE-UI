@@ -1,0 +1,106 @@
+@import '../lib/base/base';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::after {
+    box-sizing: border-box;
+}
+*::before {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+$main-color: #314199;
+
+.page {
+    padding: 0;
+    margin: 0;
+}
+
+.page-header {
+    background-color: $main-color;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    .page-logo-container {
+        display: flex;
+        align-items: center;
+        .page-logo {
+            width: 80px;
+            height: 80px;
+            fill: #FFFFFF;
+        }
+        .page-title {
+            color: #FFFFFF;
+            font-size: 2em;
+        }
+    }
+    .page-links {
+        display: flex;
+        align-items: center;
+        .page-item {
+            > a {
+                color: #FFF;
+                font-weight: 500;
+                font-size: 0.9em;
+                padding: 0 2em;
+                display: inline-block;
+                height: 80px;
+                line-height: 80px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.page-aside {
+    box-shadow: 4px 0px 6px 0px rgba(0,0,0,0.3);
+    width: 14em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 1em;
+    overflow-y: auto;
+    ul {
+        list-style: none;
+    }
+    ul > li {
+        cursor: pointer;
+        > a {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            color: #000;
+            padding: 1em 1em 1em 2.3em;
+        }
+        &:hover {
+            background-color: #eee;
+        }
+        > .active {
+            background-color: #EEEEEE;
+        }
+    }
+}
+
+.page-main {
+    padding-top: 1em;
+    position: fixed;
+    top: 80px;
+    left: 15em;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+}
+

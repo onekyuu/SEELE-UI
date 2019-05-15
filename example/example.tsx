@@ -1,42 +1,55 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import IconExample from './icon';
+import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
+import './example.scss';
+import IconDemo from './icon.demo';
 import ButtonExample from './button';
 import DialogExample from './dialog';
 import LayoutExample from './layout';
+import Layout, {Header, Aside, Panel} from '../lib/layout/layout';
+import Icon from '../lib';
 
 ReactDom.render((
     <Router>
-        <div>
-            <header>
-                WUI
-            </header>
-            <div>
-                <aside>
-                    <h2>组件</h2>
+        <Layout className={'page'}>
+            <Header className={'page-header'}>
+                <div className={'page-logo-container'}>
+                    <Icon className={'page-logo'} name='wui-logo'/>
+                    <span className={'page-title'}>WUI</span>
+                </div>
+                <div className={'page-links'}>
+                    <div className={'page-item'}>
+                        <NavLink to="/doc">Doc</NavLink>
+                    </div>
+                    <div className={'page-item'}>
+                        <a href="https://github.com/wky0615/Wheels" target='_blank'>GitHub</a>
+                    </div>
+                </div>
+            </Header>
+            <Layout>
+                <Aside className={'page-aside'}>
                     <ul>
                         <li>
-                            <Link to="/icon">Icon</Link>
+                            <NavLink to="/icon">Icon</NavLink>
                         </li>
                         <li>
-                            <Link to="/button">Button</Link>
+                            <NavLink to="/button">Button</NavLink>
                         </li>
                         <li>
-                            <Link to="/dialog">对话框</Link>
+                            <NavLink to="/dialog">Dialog</NavLink>
                         </li>
                         <li>
-                            <Link to="/layout">布局</Link>
+                            <NavLink to="/layout">Layout</NavLink>
                         </li>
                     </ul>
-                </aside>
-                <main>
-                    <Route path="/icon" component={IconExample}></Route>
+                </Aside>
+                <Panel className={'page-main'}>
+                    <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
-                </main>
-            </div>
-        </div>
+                </Panel>
+            </Layout>
+        </Layout>
     </Router>
 ), document.querySelector('#root'))

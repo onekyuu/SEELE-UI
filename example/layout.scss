@@ -6,23 +6,22 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.wui-layout {
-    width: 800px;
-    color: #FFF;
-    text-align: center;
-    &-header {
-        background-color: #8abbe6;
+    .wui-layout {
+        width: 800px;
+        color: #FFF;
+        text-align: center;
+        &-header {
+            background-color: #8abbe6;
+        }
+        &-panel {
+            background-color: #3e8ee2;
+        }
+        &-footer {
+            background-color: #8abbe6;
+        }
+        &-aside {
+            background-color: #569fe3;
+        }
+        
     }
-    &-panel {
-        background-color: #3e8ee2;
-    }
-    &-footer {
-        background-color: #8abbe6;
-    }
-    &-aside {
-        background-color: #569fe3;
-    }
-    
 }

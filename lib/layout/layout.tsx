@@ -24,3 +24,7 @@ const Layout: React.FunctionComponent<Props> = (props) => {
 }
 
 export default Layout;
+export {default as Header} from './header';
+export {default as Footer} from './footer';
+export {default as Panel} from './panel';
+export {default as Aside} from './aside';
