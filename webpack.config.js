@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
   entry: {
-    wheels: './lib/index.tsx',
+    wui: './lib/index.tsx',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
