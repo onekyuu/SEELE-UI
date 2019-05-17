@@ -1,1 +1,17 @@
-$main-color: #000000;
+$main-color: #324394;
+$light-main-color: #4153af;
+
+@mixin component($name) {
+    .#{$prefix}-#{$name} {
+        @content;
+    }
+}
+  
+@function component($name, $modifier:null) {
+    @if $modifier == null {
+        @return ".#{$prefix}-#{$name}"
+    } @else {
+        @return ".#{$prefix}-#{$name}-#{$modifier}"
+    }
+}
+  

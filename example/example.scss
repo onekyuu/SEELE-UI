@@ -95,13 +95,19 @@ $main-color: #314199;
 }
 
 .page-main {
-    padding-top: 1em;
+    padding: 1em;
     position: fixed;
     top: 80px;
-    left: 15em;
+    left: 14em;
     bottom: 0;
-    right: 1em;
+    right: 0;
     overflow-y: auto;
+}
+
+.page-footer {
+    width: 100%;
+    background-color: #314199;
+    color: #FFFFFF;
 }
 
 pre {

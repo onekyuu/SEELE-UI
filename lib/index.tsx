@@ -1,4 +1,14 @@
 import './base/index.scss';
-import Icon from './icon/icon';
+import {CSSProperties} from 'react';
 
-export default Icon;
+declare global {
+    
+    interface IStyledProps {
+        className?: string;
+        style?: CSSProperties;
+    }
+
+    type Class = string | string[] | { [k: string]: any } | undefined | false | null;
+}
+
+export {default as Icon} from './icon/icon';

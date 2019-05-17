@@ -1,10 +1,10 @@
 import React, { Fragment, ReactElement, ReactNode} from 'react';
 import './dialog.scss';
-import Icon from '../index';
+import {Icon} from '../index';
 import ReactDOM from 'react-dom';
 import { classMaker } from '../helpers/classMaker';
 
-interface Props {
+interface Props extends IStyledProps {
     visible: boolean;
     buttons?: Array<ReactElement>;
     onClose: React.MouseEventHandler;
