@@ -1,21 +1,26 @@
 import React, { SVGAttributes } from 'react';
 import '../utils/importAll';
 import './icon.scss';
-import classes from '../helpers/classMaker';
+import classes, { classMaker } from '../helpers/classMaker';
 
-interface IconProps extends SVGAttributes<SVGElement> {
+const componentName = 'Icon';
+const sc = classMaker('wui-icon')
+
+interface Props extends SVGAttributes<SVGElement> {
     name: string;
     size?: string;
     theme?: string;
 }
 
-const Icon: React.FunctionComponent<IconProps> = (props) => {
+const Icon: WFC<Props> = (props) => {
     const {className, ...restProps} = props;
     return (
-        <svg className={classes('wui-icon', className)} {...restProps}>
+        <svg className={classes(sc(''), sc(props.name), className)} {...restProps}>
           <use xlinkHref={`#${props.name}`}></use>
         </svg>
     )
 };
+
+Icon.displayName = componentName;
 
 export default Icon;

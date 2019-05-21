@@ -12,6 +12,7 @@ const IconExample: React.FunctionComponent = () => {
             <Icon name="wechat-friend"/>
             <Icon name="wechat"/>
             <Icon name="weibo"/>
+            <Icon name="loading"/>
         </div>
     );
 }
