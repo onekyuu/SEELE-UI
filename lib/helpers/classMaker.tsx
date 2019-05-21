@@ -26,12 +26,4 @@ function classMaker(prefix?: string) {
     }
 }
 
-// function classMaker(prefix?: string) {
-//     return function scopedClass(options?: Options, ...args: Class[]) {
-//         console.log(...args);
-//         console.log(options);
-//         const classes = 
-//     }
-// }
-
 export {classMaker};

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Button from '../lib/button/button';
 import Highlight, { defaultProps } from "prism-react-renderer";
 import nightOwl from "prism-react-renderer/themes/vsDark";
 
@@ -26,7 +27,7 @@ const Demo: React.FunctionComponent<Props> = (props) => {
     return (
         <div>
             {props.children}
-            <button onClick={() => setCodeVisible(!codeVisible)}>{codeVisible ? '收起代码' : '显示代码'}</button>
+            <Button onClick={() => setCodeVisible(!codeVisible)}>{codeVisible ? '收起代码' : '显示代码'}</Button>
             {codeVisible && code}
         </div>
     )

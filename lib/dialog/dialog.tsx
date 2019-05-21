@@ -3,6 +3,9 @@ import './dialog.scss';
 import {Icon} from '../index';
 import ReactDOM from 'react-dom';
 import { classMaker } from '../helpers/classMaker';
+import Button from '../button/button';
+
+const componentName = 'Dialog';
 
 interface Props extends IStyledProps {
     visible: boolean;
@@ -13,7 +16,7 @@ interface Props extends IStyledProps {
 
 const sc = classMaker('wui-dialog');
 
-const Dialog: React.FunctionComponent<Props> = (props) => {
+const Dialog: WFC<Props> = (props) => {
     const onClose: React.MouseEventHandler = (e) => {
         props.onClose(e);
     }
@@ -50,6 +53,8 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     );
 }
 
+Dialog.displayName = componentName;
+
 Dialog.defaultProps = {
     closeOnClickBg: false,
 }
@@ -77,7 +82,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
 }
 
 const alert = (content: string) => {
-    const buttons = [<button onClick={() => onClose()}>OK</button>]
+    const buttons = [<Button onClick={() => onClose()}>OK</Button>]
     const onClose = modal(content, buttons)
 }
 
@@ -92,8 +97,8 @@ const confirm = (content: string, ok?: () => void, cancel?: () => void) => {
     }
 
     const buttons = [
-        <button onClick={onCancelHandler}>cancel</button>,
-        <button onClick={onOkHandler}>ok</button>
+        <Button onClick={onCancelHandler}>cancel</Button>,
+        <Button onClick={onOkHandler}>ok</Button>
     ]
     const onClose = modal(content, buttons, cancel)
 }

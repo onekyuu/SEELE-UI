@@ -1,5 +1,8 @@
+$prefix: wui;
+
 $main-color: #324394;
 $light-main-color: #4153af;
+$danger-color: #f1453d;
 
 @mixin component($name) {
     .#{$prefix}-#{$name} {

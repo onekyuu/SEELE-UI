@@ -1,12 +1,12 @@
 import React from 'react';
 import Demo from './demo';
-import DialogExample from './dialog';
+import LayoutExample from './layout';
 
 
 const LayoutDemo = () => {
     return (
         <Demo code={require('!!raw-loader!./layout.tsx').default}>
-            <DialogExample/>
+            <LayoutExample/>
         </Demo>
     )
 }
