@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from '../lib/layout/layout';
-import Header from '../lib/layout/header';
-import Panel from '../lib/layout/panel';
-import Aside from '../lib/layout/aside';
-import Footer from '../lib/layout/footer';
+import Layout from '../../lib/layout/layout';
+import Header from '../../lib/layout/header';
+import Panel from '../../lib/layout/panel';
+import Aside from '../../lib/layout/aside';
+import Footer from '../../lib/layout/footer';
 import './layout.scss';
 
 export default function() {

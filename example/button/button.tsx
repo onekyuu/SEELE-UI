@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from '../lib/button/button';
-import './button.scss';
+import Button from '../../lib/button/button';
+import '../button/button.scss';
 
 const ButtonExample: React.FunctionComponent = () => {
     const [state, setState] = useState({loading: false});

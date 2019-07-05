@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Dialog, {alert, confirm, modal} from '../lib/dialog/dialog';
-import Button from '../lib/button/button';
+import Dialog, {alert, confirm, modal} from '../../lib/dialog/dialog';
+import Button from '../../lib/button/button';
 
 const DialogExample:React.FunctionComponent = () => {
     const [x, setX] = useState(false);

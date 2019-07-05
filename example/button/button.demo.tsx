@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo from './demo';
+import Demo from '../demo';
 import ButtonExample from './button';
 
 

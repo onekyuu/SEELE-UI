@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import './example.scss';
-// import ButtonDemo from './button.demo';
-import DialogDemo from './dialog.demo';
-import IconDemo from './icon.demo';
-import LayoutDemo from './layout.demo';
+import FormDemo from './form/form.demo';
+import DialogDemo from './dialog/dialog.demo';
+import IconDemo from './icon/icon.demo';
+import LayoutDemo from './layout/layout.demo';
 import Layout, {Header, Aside, Panel} from '../lib/layout/layout';
 import {Icon} from '../lib';
-import ButtonExample from './button';
+import ButtonExample from './button/button';
 
 ReactDom.render((
     <Router>
@@ -31,26 +31,26 @@ ReactDom.render((
                 <Aside className={'page-aside'}>
                     <ul>
                         <li>
-                            <NavLink to="/button">Button</NavLink>
+                            <NavLink to="/button">Button/按钮</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dialog">Dialog</NavLink>
+                            <NavLink to="/dialog">Dialog/对话框</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/form">Form</NavLink>
+                            <NavLink to="/form">Form/表单</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/icon">Icon</NavLink>
+                            <NavLink to="/icon">Icon/图标</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/layout">Layout</NavLink>
+                            <NavLink to="/layout">Layout/布局</NavLink>
                         </li>
                     </ul>
                 </Aside>
                 <Panel className={'page-main'}>
                     <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/dialog" component={DialogDemo}></Route>
-                    {/* <Route path="/form" component={FormDemo}></Route> */}
+                    <Route path="/form" component={FormDemo}></Route>
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/layout" component={LayoutDemo}></Route>
                 </Panel>
