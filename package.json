@@ -1,6 +1,6 @@
 {
-  "name": "wui",
-  "version": "0.0.3",
+  "name": "awesomeui",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
