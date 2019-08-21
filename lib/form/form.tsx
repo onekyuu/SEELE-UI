@@ -17,7 +17,7 @@ interface Props extends IStyledProps {
     errors: {[K: string]: string[]},
 }
 
-const Form: WFC<Props>= (props) => {
+const Form: SFC<Props>= (props) => {
     const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault()
         props.onSubmit(e)
