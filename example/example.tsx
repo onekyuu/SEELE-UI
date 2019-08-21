@@ -7,8 +7,9 @@ import DialogDemo from './dialog/dialog.demo';
 import IconDemo from './icon/icon.demo';
 import LayoutDemo from './layout/layout.demo';
 import Layout, {Header, Aside, Panel} from '../lib/layout/layout';
-import {Icon} from '../lib';
 import ButtonExample from './button/button';
+import DocExample from './doc/doc';
+import {Icon} from '../lib';
 
 ReactDom.render((
     <Router>
@@ -48,11 +49,12 @@ ReactDom.render((
                     </ul>
                 </Aside>
                 <Panel className={'page-main'}>
-                    <Route path="/button" component={ButtonExample}></Route>
-                    <Route path="/dialog" component={DialogDemo}></Route>
-                    <Route path="/form" component={FormDemo}></Route>
-                    <Route path="/icon" component={IconDemo}></Route>
-                    <Route path="/layout" component={LayoutDemo}></Route>
+                    <Route path="/" component={DocExample}/>
+                    <Route path="/button" component={ButtonExample}/>
+                    <Route path="/dialog" component={DialogDemo}/>
+                    <Route path="/form" component={FormDemo}/>
+                    <Route path="/icon" component={IconDemo}/>
+                    <Route path="/layout" component={LayoutDemo}/>
                 </Panel>
             </Layout>
         </Layout>
