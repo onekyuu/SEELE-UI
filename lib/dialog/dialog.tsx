@@ -14,9 +14,9 @@ interface Props extends IStyledProps {
     closeOnClickBg?: boolean;
 }
 
-const sc = classMaker('wui-dialog');
+const sc = classMaker('seele-dialog');
 
-const Dialog: WFC<Props> = (props) => {
+const Dialog: SFC<Props> = (props) => {
     const onClose: React.MouseEventHandler = (e) => {
         props.onClose(e);
     }

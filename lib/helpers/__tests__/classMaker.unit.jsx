@@ -34,11 +34,12 @@ describe('classes', () => {
 
 describe('classMaker', () => {
     it('接受字符串或对象', () => {
-        const sc = classMaker('wui-layout')
-        expect(sc('')).toEqual('wui-layout')
-        expect(sc('a')).toEqual('wui-layout-a')
-        expect(sc({'a': true, 'b': false})).toEqual('wui-layout-a')
-        expect(sc({'a': true, 'b': true})).toEqual('wui-layout-a wui-layout-b')
-        expect(sc({'a': true, 'b': true}, {extra: 'hi'})).toEqual('wui-layout-a wui-layout-b hi')
+        const sc = classMaker('seele-layout')
+        expect(sc('')).toEqual('seele-layout')
+        expect(sc('a')).toEqual('seele-layout-a')
+        expect(sc({'a': true, 'b': false})).toEqual('seele-layout-a')
+        expect(sc({'a': true, 'b': true})).toEqual('seele-layout-a' +
+            ' seele-layout-b')
+        expect(sc({'a': true, 'b': true}, {extra: 'hi'})).toEqual('seele-layout-a seele-layout-b hi')
     })
 })

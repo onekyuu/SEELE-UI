@@ -1,14 +1,14 @@
 const path = require('path');
 module.exports = {
   entry: {
-    wui: './lib/index.tsx',
+    seeleui: './lib/index.tsx',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/lib'),
-    library: 'wui',
+    library: 'seeleui',
     libraryTarget: 'umd',
   },
   module: {

@@ -4,7 +4,7 @@ import './button.scss';
 import Icon from '../icon/icon';
 
 const componentName = 'Button';
-const sc = classMaker('wui-button')
+const sc = classMaker('seele-button')
 
 export interface Props extends IStyledProps {
   theme?: 'default' | 'ghost' | 'dashed';
@@ -23,7 +23,7 @@ export interface Props extends IStyledProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: WFC<Props> = (props) => {
+const Button: SFC<Props> = (props) => {
 
   const disabled = props.loading || props.disabled;
 

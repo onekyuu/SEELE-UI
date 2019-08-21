@@ -1,7 +1,7 @@
 import React from 'react';
 import { classMaker } from '../helpers/classMaker';
 
-const sc = classMaker('wui-layout')
+const sc = classMaker('seele-layout')
 
 interface Props extends React.HTMLAttributes<HTMLElement> {}
 

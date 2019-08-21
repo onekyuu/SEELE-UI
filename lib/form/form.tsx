@@ -2,7 +2,7 @@ import React, { ReactFragment, FormEventHandler } from 'react';
 import {classMaker} from "../helpers/classMaker";
 
 const componentName = 'Form';
-const sc = classMaker('wui-form')
+const sc = classMaker('seele-form')
 
 export interface FormValue {
     [K: string]: any,

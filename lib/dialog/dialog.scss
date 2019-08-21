@@ -1,6 +1,6 @@
 @import '../base/base';
 
-.wui-dialog {
+.seele-dialog {
     background-color: #FFFFFF;
     min-width: 30vw;
     position: fixed;
@@ -46,7 +46,7 @@
         text-align: right;
     }
 
-    .wui-button {
+    .seele-button {
         &:first-child {
             margin-left: 0;
         }
@@ -55,6 +55,6 @@
         }
     }
 }
-.wui-button {
+.seele-button {
     margin: 6px;
 }

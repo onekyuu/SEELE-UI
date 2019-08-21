@@ -3,7 +3,7 @@ import { classMaker } from '../helpers/classMaker';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {}
 
-const sc = classMaker('wui-layout')
+const sc = classMaker('seele-layout')
 const Aside: React.FunctionComponent<Props> = (props) => {
     const {className, ...rest} = props
     return (

@@ -2,7 +2,7 @@
 
 exports[`button is div 1`] = `
 <button
-  className="wui-button wui-button-undefined wui-button-normal wui-button-round wui-button-default"
+  className="seele-button seele-button-undefined seele-button-normal seele-button-round seele-button-default"
   disabled={false}
   onClick={[Function]}
 >

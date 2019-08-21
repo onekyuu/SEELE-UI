@@ -2,7 +2,7 @@ import './base/index.scss';
 import {CSSProperties} from 'react';
 
 declare global {
-    interface WuiFunctionComponent<P = {}> extends React.FunctionComponent<P> {
+    interface SeeleUIFunctionComponent<P = {}> extends React.FunctionComponent<P> {
         // 强制要求 displayName
         displayName: string;
         // 由于 propTypes 与 TypeScript + 函数式组件配合起来有 bug
@@ -17,7 +17,7 @@ declare global {
         className?: string;
         style?: CSSProperties;
     }
-    type WFC<P = {}> = WuiFunctionComponent<P>;
+    type SFC<P = {}> = SeeleUIFunctionComponent<P>;
     type Class = string | string[] | { [k: string]: any } | undefined | false | null;
 }
 

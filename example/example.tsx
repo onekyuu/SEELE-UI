@@ -16,12 +16,12 @@ ReactDom.render((
         <Layout className={'page'}>
             <Header className={'page-header'}>
                 <div className={'page-logo-container'}>
-                    <Icon className={'page-logo'} name='wui-logo'/>
-                    <span className={'page-title'}>WUI</span>
+                    <Icon className={'page-logo'} name='seele-logo'/>
+                    <span className={'page-title'}>SEELE</span>
                 </div>
                 <div className={'page-links'}>
                     <div className={'page-item'}>
-                        <NavLink to="/doc">Doc</NavLink>
+                        <NavLink to="/">Doc</NavLink>
                     </div>
                     <div className={'page-item'}>
                         <a href="https://github.com/wky0615/Wheels" target='_blank'>GitHub</a>
@@ -49,7 +49,7 @@ ReactDom.render((
                     </ul>
                 </Aside>
                 <Panel className={'page-main'}>
-                    <Route path="/" component={DocExample}/>
+                    <Route path="/" component={DocExample} exact={true}/>
                     <Route path="/button" component={ButtonExample}/>
                     <Route path="/dialog" component={DialogDemo}/>
                     <Route path="/form" component={FormDemo}/>

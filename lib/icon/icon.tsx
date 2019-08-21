@@ -4,7 +4,7 @@ import './icon.scss';
 import classes, { classMaker } from '../helpers/classMaker';
 
 const componentName = 'Icon';
-const sc = classMaker('wui-icon')
+const sc = classMaker('seele-icon')
 
 interface Props extends SVGAttributes<SVGElement> {
     name: string;
@@ -12,7 +12,7 @@ interface Props extends SVGAttributes<SVGElement> {
     theme?: string;
 }
 
-const Icon: WFC<Props> = (props) => {
+const Icon: SFC<Props> = (props) => {
     const {className, ...restProps} = props;
     return (
         <svg className={classes(sc(''), sc(props.name), className)} {...restProps}>

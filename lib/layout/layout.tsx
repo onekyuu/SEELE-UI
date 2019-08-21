@@ -3,7 +3,7 @@ import './layout.scss'
 import Aside from './aside';
 import { classMaker } from '../helpers/classMaker';
 
-const sc = classMaker('wui-layout')
+const sc = classMaker('seele-layout')
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
     children: ReactElement | Array<ReactElement>,

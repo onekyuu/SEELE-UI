@@ -1,6 +1,6 @@
 @import '../base/base';
 
-.wui-layout {
+.seele-layout {
     display: flex;
     flex-direction: column;
     &-panel {
@@ -12,7 +12,7 @@
     }
     &-hasAside {
         flex-direction: row;
-        .wui-layout {
+        .seele-layout {
             flex-direction: column;
         }
     }
