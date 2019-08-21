@@ -1,6 +1,6 @@
 {
-  "name": "awesomeui",
-  "version": "0.0.4",
+  "name": "awesome-ui",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
