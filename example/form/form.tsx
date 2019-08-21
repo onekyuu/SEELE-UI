@@ -1,28 +1,41 @@
 import React, { useState, Fragment } from 'react';
-import Form from '../../lib/form/form';
+import Form, {FormValue} from '../../lib/form/form';
+import Validator from "../../lib/form/validator";
+import Button from "../../lib/button/button";
 
 const FormExample: React.FunctionComponent = () => {
-    const [formData] = useState({
-        username: 'wwww',
+    const [formData, setFormData] = useState<FormValue>({
+        username: '',
         password: '',
     })
     const [fields] = useState([
         {name: 'username', label: '用户名', input: {type: 'text'}},
         {name: 'password', label: '密码', input: {type: 'password'}},
     ])
+    const [errors, setErrors] = useState({})
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        console.log(formData);
-        console.log(e);
+        const rules = [
+            {key: 'username', required: true},
+            {key: 'username', minLength: 6, maxLength: 16},
+            {key: 'username', pattern: /^[A-Za-z0-9]+$/},
+            {key: 'password', required: true},
+            {key: 'password', minLength: 6, maxLength: 16},
+            {key: 'password', pattern: /^[A-Za-z0-9]+$/},
+        ]
+        const errors = Validator(formData, rules)
+        setErrors(errors)
+        console.log(errors)
     }
     return (
         <Form value={formData} fields={fields}
             buttons={
                 <Fragment>
-                    <button type="submit">提交</button>
-                    <button type="cancel">取消</button>
+                    <Button type="submit">提交</Button>
+                    <Button type="cancel">取消</Button>
                 </Fragment>
             }
-            onSubmit={onSubmit}
+            errors={errors}
+            onSubmit={onSubmit} onChange={(newData: FormValue) => setFormData(newData)}
         />
     )
 }

@@ -56,7 +56,7 @@ const ButtonExample: React.FunctionComponent = () => {
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'}>Default</Button>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'qq'} iconPosition={'right'}>Default</Button>
                     <Button theme={'default'} size={'small'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'}>Small</Button>
-                    <Button theme={'default'} size={'large'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'}>Small</Button>
+                    <Button theme={'default'} size={'large'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'}>Large</Button>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'} loading={true}>Default</Button>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'wechat'} iconPosition={'left'} onClick={() => setState({loading: !state.loading})} loading={state.loading}>Default</Button>
                 </div>

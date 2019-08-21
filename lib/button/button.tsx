@@ -15,7 +15,7 @@ export interface Props extends IStyledProps {
   shape?: 'round' | 'circle';
   href?: string;
   target?: string;
-  type?: 'button' | 'submit' | 'reset' | 'link' | 'string';
+  type?: 'button' | 'submit' | 'cancel' | 'reset' | 'link' | 'string';
   level?: 'primary' | 'danger';
   disabled?: boolean;
   badge?: number | string;
@@ -27,7 +27,7 @@ const Button: WFC<Props> = (props) => {
 
   const disabled = props.loading || props.disabled;
 
-  const classList = Array.from(new Set(['', props.level, props.size, props.shape, props.disabled ? 'disabled' : '', props.theme].map(c => sc(`${c}`)))).join(' ')
+  const classList = Array.from(new Set(['', props.level, props.size, props.shape, props.disabled ? 'disabled' : '', props.theme].filter(c => c !== 'undefined').map(c => sc(`${c}`)))).join(' ')
 
   const buttonClasses = classes(props.className, classList)
 
@@ -38,7 +38,7 @@ const Button: WFC<Props> = (props) => {
   const loadingIcon = (
     <Icon name={'loading'} className={sc('loading-icon')}/>
   )
-  
+
   const iconWrap = props.loading ? loadingIcon : icon;
 
   const buttonContent = (props.iconPosition === 'left' ? <Fragment>{iconWrap} {buttonChildren}</Fragment> : <Fragment>{buttonChildren} {iconWrap}</Fragment>)
