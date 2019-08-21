@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`button is div 1`] = `
-<div>
-  button
-</div>
+<button
+  className="wui-button wui-button-undefined wui-button-normal wui-button-round wui-button-default"
+  disabled={false}
+  onClick={[Function]}
+>
+   
+</button>
 `;

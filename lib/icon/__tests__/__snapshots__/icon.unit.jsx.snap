@@ -2,7 +2,7 @@
 
 exports[`icon UI 1`] = `
 <svg
-  className="wui-icon"
+  className="wui-icon wui-icon-alipay"
   name="alipay"
 >
   <use
