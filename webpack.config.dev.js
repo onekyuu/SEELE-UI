@@ -8,7 +8,7 @@ module.exports = Object.assign({}, base, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'WUI - React',
+      title: 'WUI - React UI Lib',
       template: 'example.html'
     })
   ]
