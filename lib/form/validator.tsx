@@ -18,6 +18,10 @@ function isEmpty(value: any) {
     return value === undefined || value === null || value === '';
 }
 
+export function noError(errors: any) {
+    return Object.keys(errors).length === 0
+}
+
 const  Validator = (formValue: FormValue, formRules: FormRules): FormErrors => {
     const errors: any = {}
     const addError = (key: string, message: string) => {
@@ -41,8 +45,6 @@ const  Validator = (formValue: FormValue, formRules: FormRules): FormErrors => {
             addError(rule.key, `${rule.key} is invalid`)
         }
     })
-    console.log('errors')
-    console.log(errors)
     return errors;
 }
 

@@ -8,7 +8,6 @@ interface Props {
 
 const Demo: React.FunctionComponent<Props> = (props) => {
     const [codeVisible, setCodeVisible] = React.useState(false)
-    console.log(props.code)
     const code = (<SyntaxHighlighter language="javascript">
         {props.code}
     </SyntaxHighlighter>)
