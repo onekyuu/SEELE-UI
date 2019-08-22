@@ -45,7 +45,6 @@
     "jest": "^24.3.1",
     "jest-junit": "^6.3.0",
     "node-sass": "^4.11.0",
-    "prism-react-renderer": "^0.1.6",
     "raw-loader": "^2.0.0",
     "react-test-renderer": "^16.8.4",
     "sass-loader": "^7.1.0",
@@ -58,9 +57,11 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@types/react-syntax-highlighter": "^10.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-syntax-highlighter": "^11.0.2"
   }
 }
