@@ -11,52 +11,89 @@ import ButtonExample from './button/button';
 import DocExample from './doc/doc';
 import {Icon} from '../lib';
 
-ReactDom.render((
-    <Router>
-        <Layout className={'page'}>
-            <Header className={'page-header'}>
-                <div className={'page-logo-container'}>
-                    <Icon className={'page-logo'} name='seele-logo'/>
-                    <span className={'page-title'}>SEELE</span>
-                </div>
-                <div className={'page-links'}>
-                    <div className={'page-item'}>
-                        <NavLink to="/">Doc</NavLink>
+const renderDevicePage = () => {
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        return (
+            <Router>
+                <Layout className={'page'}>
+                    <Header className={'page-header device'}>
+                        <div className={'page-logo-container'}>
+                            <Icon className={'page-logo'} name='seele-logo'/>
+                            <span className={'page-title'}>SEELE</span>
+                        </div>
+                        <div className={'page-links'}>
+                            <div className={'page-item'}>
+                                <NavLink to="/">Doc</NavLink>
+                            </div>
+                            <div className={'page-item'}>
+                                <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
+                            </div>
+                        </div>
+                    </Header>
+                    <Panel className={'page-main-device'}>
+                        <Route path="/" component={DocExample} exact={true}/>
+                        <Route path="/button" component={ButtonExample}/>
+                        <Route path="/dialog" component={DialogDemo}/>
+                        <Route path="/form" component={FormDemo}/>
+                        <Route path="/icon" component={IconDemo}/>
+                        <Route path="/layout" component={LayoutDemo}/>
+                    </Panel>
+                </Layout>
+            </Router>
+        )
+    }
+
+    return (
+        <Router>
+            <Layout className={'page'}>
+                <Header className={'page-header'}>
+                    <div className={'page-logo-container'}>
+                        <Icon className={'page-logo'} name='seele-logo'/>
+                        <span className={'page-title'}>SEELE</span>
                     </div>
-                    <div className={'page-item'}>
-                        <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
+                    <div className={'page-links'}>
+                        <div className={'page-item'}>
+                            <NavLink to="/">Doc</NavLink>
+                        </div>
+                        <div className={'page-item'}>
+                            <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
+                        </div>
                     </div>
-                </div>
-            </Header>
-            <Layout>
-                <Aside className={'page-aside'}>
-                    <ul>
-                        <li>
-                            <NavLink to="/button">Button/按钮</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/dialog">Dialog/对话框</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/form">Form/表单</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/icon">Icon/图标</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/layout">Layout/布局</NavLink>
-                        </li>
-                    </ul>
-                </Aside>
-                <Panel className={'page-main'}>
-                    <Route path="/" component={DocExample} exact={true}/>
-                    <Route path="/button" component={ButtonExample}/>
-                    <Route path="/dialog" component={DialogDemo}/>
-                    <Route path="/form" component={FormDemo}/>
-                    <Route path="/icon" component={IconDemo}/>
-                    <Route path="/layout" component={LayoutDemo}/>
-                </Panel>
+                </Header>
+                <Layout>
+                    <Aside className={'page-aside'}>
+                        <ul>
+                            <li>
+                                <NavLink to="/button">Button/按钮</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dialog">Dialog/对话框</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/form">Form/表单</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/icon">Icon/图标</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/layout">Layout/布局</NavLink>
+                            </li>
+                        </ul>
+                    </Aside>
+                    <Panel className={'page-main'}>
+                        <Route path="/" component={DocExample} exact={true}/>
+                        <Route path="/button" component={ButtonExample}/>
+                        <Route path="/dialog" component={DialogDemo}/>
+                        <Route path="/form" component={FormDemo}/>
+                        <Route path="/icon" component={IconDemo}/>
+                        <Route path="/layout" component={LayoutDemo}/>
+                    </Panel>
+                </Layout>
             </Layout>
-        </Layout>
-    </Router>
+        </Router>
+    );
+}
+
+ReactDom.render((
+    renderDevicePage()
 ), document.querySelector('#root'))

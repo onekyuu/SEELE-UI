@@ -61,6 +61,14 @@ $main-color: #314199;
             }
         }
     }
+    &.device {
+        padding: 0;
+        .page-item {
+            > a {
+                padding: 0 1em;
+            }
+        }
+    }
 }
 
 .page-aside {
@@ -104,6 +112,10 @@ $main-color: #314199;
     overflow-y: auto;
 }
 
+.page-main-device {
+    padding: 120px 1em;
+}
+
 .page-footer {
     width: 100%;
     background-color: #314199;
@@ -117,4 +129,5 @@ pre {
     padding: 1em;
     box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.3);
 }
+
 
