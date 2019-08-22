@@ -22,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wky0615/Wheels/issues"
+    "url": "https://github.com/wky0615/SEELE-UI/issues"
   },
-  "homepage": "https://github.com/wky0615/Wheels#readme",
+  "homepage": "https://github.com/wky0615/SEELE-UI#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",

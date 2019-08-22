@@ -24,7 +24,7 @@ ReactDom.render((
                         <NavLink to="/">Doc</NavLink>
                     </div>
                     <div className={'page-item'}>
-                        <a href="https://github.com/wky0615/Wheels" target='_blank'>GitHub</a>
+                        <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                     </div>
                 </div>
             </Header>
