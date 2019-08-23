@@ -1,0 +1,73 @@
+@import "../base/base";
+
+.seele-input {
+  position: relative;
+  padding: 24px 0 0;
+
+  &-label {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    color: #ddd;
+    font-size: 1rem;
+    transition: all 350ms cubic-bezier(.4,0,.2,1);
+    z-index: -1;
+  }
+
+  &-text {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    line-height: 22px;
+    font-size: 1rem;
+    margin: 24px 0;
+    padding: 4px 0;
+    background-color: transparent;
+  }
+
+  &-bar {
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $main-color;
+    transition: all 350ms;
+  }
+
+  &.focus {
+    .seele-input-text {
+      outline: none;
+    }
+    .seele-input-bar {
+      width: 100%;
+      left: 0;
+      transition: all 350ms;
+    }
+    .seele-input-label {
+      bottom: 2rem;
+      font-size: 12px;
+      color: $main-color;
+      font-weight: 300;
+      transition: all 350ms cubic-bezier(.4,0,.2,1);
+    }
+  }
+  &.blur {
+    &.hasInput {
+      .seele-input-text {
+        outline: none;
+      }
+      .seele-input-bar {
+        width: 0;
+        left: 50%;
+        transition: all 350ms;
+      }
+      .seele-input-label {
+        bottom: 2rem;
+        font-size: 12px;
+        color: #dddddd;
+        font-weight: 300;
+        transition: all 350ms;
+      }
+    }
+  }
+}

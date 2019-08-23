@@ -1,0 +1,29 @@
+@import '../base/base';
+
+.seele-form {
+  &-row {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-label {
+    padding-right: 14px;
+  }
+
+  &-td {
+    position: relative;
+  }
+
+  &-error {
+    position: absolute;
+    bottom: 0;
+    color: $danger-color;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}

@@ -1,5 +1,7 @@
 import React, { ReactFragment, FormEventHandler } from 'react';
-import {classMaker} from "../helpers/classMaker";
+import classes, {classMaker} from "../helpers/classMaker";
+import Input from "../input/input";
+import './form.scss';
 
 const componentName = 'Form';
 const sc = classMaker('seele-form')
@@ -15,6 +17,7 @@ interface Props extends IStyledProps {
     onSubmit: FormEventHandler<HTMLFormElement>,
     onChange: (value: FormValue) => void,
     errors: {[K: string]: string[]},
+    hasFormLabel?: boolean,
 }
 
 const Form: SFC<Props>= (props) => {
@@ -29,21 +32,34 @@ const Form: SFC<Props>= (props) => {
     }
     return (
         <form onSubmit={onSubmit}>
-            {props.fields.map(field => (
-                <div key={field.name}>
-                    <div>{field.label}</div>
-                    <input type={field.input.type} value={formData[field.name]}
-                    onChange={(e) => onInputChange(field.name, e.target.value)}/>
-                    <div className={sc('error')}>
-                        {props.errors[field.name] && props.errors[field.name][0]}
-                    </div>
-                </div>
-            ))}
+            <table>
+                <tbody>
+                    {props.fields.map(field => (
+                        <tr className={classes(sc('row'))} key={field.name}>
+                            {props.hasFormLabel && <td className={sc('label')}>
+                                <span>{field.label}</span>
+                            </td>}
+                            <td className={sc('td')}>
+                                <Input type={field.input.type} value={formData[field.name]}
+                                    onChange={(e) => onInputChange(field.name, e.target.value)}
+                                    hasInputLabel={!props.hasFormLabel}
+                                    labelText={field.label}/>
+                                <div className={sc('error')}>
+                                    {props.errors[field.name] && props.errors[field.name][0]}
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
             <div>{props.buttons}</div>
         </form>
     )
 }
 
 Form.displayName = componentName;
+Form.defaultProps = {
+    hasFormLabel: true,
+}
 
 export default Form;
