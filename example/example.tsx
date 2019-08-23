@@ -10,6 +10,7 @@ import Layout, {Header, Aside, Panel} from '../lib/layout/layout';
 import ButtonExample from './button/button';
 import DocExample from './doc/doc';
 import {Icon} from '../lib';
+import InputDemo from "./input/input.demo";
 
 const renderDevicePage = () => {
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
@@ -78,6 +79,9 @@ const renderDevicePage = () => {
                             <li>
                                 <NavLink to="/layout">Layout/布局</NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/input">Input/输入框</NavLink>
+                            </li>
                         </ul>
                     </Aside>
                     <Panel className={'page-main'}>
@@ -87,6 +91,7 @@ const renderDevicePage = () => {
                         <Route path="/form" component={FormDemo}/>
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/layout" component={LayoutDemo}/>
+                        <Route path="/input" component={InputDemo}/>
                     </Panel>
                 </Layout>
             </Layout>

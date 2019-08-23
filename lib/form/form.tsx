@@ -42,8 +42,7 @@ const Form: SFC<Props>= (props) => {
                             <td className={sc('td')}>
                                 <Input type={field.input.type} value={formData[field.name]}
                                     onChange={(e) => onInputChange(field.name, e.target.value)}
-                                    hasInputLabel={!props.hasFormLabel}
-                                    labelText={field.label}/>
+                                    labelText={(!props.hasFormLabel && field.label)}/>
                                 <div className={sc('error')}>
                                     {props.errors[field.name] && props.errors[field.name][0]}
                                 </div>
