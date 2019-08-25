@@ -77,10 +77,10 @@ const renderDevicePage = () => {
                                 <NavLink to="/icon">Icon/图标</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/layout">Layout/布局</NavLink>
+                                <NavLink to="/input">Input/输入框</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/input">Input/输入框</NavLink>
+                                <NavLink to="/layout">Layout/布局</NavLink>
                             </li>
                         </ul>
                     </Aside>

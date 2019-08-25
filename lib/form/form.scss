@@ -12,7 +12,8 @@
     }
   }
   &-label {
-    padding-right: 14px;
+    padding: 0 14px 16px 0;
+    vertical-align: bottom;
   }
 
   &-td {
@@ -20,8 +21,6 @@
   }
 
   &-error {
-    position: absolute;
-    bottom: 0;
     color: $danger-color;
     font-size: 14px;
     font-weight: 300;
