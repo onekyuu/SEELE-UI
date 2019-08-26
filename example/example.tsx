@@ -29,6 +29,9 @@ const renderDevicePage = () => {
                             <div className={'page-item'}>
                                 <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                             </div>
+                            <div className={'page-item'}>
+                                <div className={'language'}>简体中文</div>
+                            </div>
                         </div>
                     </Header>
                     <Panel className={'page-main-device'}>
@@ -60,7 +63,7 @@ const renderDevicePage = () => {
                             <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                         </div>
                         <div className={'page-item'}>
-                            简体中文
+                            <div className={'language'}>简体中文</div>
                         </div>
                     </div>
                 </Header>

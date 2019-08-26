@@ -6,21 +6,40 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    .title {
+        margin: 30px 0 10px 0;
+    }
     .seele-layout {
         width: 800px;
         color: #FFF;
         text-align: center;
         &-header {
             background-color: #8abbe6;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         &-panel {
             background-color: #3e8ee2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         &-footer {
             background-color: #8abbe6;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         &-aside {
             background-color: #569fe3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
         }
         
     }

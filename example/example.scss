@@ -27,10 +27,10 @@ $main-color: #314199;
     padding: 0 1em;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 9999;
     .page-logo-container {
         display: flex;
@@ -49,10 +49,7 @@ $main-color: #314199;
         display: flex;
         align-items: center;
         .page-item {
-            color: #FFF;
-            cursor: pointer;
-            font-size: 0.9em;
-            > a {
+            > a, .language {
                 color: #FFF;
                 font-weight: 500;
                 font-size: 0.9em;
@@ -77,12 +74,12 @@ $main-color: #314199;
 .page-aside {
     box-shadow: 4px 0px 6px 0px rgba(0,0,0,0.3);
     width: 14em;
+    padding-top: 80px;
+    padding-bottom: 1em;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    padding-top: 80px;
-    padding-bottom: 1em;
     overflow-y: auto;
     ul {
         list-style: none;
@@ -107,22 +104,13 @@ $main-color: #314199;
 
 .page-main {
     padding: 1em;
-    position: fixed;
-    top: 80px;
-    left: 14em;
-    bottom: 0;
-    right: 0;
+    margin-left: 14em;
+    margin-top: 80px;
     overflow-y: auto;
 }
 
 .page-main-device {
     padding: 120px 1em;
-}
-
-.page-footer {
-    width: 100%;
-    background-color: #314199;
-    color: #FFFFFF;
 }
 
 pre {

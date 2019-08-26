@@ -3,17 +3,15 @@
 .seele-layout {
     display: flex;
     flex-direction: column;
+
     &-panel {
         flex-grow: 1;
+        flex-shrink: 0;
     }
-    & & {
+    & > & {
         flex-grow: 1;
-        flex-direction: row;
     }
     &-hasAside {
         flex-direction: row;
-        .seele-layout {
-            flex-direction: column;
-        }
     }
 }

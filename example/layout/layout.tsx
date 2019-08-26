@@ -15,8 +15,8 @@ export default function() {
                 </div>
                 <Layout style={{height: '300px'}}>
                     <Header>header</Header>
-                    <Panel>header</Panel>
-                    <Footer>header</Footer>
+                    <Panel>main</Panel>
+                    <Footer>footer</Footer>
                 </Layout>
             </div>
             <div className={'container'}>
@@ -27,9 +27,9 @@ export default function() {
                     <Header>header</Header>
                     <Layout>
                         <Aside>aside</Aside>
-                        <Panel>header</Panel>
+                        <Panel>main</Panel>
                     </Layout>
-                    <Footer>header</Footer>
+                    <Footer>footer</Footer>
                 </Layout>
             </div>
             <div className={'container'}>
@@ -40,9 +40,9 @@ export default function() {
                     <Header>header</Header>
                     <Layout>
                         <Aside>aside</Aside>
-                        <Panel>header</Panel>
+                        <Panel>main</Panel>
                     </Layout>
-                    <Footer>header</Footer>
+                    <Footer>footer</Footer>
                 </Layout>
             </div>
             <div className={'container'}>
@@ -53,8 +53,8 @@ export default function() {
                     <Aside>aside</Aside>
                     <Layout>
                         <Header>header</Header>
-                        <Panel>header</Panel>
-                        <Footer>header</Footer>
+                        <Panel>main</Panel>
+                        <Footer>footer</Footer>
                     </Layout>
                 </Layout>
             </div>
