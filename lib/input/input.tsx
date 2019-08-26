@@ -10,7 +10,7 @@ export interface Props extends Omit<React.InputHTMLAttributes<HTMLInputElement>,
     labelPosition?: 'right' | 'left',
     placeholder?: string,
     size?: 'large' | 'normal' | 'small',
-    inputType?: 'text' | 'number' | 'password' | 'email' | 'date' | 'datetime' | 'datetime-local' | 'search' | 'tel' | 'time' | 'url';
+    inputType?: 'text' | 'number' | 'password' | 'email' | 'date' | 'datetime-local' | 'search' | 'tel' | 'time' | 'url';
     before?: ReactChild;
     after?: ReactChild;
     length?: number | string,

@@ -52,7 +52,7 @@ const InputExample: React.FunctionComponent = () => {
                     <Input labelText={'number'} inputType={'number'}/>
                     <Input labelText={'email'} inputType={'email'}/>
                     <Input labelText={'date'} inputType={'date'}/>
-                    <Input labelText={'datetime'} inputType={'datetime'}/>
+                    <Input labelText={'datetime-local'} inputType={'datetime-local'}/>
                     <Input labelText={'tel'} inputType={'tel'}/>
                     <Input labelText={'search'} inputType={'search'}/>
                     <Input labelText={'time'} inputType={'time'}/>
