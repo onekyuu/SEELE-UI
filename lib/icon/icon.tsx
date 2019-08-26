@@ -4,7 +4,7 @@ import './icon.scss';
 import classes, { classMaker } from '../helpers/classMaker';
 
 const componentName = 'Icon';
-const sc = classMaker('seele')
+const sc = classMaker('seele-icon')
 
 interface Props extends SVGAttributes<SVGElement> {
     name: string;
@@ -15,7 +15,7 @@ interface Props extends SVGAttributes<SVGElement> {
 const Icon: SFC<Props> = (props) => {
     const {className, ...restProps} = props;
     return (
-        <svg className={classes(sc('icon'), sc(props.name), className)} {...restProps}>
+        <svg className={classes(sc(''), sc(props.name), className)} {...restProps}>
           <use xlinkHref={`#${props.name}`}></use>
         </svg>
     )
