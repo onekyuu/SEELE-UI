@@ -1,7 +1,7 @@
 $prefix: seele;
 
-$main-color: #324394;
-$light-main-color: #4153af;
+$main-color: #314199;
+$light-main-color: rgba(49, 65, 153, .7);
 $danger-color: #f1453d;
 
 @mixin component($name) {
@@ -17,4 +17,3 @@ $danger-color: #f1453d;
         @return ".#{$prefix}-#{$name}-#{$modifier}"
     }
 }
-  

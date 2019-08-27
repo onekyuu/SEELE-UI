@@ -11,6 +11,7 @@ import ButtonExample from './button/button';
 import DocExample from './doc/doc';
 import {Icon} from '../lib';
 import InputDemo from "./input/input.demo";
+import GridDemo from "./grid/grid.demo";
 
 const renderDevicePage = () => {
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
@@ -39,6 +40,7 @@ const renderDevicePage = () => {
                         <Route path="/button" component={ButtonExample}/>
                         <Route path="/dialog" component={DialogDemo}/>
                         <Route path="/form" component={FormDemo}/>
+                        <Route path="/grid" component={GridDemo}/>
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/layout" component={LayoutDemo}/>
                     </Panel>
@@ -80,6 +82,9 @@ const renderDevicePage = () => {
                                 <NavLink to="/form">Form/表单</NavLink>
                             </li>
                             <li>
+                                <NavLink to="/grid">Grid/栅格</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/icon">Icon/图标</NavLink>
                             </li>
                             <li>
@@ -95,6 +100,7 @@ const renderDevicePage = () => {
                         <Route path="/button" component={ButtonExample}/>
                         <Route path="/dialog" component={DialogDemo}/>
                         <Route path="/form" component={FormDemo}/>
+                        <Route path="/grid" component={GridDemo}/>
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/layout" component={LayoutDemo}/>
                         <Route path="/input" component={InputDemo}/>
