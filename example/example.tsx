@@ -71,29 +71,49 @@ const renderDevicePage = () => {
                 </Header>
                 <Layout>
                     <Aside className={'page-aside'}>
-                        <ul>
-                            <li>
-                                <NavLink to="/button">Button/按钮</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dialog">Dialog/对话框</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/form">Form/表单</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/grid">Grid/栅格</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/icon">Icon/图标</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/input">Input/输入框</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/layout">Layout/布局</NavLink>
-                            </li>
-                        </ul>
+                        <div className={'list-container'}>
+                            <div className={'list-title'}>通用</div>
+                            <ul>
+                                <li>
+                                    <NavLink to="/button">Button/按钮</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/icon">Icon/图标</NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={'list-container'}>
+                            <div className={'list-title'}>布局</div>
+                            <ul>
+                                <li>
+                                    <NavLink to="/grid">Grid/栅格</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/layout">Layout/布局</NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={'list-container'}>
+                            <div className={'list-title'}>交互</div>
+                            <ul>
+                                <li>
+                                    <NavLink to="/dialog">Dialog/对话框</NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={'list-container'}>
+                            <div className={'list-title'}>数据</div>
+                            <ul>
+                                <li>
+                                    <NavLink to="/form">Form/表单</NavLink>
+                                </li>
+
+
+                                <li>
+                                    <NavLink to="/input">Input/输入框</NavLink>
+                                </li>
+                            </ul>
+                        </div>
                     </Aside>
                     <Panel className={'page-main'}>
                         <Route path="/" component={DocExample} exact={true}/>

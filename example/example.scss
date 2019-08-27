@@ -81,6 +81,11 @@ $main-color: #314199;
     left: 0;
     bottom: 0;
     overflow-y: auto;
+    .list-title {
+        font-size: 0.8em;
+        color: rgba(0, 0, 0, .6);
+        margin: 10px 0 10px 1em;
+    }
     ul {
         list-style: none;
     }
