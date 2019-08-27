@@ -15,27 +15,27 @@
         color: #FFF;
         text-align: center;
         &-header {
-            background-color: #8abbe6;
+            background-color: rgba(49, 65, 153, .6);
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         &-panel {
-            background-color: #3e8ee2;
+            background-color: rgb(49, 65, 153);
             display: flex;
             justify-content: center;
             align-items: center;
         }
         &-footer {
-            background-color: #8abbe6;
+            background-color: rgba(49, 65, 153, .6);
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         &-aside {
-            background-color: #569fe3;
+            background-color: rgba(49, 65, 153, .8);
             display: flex;
             justify-content: center;
             align-items: center;
