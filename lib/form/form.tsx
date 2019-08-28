@@ -17,6 +17,7 @@ interface Props extends IStyledProps {
     onSubmit: FormEventHandler<HTMLFormElement>,
     onChange: (value: FormValue) => void,
     errors: {[K: string]: string[]},
+    errorsDisplayMode?: 'first' | 'all',
     hasFormLabel?: boolean,
 }
 
@@ -44,7 +45,10 @@ const Form: SFC<Props>= (props) => {
                                     onChange={(e) => onInputChange(field.name, e.target.value)}
                                     labelText={(!props.hasFormLabel && field.label)}/>
                                 <div className={sc('error')}>
-                                    {props.errors[field.name] && props.errors[field.name][0]}
+                                    {props.errors[field.name]
+                                        && (props.errorsDisplayMode === 'first'
+                                            ? props.errors[field.name][0]
+                                            : props.errors[field.name])}
                                 </div>
                             </td>
                         </tr>
@@ -59,6 +63,7 @@ const Form: SFC<Props>= (props) => {
 Form.displayName = componentName;
 Form.defaultProps = {
     hasFormLabel: true,
+    errorsDisplayMode: 'first',
 }
 
 export default Form;
