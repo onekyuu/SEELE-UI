@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dialog, {alert, confirm, modal} from '../../lib/dialog/dialog';
 import Button from '../../lib/button/button';
+import './dialog.scss';
 
 const DialogExample:React.FunctionComponent = () => {
     const [x, setX] = useState(false);
@@ -14,7 +15,7 @@ const DialogExample:React.FunctionComponent = () => {
     return (
         <div>
             <div>
-                <Button onClick={e => setX(!x)}>Dialog</Button>
+                <Button  className={'dialog-button'} onClick={e => setX(!x)}>Dialog</Button>
                 <Dialog visible={x} buttons={
                     [
                         <Button onClick={e => {setX(false)}}>Cancel</Button>,
@@ -25,9 +26,9 @@ const DialogExample:React.FunctionComponent = () => {
                 </Dialog>
             </div>
             <div>
-                <Button onClick={e => alert('hi')}>Alert</Button>
-                <Button onClick={e => confirm('please confirm', () => {console.log('OK')}, () => {console.log('Cancel')})}>Confirm</Button>
-                <Button onClick={openModal}>Modal</Button>
+                <Button className={'dialog-button'} onClick={e => alert('hi')}>Alert</Button>
+                <Button className={'dialog-button'} onClick={e => confirm('please confirm', () => {console.log('OK')}, () => {console.log('Cancel')})}>Confirm</Button>
+                <Button className={'dialog-button'} onClick={openModal}>Modal</Button>
             </div>
         </div>
     );
