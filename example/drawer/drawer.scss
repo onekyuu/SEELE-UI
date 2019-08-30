@@ -1,1 +1,17 @@
 @import "../../lib/base/base";
+
+.right-text {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.drawer-button {
+  margin: 6px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
