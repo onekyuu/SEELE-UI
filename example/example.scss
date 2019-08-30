@@ -63,8 +63,21 @@ $main-color: #314199;
     }
     &.device {
         padding: 0;
+
+        .page-logo {
+            height: 60px;
+            width: 60px;
+        }
+
+        .page-title {
+            font-size: 1.4em;
+        }
+
         .page-item {
             > a {
+                padding: 0 1em;
+            }
+            .language {
                 padding: 0 1em;
             }
         }

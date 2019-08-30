@@ -12,9 +12,12 @@ import DocExample from './doc/doc';
 import {Icon} from '../lib';
 import InputDemo from "./input/input.demo";
 import GridDemo from "./grid/grid.demo";
+import DrawerDemo from "./drawer/drawer.demo";
+
+const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
 
 const renderDevicePage = () => {
-    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    if(isDevice) {
         return (
             <Router>
                 <Layout className={'page'}>
@@ -43,6 +46,7 @@ const renderDevicePage = () => {
                         <Route path="/grid" component={GridDemo}/>
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/layout" component={LayoutDemo}/>
+                        <Route path="/drawer" component={DrawerDemo}/>
                     </Panel>
                 </Layout>
             </Router>
@@ -99,6 +103,9 @@ const renderDevicePage = () => {
                                 <li>
                                     <NavLink to="/dialog">Dialog/对话框</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to="/drawer">Drawer/抽屉</NavLink>
+                                </li>
                             </ul>
                         </div>
                         <div className={'list-container'}>
@@ -124,6 +131,7 @@ const renderDevicePage = () => {
                         <Route path="/icon" component={IconDemo}/>
                         <Route path="/layout" component={LayoutDemo}/>
                         <Route path="/input" component={InputDemo}/>
+                        <Route path="/drawer" component={DrawerDemo}/>
                     </Panel>
                 </Layout>
             </Layout>
