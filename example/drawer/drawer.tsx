@@ -35,7 +35,7 @@ const DrawerExample2 = () => {
                 title={'Drawer Component'}
                 visible={visible}
                 className={'aside-drawer'}
-                position={'right'}
+                position={'bottom'}
                 onClose={() => setVisible(false)}>
                 <div className={'right-text'}>drawer</div>
                 <div>drawer</div>
