@@ -14,9 +14,9 @@ interface IProps extends IStyledProps{
 }
 
 const Drawer: SFC<IProps> = (props) => {
-    const {className, position, onClose, title} = props;
+    const {className, position, onClose, title, visible} = props;
 
-    const DrawerNode = props.visible && <Fragment>
+    const DrawerNode = visible && <Fragment>
         <div className={sc('bg')} onClick={onClose}/>
         <div className={classes(sc('main',{extra: position}), className)}>
             {title && <div className={sc('title')}>{title}</div>}
