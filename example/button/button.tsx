@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Button from '../../lib/button/button';
 import '../button/button.scss';
+import { useTranslation } from 'react-i18next';
 
 const ButtonExample: React.FunctionComponent = () => {
     const [state, setState] = useState({loading: false});
+    const { t } = useTranslation();
     return (
         <div className={'buttonExample'}>
             <div>
-                <h3>普通按钮</h3>
+                <h3>{t('default_button')}</h3>
                 <div>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'}>Default</Button>
                     <Button theme={'default'} size={'normal'} disabled={true} type={'button'}>Disabled</Button>

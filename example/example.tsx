@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import ReactDom from 'react-dom';
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import './example.scss';
+import './i18n';
+import { useTranslation } from 'react-i18next';
 import FormDemo from './form/form.demo';
 import DialogDemo from './dialog/dialog.demo';
 import IconDemo from './icon/icon.demo';
@@ -13,6 +15,7 @@ import {Icon} from '../lib';
 import InputDemo from "./input/input.demo";
 import GridDemo from "./grid/grid.demo";
 import DrawerDemo from "./drawer/drawer.demo";
+import AffixDemo from "./affix/affix.demo";
 import Drawer from "../lib/drawer/drawer";
 import Button from "../lib/button/button";
 
@@ -20,13 +23,14 @@ const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgen
 
 const RenderDeviceAside: React.FunctionComponent = () => {
     const [visible, setVisible] = useState(false)
+    const { t } = useTranslation();
     return (
         <div className={'drawer-container'}>
             <Button level={'primary'} className={'affix'} onClick={() => setVisible(true)}>固钉</Button>
             <Drawer onClose={() => setVisible(false)} visible={visible}>
                 <Aside className={'page-aside device'}>
                     <div className={'list-container'}>
-                        <div className={'list-title'}>通用</div>
+                        <div className={'list-title'}>{t('general')}</div>
                         <ul>
                             <li>
                                 <NavLink to="/button">Button/按钮</NavLink>
@@ -50,6 +54,9 @@ const RenderDeviceAside: React.FunctionComponent = () => {
                     <div className={'list-container'}>
                         <div className={'list-title'}>交互</div>
                         <ul>
+                            <li>
+                                <NavLink to="/affix">Affix/固钉</NavLink>
+                            </li>
                             <li>
                                 <NavLink to="/dialog">Dialog/对话框</NavLink>
                             </li>
@@ -75,7 +82,8 @@ const RenderDeviceAside: React.FunctionComponent = () => {
     )
 }
 
-const renderNode = () =>{
+const RenderNode: React.FunctionComponent = () =>{
+    const { t } = useTranslation();
     return (
         <Router>
             <Layout className={'page'}>
@@ -86,13 +94,13 @@ const renderNode = () =>{
                     </div>
                     <div className={'page-links'}>
                         <div className={'page-item'}>
-                            <NavLink to="/">Doc</NavLink>
+                            <NavLink to="/">{t('doc')}</NavLink>
                         </div>
                         <div className={'page-item'}>
                             <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                         </div>
                         <div className={'page-item'}>
-                            <div className={'language'}>简体中文</div>
+                            <div className={'language'}>{t('language')}</div>
                         </div>
                     </div>
                 </Header>
@@ -101,7 +109,7 @@ const renderNode = () =>{
                         ? <RenderDeviceAside/>
                         : <Aside className={'page-aside'}>
                             <div className={'list-container'}>
-                                <div className={'list-title'}>通用</div>
+                                <div className={'list-title'}>{t('general')}</div>
                                 <ul>
                                     <li>
                                         <NavLink to="/button">Button/按钮</NavLink>
@@ -125,6 +133,9 @@ const renderNode = () =>{
                             <div className={'list-container'}>
                                 <div className={'list-title'}>交互</div>
                                 <ul>
+                                    <li>
+                                        <NavLink to="/affix">Affix/固钉</NavLink>
+                                    </li>
                                     <li>
                                         <NavLink to="/dialog">Dialog/对话框</NavLink>
                                     </li>
@@ -155,6 +166,7 @@ const renderNode = () =>{
                         <Route path="/layout" component={LayoutDemo}/>
                         <Route path="/input" component={InputDemo}/>
                         <Route path="/drawer" component={DrawerDemo}/>
+                        <Route path="/affix" component={AffixDemo}/>
                     </Panel>
                 </Layout>
             </Layout>
@@ -163,5 +175,5 @@ const renderNode = () =>{
 }
 
 ReactDom.render(
-    renderNode()
+    <RenderNode/>
     , document.querySelector('#root'))
