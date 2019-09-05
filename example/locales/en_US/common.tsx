@@ -15,6 +15,7 @@ const en_USCommon = {
     data: 'Data',
     form: 'Form',
     input: 'Input',
+    menu: 'Menu',
 }
 
 export default en_USCommon;

@@ -26,7 +26,7 @@ const RenderDeviceAside: React.FunctionComponent = () => {
     const { t } = useTranslation();
     return (
         <div className={'drawer-container'}>
-            <Button level={'primary'} className={'affix'} onClick={() => setVisible(true)}>固钉</Button>
+            <Button level={'primary'} className={'affix'} onClick={() => setVisible(true)}>{t('menu')}</Button>
             <Drawer onClose={() => setVisible(false)} visible={visible}>
                 <Aside className={'page-aside device'}>
                     <div className={'list-container'}>

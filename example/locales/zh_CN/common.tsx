@@ -15,6 +15,7 @@ const zh_CNCommon = {
     data: '数据',
     form: 'Form/表单',
     input: 'Input/输入框',
+    menu: '菜单',
 }
 
 export default zh_CNCommon;
