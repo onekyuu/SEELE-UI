@@ -108,7 +108,7 @@ const RenderNode: React.FunctionComponent = () =>{
                             <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                         </div>
                         <div className={'page-item'}>
-                            <div className={`language ${language === 'en_us' && 'show'}`} onClick={() => switchLanguage('zh_cn')}>{t('chinese')}</div>
+                            <div className={`language ${language !== 'zh_cn' && 'show'}`} onClick={() => switchLanguage('zh_cn')}>{t('chinese')}</div>
                             <div className={`language ${language === 'zh_cn' && 'show'}`} onClick={() => switchLanguage('en_us')}>{t('english')}</div>
                         </div>
                     </div>
