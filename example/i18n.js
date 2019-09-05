@@ -10,7 +10,6 @@ import en_USDoc from './locales/en_US/doc';
 
 function getLanguage() {
     let language = localStorage.getItem('language');
-    console.log(language);
     const lang = navigator.language || navigator.userLanguage; // 常规浏览器语言和IE浏览器
     language = language || lang;
     language = language.replace(/-/, '_').toLowerCase();

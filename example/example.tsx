@@ -85,9 +85,9 @@ const RenderDeviceAside: React.FunctionComponent = () => {
 const RenderNode: React.FunctionComponent = () =>{
     const { t } = useTranslation();
     useEffect(()=> {
-        localStorage.setItem('language', 'en');
+        localStorage.setItem('language', 'en_us');
     }, [])
-    const language = localStorage.getItem('language');
+    const language = localStorage.getItem('language') || navigator.language.replace(/-/, '_').toLowerCase();
     const switchLanguage = (lang: string) => {
         localStorage.setItem('language', lang);
         window.location.reload();
@@ -108,8 +108,8 @@ const RenderNode: React.FunctionComponent = () =>{
                             <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                         </div>
                         <div className={'page-item'}>
-                            <div className={`language ${language === 'en' && 'show'}`} onClick={() => switchLanguage('zh')}>{t('chinese')}</div>
-                            <div className={`language ${language === 'zh' && 'show'}`} onClick={() => switchLanguage('en')}>{t('english')}</div>
+                            <div className={`language ${language === 'en_us' && 'show'}`} onClick={() => switchLanguage('zh_cn')}>{t('chinese')}</div>
+                            <div className={`language ${language === 'zh_cn' && 'show'}`} onClick={() => switchLanguage('en_us')}>{t('english')}</div>
                         </div>
                     </div>
                 </Header>
