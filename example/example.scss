@@ -59,8 +59,15 @@ $main-color: #314199;
                 line-height: 80px;
                 cursor: pointer;
             }
+            .language {
+                display: none;
+                &.show {
+                    display: block;
+                }
+            }
         }
     }
+
     &.device {
         padding: 0;
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDom from 'react-dom';
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import './example.scss';
@@ -84,6 +84,14 @@ const RenderDeviceAside: React.FunctionComponent = () => {
 
 const RenderNode: React.FunctionComponent = () =>{
     const { t } = useTranslation();
+    useEffect(()=> {
+        localStorage.setItem('language', 'en');
+    }, [])
+    const language = localStorage.getItem('language');
+    const switchLanguage = (lang: string) => {
+        localStorage.setItem('language', lang);
+        window.location.reload();
+    }
     return (
         <Router>
             <Layout className={'page'}>
@@ -100,7 +108,8 @@ const RenderNode: React.FunctionComponent = () =>{
                             <a href="https://github.com/wky0615/SEELE-UI" target='_blank'>GitHub</a>
                         </div>
                         <div className={'page-item'}>
-                            <div className={'language'}>{t('language')}</div>
+                            <div className={`language ${language === 'en' && 'show'}`} onClick={() => switchLanguage('zh')}>{t('chinese')}</div>
+                            <div className={`language ${language === 'zh' && 'show'}`} onClick={() => switchLanguage('en')}>{t('english')}</div>
                         </div>
                     </div>
                 </Header>

@@ -8,8 +8,8 @@ import en_USCommon from './locales/en_US/common';
 import en_USButton from './locales/en_US/button';
 
 function getLanguage() {
-    console.log(resources)
     let language = localStorage.getItem('language');
+    console.log(language);
     const lang = navigator.language || navigator.userLanguage; // 常规浏览器语言和IE浏览器
     language = language || lang;
     language = language.replace(/-/, '_').toLowerCase();

@@ -1,6 +1,7 @@
 const zh_CNCommon = {
     doc: '文档',
-    language: 'English',
+    chinese: '简体中文',
+    english: 'English',
     general: '通用',
 }
 
