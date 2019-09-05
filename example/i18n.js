@@ -1,11 +1,12 @@
 //i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-// import { getLanguage } from './common/utils';
 import zh_CNCommon from './locales/zh_CN/common';
+import zh_CNDoc from './locales/zh_CN/doc';
 import zh_CNButton from './locales/zh_CN/button';
 import en_USCommon from './locales/en_US/common';
 import en_USButton from './locales/en_US/button';
+import en_USDoc from './locales/en_US/doc';
 
 function getLanguage() {
     let language = localStorage.getItem('language');
@@ -26,12 +27,14 @@ const resources = {
         translation: {
             ...zh_CNCommon,
             ...zh_CNButton,
+            ...zh_CNDoc,
         }
     },
     en_US: {
         translation: {
             ...en_USCommon,
             ...en_USButton,
+            ...en_USDoc,
         },
     },
 };

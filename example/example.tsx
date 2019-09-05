@@ -33,46 +33,46 @@ const RenderDeviceAside: React.FunctionComponent = () => {
                         <div className={'list-title'}>{t('general')}</div>
                         <ul>
                             <li>
-                                <NavLink to="/button">Button/按钮</NavLink>
+                                <NavLink to="/button">{t('button')}</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/icon">Icon/图标</NavLink>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={'list-container'}>
-                        <div className={'list-title'}>布局</div>
-                        <ul>
-                            <li>
-                                <NavLink to="/grid">Grid/栅格</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/layout">Layout/布局</NavLink>
+                                <NavLink to="/icon">{t('icon')}</NavLink>
                             </li>
                         </ul>
                     </div>
                     <div className={'list-container'}>
-                        <div className={'list-title'}>交互</div>
+                        <div className={'list-title'}>{t('layout')}</div>
                         <ul>
                             <li>
-                                <NavLink to="/affix">Affix/固钉</NavLink>
+                                <NavLink to="/grid">{t('grid')}</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dialog">Dialog/对话框</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/drawer">Drawer/抽屉</NavLink>
+                                <NavLink to="/layout">{t('layout_component')}</NavLink>
                             </li>
                         </ul>
                     </div>
                     <div className={'list-container'}>
-                        <div className={'list-title'}>数据</div>
+                        <div className={'list-title'}>{t('interaction')}</div>
                         <ul>
                             <li>
-                                <NavLink to="/form">Form/表单</NavLink>
+                                <NavLink to="/affix">{t('affix')}</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/input">Input/输入框</NavLink>
+                                <NavLink to="/dialog">{t('dialog')}</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/drawer">{t('drawer')}</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={'list-container'}>
+                        <div className={'list-title'}>{t('data')}</div>
+                        <ul>
+                            <li>
+                                <NavLink to="/form">{t('form')}</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/input">{t('input')}</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -121,46 +121,46 @@ const RenderNode: React.FunctionComponent = () =>{
                                 <div className={'list-title'}>{t('general')}</div>
                                 <ul>
                                     <li>
-                                        <NavLink to="/button">Button/按钮</NavLink>
+                                        <NavLink to="/button">{t('button')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/icon">Icon/图标</NavLink>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className={'list-container'}>
-                                <div className={'list-title'}>布局</div>
-                                <ul>
-                                    <li>
-                                        <NavLink to="/grid">Grid/栅格</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/layout">Layout/布局</NavLink>
+                                        <NavLink to="/icon">{t('icon')}</NavLink>
                                     </li>
                                 </ul>
                             </div>
                             <div className={'list-container'}>
-                                <div className={'list-title'}>交互</div>
+                                <div className={'list-title'}>{t('layout')}</div>
                                 <ul>
                                     <li>
-                                        <NavLink to="/affix">Affix/固钉</NavLink>
+                                        <NavLink to="/grid">{t('grid')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/dialog">Dialog/对话框</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/drawer">Drawer/抽屉</NavLink>
+                                        <NavLink to="/layout">{t('layout_component')}</NavLink>
                                     </li>
                                 </ul>
                             </div>
                             <div className={'list-container'}>
-                                <div className={'list-title'}>数据</div>
+                                <div className={'list-title'}>{t('interaction')}</div>
                                 <ul>
                                     <li>
-                                        <NavLink to="/form">Form/表单</NavLink>
+                                        <NavLink to="/affix">{t('affix')}</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/input">Input/输入框</NavLink>
+                                        <NavLink to="/dialog">{t('dialog')}</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/drawer">{t('drawer')}</NavLink>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className={'list-container'}>
+                                <div className={'list-title'}>{t('data')}</div>
+                                <ul>
+                                    <li>
+                                        <NavLink to="/form">{t('form')}</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/input">{t('input')}</NavLink>
                                     </li>
                                 </ul>
                             </div>

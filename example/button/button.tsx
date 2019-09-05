@@ -18,7 +18,7 @@ const ButtonExample: React.FunctionComponent = () => {
                 </div>
             </div>
             <div>
-                <h3>幽灵按钮</h3>
+                <h3>{t('ghost_button')}</h3>
                 <div style={{backgroundColor: 'rgb(190, 200, 200)'}}>
                     <Button theme={'ghost'} size={'normal'} disabled={false} type={'button'}>Default</Button>
                     <Button theme={'ghost'} size={'normal'} disabled={true} type={'button'}>Disabled</Button>
@@ -27,7 +27,7 @@ const ButtonExample: React.FunctionComponent = () => {
                 </div>
             </div>
             <div>
-                <h3>虚线按钮</h3>
+                <h3>{t('dashed_button')}</h3>
                 <div>
                     <Button theme={'dashed'} size={'normal'} disabled={false} type={'button'}>Default</Button>
                     <Button theme={'dashed'} size={'normal'} disabled={true} type={'button'}>Disabled</Button>
@@ -36,7 +36,7 @@ const ButtonExample: React.FunctionComponent = () => {
                 </div>
             </div>
             <div>
-                <h3>按钮类型</h3>
+                <h3>{t('button_type')}</h3>
                 <div>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'}>Default</Button>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} level={'primary'}>Primary</Button>
@@ -53,7 +53,7 @@ const ButtonExample: React.FunctionComponent = () => {
                 </div>
             </div>
             <div>
-                <h3>图标按钮</h3>
+                <h3>{t('icon_button')}</h3>
                 <div>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'qq'} iconPosition={'left'}>Default</Button>
                     <Button theme={'default'} size={'normal'} disabled={false} type={'button'} icon={'qq'} iconPosition={'right'}>Default</Button>

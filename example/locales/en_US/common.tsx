@@ -3,6 +3,18 @@ const en_USCommon = {
     chinese: '简体中文',
     english: 'English',
     general: 'General',
+    button: 'Button',
+    icon: 'Icon',
+    layout: 'Layout',
+    grid: 'Grid',
+    layout_component: 'Layout',
+    interaction: 'Interaction',
+    affix: 'Affix',
+    dialog: 'Dialog',
+    drawer: 'Drawer',
+    data: 'Data',
+    form: 'Form',
+    input: 'Input',
 }
 
 export default en_USCommon;
