@@ -137,6 +137,8 @@ $main-color: #314199;
     margin-left: 14em;
     margin-top: 80px;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(100% - 14em);
 
     &.device {
         padding: 1em;

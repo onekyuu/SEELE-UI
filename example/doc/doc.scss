@@ -1,6 +1,9 @@
 @import '../../lib/base/base';
 
 .seele-doc {
+  div {
+    word-break: break-word;
+  }
   .page-title {
     font-size: 2rem;
     color: #303f9f;

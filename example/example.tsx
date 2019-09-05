@@ -95,7 +95,7 @@ const RenderNode: React.FunctionComponent = () =>{
     return (
         <Router>
             <Layout className={'page'}>
-                <Header className={`page-header ${isDevice && 'device'}`}>
+                <Header className={`page-header ${isDevice === true ? 'device' : ''}`}>
                     <div className={'page-logo-container'}>
                         <Icon className={'page-logo'} name='seele-logo'/>
                         <span className={'page-title'}>SEELE</span>
@@ -165,7 +165,7 @@ const RenderNode: React.FunctionComponent = () =>{
                                 </ul>
                             </div>
                         </Aside>}
-                    <Panel className={`page-main ${isDevice && 'device'}`}>
+                    <Panel className={`page-main ${isDevice === true ? 'device' : ''}`}>
                         <Route path="/" component={DocExample} exact={true}/>
                         <Route path="/button" component={ButtonExample}/>
                         <Route path="/dialog" component={DialogDemo}/>
