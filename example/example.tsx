@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import ReactDom from 'react-dom';
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import './example.scss';
 import './i18n';
+import {getLanguage} from './utils';
 import { useTranslation } from 'react-i18next';
 import FormDemo from './form/form.demo';
 import DialogDemo from './dialog/dialog.demo';
@@ -84,10 +85,8 @@ const RenderDeviceAside: React.FunctionComponent = () => {
 
 const RenderNode: React.FunctionComponent = () =>{
     const { t } = useTranslation();
-    useEffect(()=> {
-        localStorage.setItem('language', 'en_us');
-    }, [])
-    const language = localStorage.getItem('language') || navigator.language.replace(/-/, '_').toLowerCase();
+    const language = getLanguage()
+    console.log(language)
     const switchLanguage = (lang: string) => {
         localStorage.setItem('language', lang);
         window.location.reload();

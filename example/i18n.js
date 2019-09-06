@@ -7,19 +7,7 @@ import zh_CNButton from './locales/zh_CN/button';
 import en_USCommon from './locales/en_US/common';
 import en_USButton from './locales/en_US/button';
 import en_USDoc from './locales/en_US/doc';
-
-function getLanguage() {
-    let language = localStorage.getItem('language');
-    const lang = navigator.language || navigator.userLanguage; // 常规浏览器语言和IE浏览器
-    language = language || lang;
-    language = language.replace(/-/, '_').toLowerCase();
-    if (language === 'zh_cn' || language === 'zh') {
-        language = 'zh_CN';
-    } else {
-        language = 'en_US';
-    }
-    return language;
-}
+import {getLanguage} from "./utils";
 
 const resources = {
     zh_CN: {
