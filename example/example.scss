@@ -49,11 +49,13 @@ $main-color: #314199;
         display: flex;
         align-items: center;
         .page-item {
+            display: flex;
+            align-items: center;
+            padding: 0 2em;
             > a, .language {
                 color: #FFF;
                 font-weight: 500;
                 font-size: 0.9em;
-                padding: 0 2em;
                 display: inline-block;
                 height: 80px;
                 line-height: 80px;
@@ -61,9 +63,14 @@ $main-color: #314199;
             }
             .language {
                 display: none;
+                width: 58px;
                 &.show {
                     display: block;
                 }
+            }
+            .language-icon {
+                width: 1em;
+                fill: #FFFFFF;
             }
         }
     }
@@ -72,8 +79,8 @@ $main-color: #314199;
         padding: 0;
 
         .page-logo {
-            height: 60px;
-            width: 60px;
+            height: 50px;
+            width: 50px;
         }
 
         .page-title {
@@ -81,12 +88,7 @@ $main-color: #314199;
         }
 
         .page-item {
-            > a {
-                padding: 0 1em;
-            }
-            .language {
-                padding: 0 1em;
-            }
+            padding: 0 0.8em;
         }
     }
 }
