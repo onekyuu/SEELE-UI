@@ -8,12 +8,15 @@ import en_USCommon from './locales/en_US/common';
 import en_USButton from './locales/en_US/button';
 import en_USDoc from './locales/en_US/doc';
 import {getLanguage} from "./utils";
+import zh_CNDialog from "./locales/zh_CN/dialog";
+import en_USDialog from "./locales/en_US/dialog";
 
 const resources = {
     zh_CN: {
         translation: {
             ...zh_CNCommon,
             ...zh_CNButton,
+            ...zh_CNDialog,
             ...zh_CNDoc,
         }
     },
@@ -21,6 +24,7 @@ const resources = {
         translation: {
             ...en_USCommon,
             ...en_USButton,
+            ...en_USDialog,
             ...en_USDoc,
         },
     },
