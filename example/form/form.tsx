@@ -3,8 +3,10 @@ import Form, {FormValue} from '../../lib/form/form';
 import Validator, {noError} from "../../lib/form/validator";
 import Button from "../../lib/button/button";
 import './form.scss';
+import { useTranslation } from 'react-i18next';
 
 const FormExample: React.FunctionComponent = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState<FormValue>({
         username: '',
         password: '',
@@ -32,12 +34,12 @@ const FormExample: React.FunctionComponent = () => {
     }
     return (
         <div>
-            <div>带标签的表单</div>
+            <div>{t('form_with_label')}</div>
             <Form value={formData} fields={fields}
                 buttons={
                     <Fragment>
-                        <Button className={'form-button'} type="submit">提交</Button>
-                        <Button className={'form-button'} type="cancel">取消</Button>
+                        <Button className={'form-button'} type="submit">{t('submit')}</Button>
+                        <Button className={'form-button'} type="cancel">{t('cancel')}</Button>
                     </Fragment>
                 }
                 errors={errors}
@@ -49,13 +51,14 @@ const FormExample: React.FunctionComponent = () => {
 }
 
 const FormExample2: React.FunctionComponent = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState<FormValue>({
         username: '',
         password: '',
     })
     const [fields] = useState([
-        {name: 'username', label: '用户名', input: {type: 'text'}},
-        {name: 'password', label: '密码', input: {type: 'password'}},
+        {name: 'username', label: t('username'), input: {type: 'text'}},
+        {name: 'password', label: t('password'), input: {type: 'password'}},
     ])
     const [errors, setErrors] = useState({})
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -76,12 +79,12 @@ const FormExample2: React.FunctionComponent = () => {
     }
     return (
         <div>
-            <div>不带标签的表单</div>
+            <div>{t('form_without_label')}</div>
             <Form value={formData} fields={fields}
                   buttons={
                       <Fragment>
-                          <Button className={'form-button'} type="submit">提交</Button>
-                          <Button className={'form-button'} type="cancel">取消</Button>
+                          <Button className={'form-button'} type="submit">{t('submit')}</Button>
+                          <Button className={'form-button'} type="cancel">{t('cancel')}</Button>
                       </Fragment>
                   }
                   errors={errors}
