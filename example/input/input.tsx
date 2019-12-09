@@ -2,61 +2,63 @@ import React from 'react';
 import Input from "../../lib/input/input";
 import Icon from "../../lib/icon/icon";
 import './input.scss';
+import { useTranslation } from 'react-i18next';
 
 
 const InputExample: React.FunctionComponent = () => {
+    const { t } = useTranslation();
     return (
         <div>
             <div>
-                <div>带标签文本的输入框</div>
+                <div>{t('input_with_label')}</div>
                 <div>
-                    <Input labelText={'输入框'}/>
-                    <Input labelText={'输入框'} labelPosition={'right'}/>
+                    <Input labelText={t('input')}/>
+                    <Input labelText={t('input')} labelPosition={'right'}/>
                 </div>
             </div>
             <div>
-                <div>带有占位符的输入框（Tips：此用法需保证 labelText 为空字符串或 false）</div>
+                <div>{t('input_with_placeholder')}</div>
                 <div>
-                    <Input labelText={''} placeholder={'labelText为空字符串'}/>
-                    <Input labelText={false} placeholder={'labelText为 false'}/>
+                    <Input labelText={''} placeholder={t('input_placeholder')}/>
+                    <Input labelText={false} placeholder={t('input_placeholder_is_false')}/>
                 </div>
             </div>
             <div>
-                <div>不同尺寸的输入框</div>
+                <div>{t('input_with_different_size')}</div>
                 <div>
-                    <Input labelText={'normal size input'} size={'normal'}/>
-                    <Input labelText={'large size input'} size={'large'}/>
-                    <Input labelText={'small size input'} size={'small'}/>
+                    <Input labelText={t('normal_size')} size={'normal'}/>
+                    <Input labelText={t('large_size')} size={'large'}/>
+                    <Input labelText={t('small_size')} size={'small'}/>
                 </div>
             </div>
             <div>
-                <div>不同长度的输入框</div>
+                <div>{t('input_with_different_length')}</div>
                 <div>
-                    <Input labelText={'8 characters length'} length={8}/>
-                    <Input labelText={'16 characters length'} length={16}/>
-                    <Input labelText={'24 characters length'} length={24}/>
+                    <Input labelText={t('8_characters')} length={8}/>
+                    <Input labelText={t('16_characters')} length={16}/>
+                    <Input labelText={t('24_characters')} length={24}/>
                 </div>
             </div>
             <div>
-                <div>before & after</div>
+                <div>{t('before_and_after')}</div>
                 <div>
-                    <Input labelText={'before'} before={<Icon name={'alipay'} className={'input-icon'}/>} after={'元'}/>
-                    <Input labelText={'after'} after={<Icon name={'alipay'}/>}/>
+                    <Input labelText={t('before')} before={<Icon name={'alipay'} className={'input-icon'}/>} after={'元'}/>
+                    <Input labelText={t('after')} after={<Icon name={'alipay'}/>}/>
                 </div>
             </div>
             <div>
-                <div>各种type</div>
+                <div>{t('input_type')}</div>
                 <div>
-                    <Input labelText={'text'} inputType={'text'}/>
-                    <Input labelText={'password'} inputType={'password'}/>
-                    <Input labelText={'number'} inputType={'number'}/>
-                    <Input labelText={'email'} inputType={'email'}/>
-                    <Input labelText={'date'} inputType={'date'}/>
-                    <Input labelText={'datetime-local'} inputType={'datetime-local'}/>
-                    <Input labelText={'tel'} inputType={'tel'}/>
-                    <Input labelText={'search'} inputType={'search'}/>
-                    <Input labelText={'time'} inputType={'time'}/>
-                    <Input labelText={'url'} inputType={'url'}/>
+                    <Input labelText={t('input_text')} inputType={'text'}/>
+                    <Input labelText={t('input_password')} inputType={'password'}/>
+                    <Input labelText={t('input_number')} inputType={'number'}/>
+                    <Input labelText={t('input_email')} inputType={'email'}/>
+                    <Input labelText={t('input_date')} inputType={'date'}/>
+                    <Input labelText={t('input_datetime-local')} inputType={'datetime-local'}/>
+                    <Input labelText={t('input_tel')} inputType={'tel'}/>
+                    <Input labelText={t('input_search')} inputType={'search'}/>
+                    <Input labelText={t('input_time')} inputType={'time'}/>
+                    <Input labelText={t('input_url')} inputType={'url'}/>
                 </div>
             </div>
         </div>

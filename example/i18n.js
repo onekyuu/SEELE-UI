@@ -12,6 +12,8 @@ import zh_CNDialog from "./locales/zh_CN/dialog";
 import en_USDialog from "./locales/en_US/dialog";
 import zh_CNForm from "./locales/zh_CN/form";
 import en_USForm from "./locales/en_US/form";
+import zh_CNInput from "./locales/zh_CN/input";
+import en_USInput from "./locales/en_US/input";
 
 const resources = {
     zh_CN: {
@@ -20,6 +22,7 @@ const resources = {
             ...zh_CNButton,
             ...zh_CNDialog,
             ...zh_CNForm,
+            ...zh_CNInput,
             ...zh_CNDoc,
         }
     },
@@ -29,6 +32,7 @@ const resources = {
             ...en_USButton,
             ...en_USDialog,
             ...en_USForm,
+            ...en_USInput,
             ...en_USDoc,
         },
     },
