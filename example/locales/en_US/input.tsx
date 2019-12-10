@@ -1,6 +1,6 @@
 const zh_CNInput = {
     input_with_label: 'Input  with label',
-    input: 'Input',
+    input_input: 'Input',
     input_with_placeholder: 'Input with placeholder (Tips: this usage requires labelText to be an empty string or false)',
     input_placeholder: 'labelText is an empty string',
     input_placeholder_is_false: 'labelText is false',

@@ -1,6 +1,6 @@
 const zh_CNInput = {
     input_with_label: '带标签文本的输入框',
-    input: '输入框',
+    input_input: '输入框',
     input_with_placeholder: '带有占位符的输入框（Tips：此用法需保证 labelText 为空字符串或 false）',
     input_placeholder: 'labelText为空字符串',
     input_placeholder_is_false: 'labelText为false',

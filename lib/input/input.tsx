@@ -6,7 +6,7 @@ import {ReactChild} from 'react';
 const componentName = 'Input';
 const sc = classMaker('seele-input')
 export interface Props extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-    labelText?: string | boolean,
+    labelText?: string | boolean | object | (string | object)[] | null,
     labelPosition?: 'right' | 'left',
     placeholder?: string,
     size?: 'large' | 'normal' | 'small',
