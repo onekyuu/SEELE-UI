@@ -43,7 +43,7 @@ const TableExample = () => {
     ];
     return (
         <div>
-            {t('table_example')}
+            {t('table_simple')}
             <Table columns={columns} source={source}/>
         </div>
     )

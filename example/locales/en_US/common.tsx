@@ -12,6 +12,7 @@ const en_USCommon = {
     affix: 'Affix',
     dialog: 'Dialog',
     drawer: 'Drawer',
+    scroll: 'Scroll',
     data: 'Data',
     form: 'Form',
     input: 'Input',

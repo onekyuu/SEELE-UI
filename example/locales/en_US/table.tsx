@@ -1,5 +1,5 @@
 const en_USTable = {
-    table_example: 'Table Example',
+    table_simple: 'Simple Table',
 }
 
 export default en_USTable;

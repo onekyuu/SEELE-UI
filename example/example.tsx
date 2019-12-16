@@ -20,6 +20,7 @@ import AffixDemo from "./affix/affix.demo";
 import Drawer from "../lib/drawer/drawer";
 import Button from "../lib/button/button";
 import TableDemo from "./table/table.demo";
+import ScrollDemo from "./scroll/scroll.demo";
 
 const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
 
@@ -64,6 +65,9 @@ const RenderDeviceAside: React.FunctionComponent = () => {
                             </li>
                             <li>
                                 <NavLink to="/drawer">{t('drawer')}</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/scroll">{t('scroll')}</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -154,6 +158,9 @@ const RenderNode: React.FunctionComponent = () =>{
                                     <li>
                                         <NavLink to="/drawer">{t('drawer')}</NavLink>
                                     </li>
+                                    <li>
+                                        <NavLink to="/scroll">{t('scroll')}</NavLink>
+                                    </li>
                                 </ul>
                             </div>
                             <div className={'list-container'}>
@@ -183,6 +190,7 @@ const RenderNode: React.FunctionComponent = () =>{
                         <Route path="/drawer" component={DrawerDemo}/>
                         <Route path="/affix" component={AffixDemo}/>
                         <Route path="/table" component={TableDemo}/>
+                        <Route path="/scroll" component={ScrollDemo}/>
                     </Panel>
                 </Layout>
             </Layout>

@@ -12,6 +12,7 @@ const zh_CNCommon = {
     affix: 'Affix/固钉',
     dialog: 'Dialog/对话框',
     drawer: 'Drawer/抽屉',
+    scroll: 'Scroll/滚动条',
     data: '数据',
     form: 'Form/表单',
     input: 'Input/输入框',
