@@ -1,7 +1,10 @@
 import React from 'react';
 import Table from "../../lib/table/table";
+import { useTranslation } from 'react-i18next';
 
 const TableExample = () => {
+    const { t } = useTranslation();
+
     const columns = [
         {
             title: 'name',
@@ -40,7 +43,7 @@ const TableExample = () => {
     ];
     return (
         <div>
-            Table Example
+            {t('table_example')}
             <Table columns={columns} source={source}/>
         </div>
     )

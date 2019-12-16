@@ -1,4 +1,4 @@
-const zh_CNInput = {
+const en_USInput = {
     input_with_label: 'Input  with label',
     input_input: 'Input',
     input_with_placeholder: 'Input with placeholder (Tips: this usage requires labelText to be an empty string or false)',
@@ -28,4 +28,4 @@ const zh_CNInput = {
     input_url: 'url',
 }
 
-export default zh_CNInput;
+export default en_USInput;

@@ -12,8 +12,8 @@ const InputExample: React.FunctionComponent = () => {
             <div>
                 <div>{t('input_with_label')}</div>
                 <div>
-                    <Input labelText={t('input')}/>
-                    <Input labelText={t('input')} labelPosition={'right'}/>
+                    <Input labelText={t('input_input')}/>
+                    <Input labelText={t('input_input')} labelPosition={'right'}/>
                 </div>
             </div>
             <div>
