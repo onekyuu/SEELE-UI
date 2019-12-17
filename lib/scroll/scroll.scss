@@ -14,4 +14,20 @@
     bottom: 0;
     left: 0;
   }
+  &-track {
+    width: 10px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &-bar {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
 }
