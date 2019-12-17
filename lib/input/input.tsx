@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import classes, {classMaker} from "../helpers/classMaker";
 import './input.scss';
 import {ReactChild} from 'react';
+import {Omit} from "react-router";
 
 const componentName = 'Input';
 const sc = classMaker('seele-input')
