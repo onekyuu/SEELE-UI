@@ -13,10 +13,11 @@ const componentName = 'Scroll';
 const sc = classMaker('seele-scroll');
 interface IProps extends IStyledProps{
     autoHide?: boolean,
+    color?: string,
 }
 
 const Scroll: SFC<IProps> = (props) => {
-    const {children, className, autoHide, ...rest} = props;
+    const {children, className, autoHide, color, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0);
     const [barTop, _setBarTop] = useState(0);
     const [barVisible, setBarVisible] = useState(false);
@@ -87,16 +88,20 @@ const Scroll: SFC<IProps> = (props) => {
         }
     }, [])
     return (
-        <div {...rest} className={classes(sc(''), className)}>
+        <div {...rest} className={classes(sc(''))}>
             <div className={sc('inner')} style={{right: -scrollbarWidth()}}
             onScroll={onScroll} ref={ref}>
                 {children}
             </div>
             {
                 barVisible &&
-                    <div className={sc('track')}
+                    <div className={classes(sc('track'), className)}
                         onMouseDown={MouseDownOnScrollBar}>
-                        <div className={sc('bar')} style={{height: `${barHeight}px`, transform: `translateY(${barTop}px)`}}/>
+                        <div className={sc('bar')}
+                             style={{
+                                 height: `${barHeight}px`,
+                                 transform: `translateY(${barTop}px)`,
+                                 backgroundColor: color}}/>
                     </div>
             }
         </div>
@@ -106,5 +111,6 @@ const Scroll: SFC<IProps> = (props) => {
 Scroll.displayName = componentName;
 Scroll.defaultProps = {
     autoHide: false,
+    color: 'rgba(0, 0, 0, .2)',
 }
 export default Scroll;
