@@ -17,6 +17,7 @@ const Scroll: SFC<IProps> = (props) => {
     const {children, className, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0);
     const [barTop, _setBarTop] = useState(0);
+    const [barVisible, setBarVisible] = useState(false);
     const setBarTop = (number: number) => {
         if (number < 0) { return }
         const scrollHeight = ref.current!.scrollHeight;
@@ -25,11 +26,19 @@ const Scroll: SFC<IProps> = (props) => {
         if (number > maxBarTop) { return }
         _setBarTop(number)
     }
+    const timerRef = useRef<number | null>(null)
     const onScroll:UIEventHandler = () => {
+        setBarVisible(true);
         const scrollHeight = ref.current!.scrollHeight;
         const scrollTop = ref.current!.scrollTop;
         const viewHeight = ref.current!.getBoundingClientRect().height;
         setBarTop(scrollTop * viewHeight / scrollHeight);
+        if (timerRef.current !== null) {
+            window.clearTimeout(timerRef.current)
+        }
+        timerRef.current =  window.setTimeout(() => {
+            setBarVisible(false);
+        }, 600)
     }
     const ref = useRef<HTMLDivElement>(null);
     const isDraggingRef = useRef(false);
@@ -76,10 +85,13 @@ const Scroll: SFC<IProps> = (props) => {
             onScroll={onScroll} ref={ref}>
                 {children}
             </div>
-            <div className={sc('track')}
-                onMouseDown={MouseDownOnScrollBar}>
-                <div className={sc('bar')} style={{height: `${barHeight}px`, transform: `translateY(${barTop}px)`}}/>
-            </div>
+            {
+                barVisible &&
+                    <div className={sc('track')}
+                        onMouseDown={MouseDownOnScrollBar}>
+                        <div className={sc('bar')} style={{height: `${barHeight}px`, transform: `translateY(${barTop}px)`}}/>
+                    </div>
+            }
         </div>
     )
 };
