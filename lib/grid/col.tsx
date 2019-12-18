@@ -16,7 +16,6 @@ interface IProps extends IStyledProps{
 }
 const Col: SFC<IProps> = (props) => {
     const {gutter, offset, className} = props;
-    console.log(props.xs);
     const padding = gutter ? `0 ${gutter / 2}px` : '';
     const spanList = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
     const spanClass: any = [];

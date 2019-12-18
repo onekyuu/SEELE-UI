@@ -12,7 +12,6 @@ interface IProps extends IStyledProps{
 const Affix:SFC<IProps> = (props) => {
     const {className} = props;
     const element = useRef(null)
-    console.log(element)
     const getOffset = (el: HTMLDivElement | null) => {
         if (el) {
             return el.getBoundingClientRect()
@@ -22,7 +21,6 @@ const Affix:SFC<IProps> = (props) => {
     const setStyle = () => {
         useEffect(() => {
             getOffset(element.current);
-            console.log(getOffset(element.current))
         }, [element])
     }
 
