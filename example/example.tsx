@@ -93,7 +93,7 @@ const RenderDeviceAside: React.FunctionComponent = () => {
 
 const RenderNode: React.FunctionComponent = () =>{
     const { t } = useTranslation();
-    const language = getLanguage()
+    const language = getLanguage();
     const switchLanguage = (lang: string) => {
         localStorage.setItem('language', lang);
         window.location.reload();

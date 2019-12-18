@@ -11,10 +11,12 @@ import scrollbarWidth from "../../example/scroll/getScrollBarWidth";
 
 const componentName = 'Scroll';
 const sc = classMaker('seele-scroll');
-interface IProps extends IStyledProps{}
+interface IProps extends IStyledProps{
+    autoHide?: boolean,
+}
 
 const Scroll: SFC<IProps> = (props) => {
-    const {children, className, ...rest} = props;
+    const {children, className, autoHide, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0);
     const [barTop, _setBarTop] = useState(0);
     const [barVisible, setBarVisible] = useState(false);
@@ -27,18 +29,20 @@ const Scroll: SFC<IProps> = (props) => {
         _setBarTop(number)
     }
     const timerRef = useRef<number | null>(null)
-    const onScroll:UIEventHandler = () => {
+    const onScroll: UIEventHandler = () => {
         setBarVisible(true);
         const scrollHeight = ref.current!.scrollHeight;
         const scrollTop = ref.current!.scrollTop;
         const viewHeight = ref.current!.getBoundingClientRect().height;
         setBarTop(scrollTop * viewHeight / scrollHeight);
-        if (timerRef.current !== null) {
-            window.clearTimeout(timerRef.current)
+        if (autoHide) {
+            if (timerRef.current !== null) {
+                window.clearTimeout(timerRef.current)
+            }
+            timerRef.current =  window.setTimeout(() => {
+                setBarVisible(false);
+            }, 600)
         }
-        timerRef.current =  window.setTimeout(() => {
-            setBarVisible(false);
-        }, 600)
     }
     const ref = useRef<HTMLDivElement>(null);
     const isDraggingRef = useRef(false);
@@ -67,6 +71,9 @@ const Scroll: SFC<IProps> = (props) => {
         }
     }
     useEffect(()=> {
+        if (!autoHide) {
+            setBarVisible(true)
+        }
         const scrollHeight = ref.current!.scrollHeight;
         const viewHeight = ref.current!.getBoundingClientRect().height;
         setBarHeight(viewHeight * viewHeight / scrollHeight);
@@ -97,4 +104,7 @@ const Scroll: SFC<IProps> = (props) => {
 };
 
 Scroll.displayName = componentName;
+Scroll.defaultProps = {
+    autoHide: false,
+}
 export default Scroll;
