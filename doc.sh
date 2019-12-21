@@ -1,8 +1,8 @@
 #!/bin/env bash
 yarn doc
-git checkout gh-pages
-mv -f doc/* ./
+cd ../SEELE-UI-PAGE
+mv -f ../SEELE/doc/* ./
 git add .
 git commit -m "update"
-git push --set-upstream origin gh-pages -f
-git checkout master
+git push origin master -f
+cd ../SEELE
