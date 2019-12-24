@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDom from 'react-dom';
-import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import './example.scss';
 import './i18n';
 import {getLanguage} from './utils';
