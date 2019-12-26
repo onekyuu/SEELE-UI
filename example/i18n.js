@@ -1,6 +1,6 @@
 //i18n.js
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 import zh_CNCommon from './locales/zh_CN/common';
 import zh_CNDoc from './locales/zh_CN/doc';
 import zh_CNButton from './locales/zh_CN/button';

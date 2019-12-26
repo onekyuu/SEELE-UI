@@ -1,5 +1,5 @@
 import React, {
-    MouseEventHandler,
+    MouseEventHandler, TouchEventHandler,
     UIEventHandler,
     useEffect,
     useRef,
@@ -11,7 +11,9 @@ import scrollbarWidth from "../../example/scroll/getScrollBarWidth";
 
 const componentName = 'Scroll';
 const sc = classMaker('seele-scroll');
-interface IProps extends IStyledProps{
+const isTouchDevice = 'ontouchstart' in window;
+
+interface IProps extends IStyledProps {
     autoHide?: boolean,
     color?: string,
 }
@@ -22,14 +24,18 @@ const Scroll: SFC<IProps> = (props) => {
     const [barTop, _setBarTop] = useState(0);
     const [barVisible, setBarVisible] = useState(false);
     const setBarTop = (number: number) => {
-        if (number < 0) { return }
+        if (number < 0) {
+            return
+        }
         const scrollHeight = ref.current!.scrollHeight;
         const viewHeight = ref.current!.getBoundingClientRect().height;
         const maxBarTop = (scrollHeight - viewHeight) * viewHeight / scrollHeight;
-        if (number > maxBarTop) { return }
+        if (number > maxBarTop) {
+            return
+        }
         _setBarTop(number)
-    }
-    const timerRef = useRef<number | null>(null)
+    };
+    const timerRef = useRef<number | null>(null);
     const onScroll: UIEventHandler = () => {
         setBarVisible(true);
         const scrollHeight = ref.current!.scrollHeight;
@@ -40,11 +46,11 @@ const Scroll: SFC<IProps> = (props) => {
             if (timerRef.current !== null) {
                 window.clearTimeout(timerRef.current)
             }
-            timerRef.current =  window.setTimeout(() => {
+            timerRef.current = window.setTimeout(() => {
                 setBarVisible(false);
             }, 600)
         }
-    }
+    };
     const ref = useRef<HTMLDivElement>(null);
     const isDraggingRef = useRef(false);
     const startPositionRef = useRef(0);
@@ -53,32 +59,63 @@ const Scroll: SFC<IProps> = (props) => {
         isDraggingRef.current = true;
         startPositionRef.current = e.clientY;
         startBarTopRef.current = barTop;
-    }
+    };
     const MouseMoveOnScrollBar = (e: MouseEvent) => {
         if (isDraggingRef.current) {
-            const newBarTop = e.clientY - startPositionRef.current + startBarTopRef.current
-            setBarTop(newBarTop)
+            const newBarTop = e.clientY - startPositionRef.current + startBarTopRef.current;
+            setBarTop(newBarTop);
             const scrollHeight = ref.current!.scrollHeight;
             const viewHeight = ref.current!.getBoundingClientRect().height;
             ref.current!.scrollTop = newBarTop * scrollHeight / viewHeight;
         }
-    }
+    };
     const MouseUpOnScrollBar = () => {
         isDraggingRef.current = false
-    }
+    };
     const onSelect = (e: Event) => {
         if (isDraggingRef.current) {
             e.preventDefault();
         }
+    };
+    const [translateY, _setTranslateY] = useState(0);
+    const setTranslateY = (y: number) => {
+        if (y < 0) { y = 0 } else if (y > 60) { y = 60 }
+        _setTranslateY(y)
     }
-    useEffect(()=> {
+    const lastTouchY = useRef(0);
+    const moveCount = useRef(0);
+    const isPulling = useRef(false);
+    const onTouchStart: TouchEventHandler = (e) => {
+        const scrollTop = ref.current!.scrollTop;
+        if (scrollTop !== 0) {
+            return
+        }
+        isPulling.current = true;
+        lastTouchY.current = e.touches[0].clientY;
+        moveCount.current = 0;
+    };
+    const onTouchMove: TouchEventHandler = (e) => {
+        const deltaY = e.touches[0].clientY - lastTouchY.current;
+        moveCount.current += 1;
+        if (moveCount.current === 1 && deltaY < 0) {
+            isPulling.current = false;
+            return;
+        }
+        if (isPulling.current === false) {return;}
+        setTranslateY(translateY + deltaY);
+        lastTouchY.current = e.touches[0].clientY;
+    };
+    const onTouchEnd: TouchEventHandler = () => {
+        setTranslateY(0)
+    };
+    useEffect(() => {
         if (!autoHide) {
             setBarVisible(true)
         }
         const scrollHeight = ref.current!.scrollHeight;
         const viewHeight = ref.current!.getBoundingClientRect().height;
         setBarHeight(viewHeight * viewHeight / scrollHeight);
-        document.addEventListener('mousemove', MouseMoveOnScrollBar);
+        document.addEventListener('mousemove',  MouseMoveOnScrollBar);
         document.addEventListener('mouseup', MouseUpOnScrollBar);
         document.addEventListener('selectstart', onSelect);
         return () => {
@@ -86,23 +123,32 @@ const Scroll: SFC<IProps> = (props) => {
             document.removeEventListener('mouseup', MouseUpOnScrollBar);
             document.addEventListener('selectstart', onSelect)
         }
-    }, [])
+    }, []);
+    const isVisible = isTouchDevice ? false : barVisible;
     return (
         <div {...rest} className={classes(sc(''))}>
-            <div className={sc('inner')} style={{right: -scrollbarWidth()}}
-            onScroll={onScroll} ref={ref}>
+            <div className={sc('inner')} style={{
+                right: -scrollbarWidth(),
+                transform: `translateY(${translateY}px)`,
+            }}
+                 onScroll={onScroll}
+                 onTouchStart={onTouchStart}
+                 onTouchMove={onTouchMove}
+                 onTouchEnd={onTouchEnd}
+                 ref={ref}>
                 {children}
             </div>
             {
-                barVisible &&
-                    <div className={classes(sc('track'), className)}
-                        onMouseDown={MouseDownOnScrollBar}>
-                        <div className={sc('bar')}
-                             style={{
-                                 height: `${barHeight}px`,
-                                 transform: `translateY(${barTop}px)`,
-                                 backgroundColor: color}}/>
-                    </div>
+                isVisible &&
+                <div className={classes(sc('track'), className)}
+                     onMouseDown={MouseDownOnScrollBar}>
+                    <div className={sc('bar')}
+                         style={{
+                             height: `${barHeight}px`,
+                             transform: `translateY(${barTop}px)`,
+                             backgroundColor: color
+                         }}/>
+                </div>
             }
         </div>
     )
@@ -112,5 +158,5 @@ Scroll.displayName = componentName;
 Scroll.defaultProps = {
     autoHide: false,
     color: 'rgba(0, 0, 0, .2)',
-}
+};
 export default Scroll;
