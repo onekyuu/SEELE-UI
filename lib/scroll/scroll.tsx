@@ -8,6 +8,7 @@ import React, {
 import './scroll.scss';
 import classes, {classMaker} from "../helpers/classMaker";
 import scrollbarWidth from "../../example/scroll/getScrollBarWidth";
+import Icon from "../icon/icon";
 
 const componentName = 'Scroll';
 const sc = classMaker('seele-scroll');
@@ -16,10 +17,11 @@ const isTouchDevice = 'ontouchstart' in window;
 interface IProps extends IStyledProps {
     autoHide?: boolean,
     color?: string,
+    pullDownText?: string,
 }
 
 const Scroll: SFC<IProps> = (props) => {
-    const {children, className, autoHide, color, ...rest} = props;
+    const {children, className, autoHide, color, pullDownText, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0);
     const [barTop, _setBarTop] = useState(0);
     const [barVisible, setBarVisible] = useState(false);
@@ -79,7 +81,7 @@ const Scroll: SFC<IProps> = (props) => {
     };
     const [translateY, _setTranslateY] = useState(0);
     const setTranslateY = (y: number) => {
-        if (y < 0) { y = 0 } else if (y > 60) { y = 60 }
+        if (y < 0) { y = 0 } else if (y > 52) { y = 52 }
         _setTranslateY(y)
     }
     const lastTouchY = useRef(0);
@@ -101,12 +103,13 @@ const Scroll: SFC<IProps> = (props) => {
             isPulling.current = false;
             return;
         }
-        if (isPulling.current === false) {return;}
+        if (!isPulling.current) {return;}
         setTranslateY(translateY + deltaY);
         lastTouchY.current = e.touches[0].clientY;
     };
     const onTouchEnd: TouchEventHandler = () => {
-        setTranslateY(0)
+        setTranslateY(0);
+        isPulling.current = false;
     };
     useEffect(() => {
         if (!autoHide) {
@@ -150,6 +153,12 @@ const Scroll: SFC<IProps> = (props) => {
                          }}/>
                 </div>
             }
+            {isPulling.current && <div className={sc('loading')} style={{
+                height: translateY
+            }}>
+                <Icon className={sc('loading-icon')} name="down"/>
+                <span className={sc('loading-text')}>{pullDownText}</span>
+            </div>}
         </div>
     )
 };
@@ -158,5 +167,6 @@ Scroll.displayName = componentName;
 Scroll.defaultProps = {
     autoHide: false,
     color: 'rgba(0, 0, 0, .2)',
+    pullDownText: 'pull down to refresh'
 };
 export default Scroll;

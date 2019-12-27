@@ -32,4 +32,15 @@
     right: 0;
     left: 0;
   }
+  &-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      font-size: 12px;
+    }
+    &-text {
+      font-size: 16px;
+    }
+  }
 }
