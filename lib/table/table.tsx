@@ -26,13 +26,13 @@ const Table: SFC<IProps> = (props) => {
             return (
                 <td className={sc('cell')} key={key}>{row[column.title]}</td>
             )
-        })
+        });
         return (
             <tr className={sc('row')} key={key}>
                 {rowNodes}
             </tr>
         );
-    })
+    });
     return (
         <div className={sc('')}>
             <table>
