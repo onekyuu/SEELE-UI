@@ -18,10 +18,11 @@ interface IProps extends IStyledProps {
     autoHide?: boolean,
     color?: string,
     pullDownText?: string,
+    onPull?: () => void,
 }
 
 const Scroll: SFC<IProps> = (props) => {
-    const {children, className, autoHide, color, pullDownText, ...rest} = props;
+    const {children, className, autoHide, color, pullDownText, onPull, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0);
     const [barTop, _setBarTop] = useState(0);
     const [barVisible, setBarVisible] = useState(false);
@@ -110,6 +111,7 @@ const Scroll: SFC<IProps> = (props) => {
     const onTouchEnd: TouchEventHandler = () => {
         setTranslateY(0);
         isPulling.current = false;
+        onPull && onPull();
     };
     useEffect(() => {
         if (!autoHide) {
@@ -153,7 +155,7 @@ const Scroll: SFC<IProps> = (props) => {
                          }}/>
                 </div>
             }
-            {isPulling.current && <div className={sc('loading')} style={{
+            {translateY > 30 && <div className={sc('loading')} style={{
                 height: translateY
             }}>
                 <Icon className={sc('loading-icon')} name="down"/>
@@ -167,6 +169,6 @@ Scroll.displayName = componentName;
 Scroll.defaultProps = {
     autoHide: false,
     color: 'rgba(0, 0, 0, .2)',
-    pullDownText: 'pull down to refresh'
+    pullDownText: 'pull down to refresh',
 };
 export default Scroll;

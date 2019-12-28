@@ -5,14 +5,16 @@ import './scroll.scss';
 
 const ScrollExample = () => {
     const { t } = useTranslation();
-
+    const onPull = () => {
+        console.log('pull')
+    }
     return (
         <div>
             <div className={"example"}>
                 <h2 className={"scroll-title"}>
                     {t('scroll_example')}
                 </h2>
-                <Scroll className={"scroll-example"} style={{height: 300}}>
+                <Scroll className={"scroll-example"} style={{height: 300}} onPull={onPull}>
                     <div>
                         <p>1</p>
                         <p>2</p>
