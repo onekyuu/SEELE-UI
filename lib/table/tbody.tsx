@@ -5,6 +5,7 @@ import {classMaker} from "../helpers/classMaker";
 const componentName = 'TCell';
 const sc = classMaker('seele-table');
 interface IProps extends IStyledProps{
+    dataKey?: string,
 }
 
 const TCell: SFC<IProps> = () => {

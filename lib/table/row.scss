@@ -1,5 +1,6 @@
 @import '../base/base';
 
 .seele-table-column {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 }
