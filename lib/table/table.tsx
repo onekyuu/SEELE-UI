@@ -1,18 +1,22 @@
 import React from 'react';
 import './table.scss';
 import {classMaker} from "../helpers/classMaker";
+import TBody from "./tbody";
+import THead from "./thead";
 
 const componentName = 'Table';
 const sc = classMaker('seele-table');
 interface IProps extends IStyledProps{
-    // columns: Array<{title: string, key: string}>,
-    // source: Array<{[K: string]: string | number}>,
-}
+    data: Array<{[K: string]: string | number}>,
+    columns: Array<{label: string, key: string, render?: Function}>,
+};
 
 const Table: SFC<IProps> = (props) => {
+    const {data, columns} = props;
     return (
         <div className={sc('')}>
-            {props.children}
+            <THead columns={columns}/>
+            <TBody data={data} columns={columns}/>
         </div>
     )
 };

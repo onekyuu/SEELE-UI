@@ -1,60 +1,68 @@
 import React from 'react';
 import Table from "../../lib/table/table";
 import { useTranslation } from 'react-i18next';
-import Column from "../../lib/table/Column";
-import THead from "../../lib/table/THead";
-import TCell from "../../lib/table/TCell";
-import TPagination from "../../lib/table/TPagination";
+import TPagination from "../../lib/table/tpagination";
+import Button from '../../lib/button/button';
 
 const TableExample = () => {
     const { t } = useTranslation();
-    //
-    // const columns = [
-    //     {
-    //         title: 'name',
-    //         key: 'name',
-    //     },
-    //     {
-    //         title: 'age',
-    //         key: 'age',
-    //     },
-    //     {
-    //         title: 'gender',
-    //         key: 'gender',
-    //     }
-    // ];
-    // const source = [
-    //     {
-    //         name: 'frank',
-    //         age: 18,
-    //         gender: 'male',
-    //     },
-    //     {
-    //         name: 'nemo',
-    //         age: 20,
-    //         gender: 'male',
-    //     },
-    //     {
-    //         name: 'leo',
-    //         age: 1,
-    //         gender: 'male',
-    //     },
-    //     {
-    //         name: 'may',
-    //         age: 1,
-    //         gender: 'male',
-    //     }
-    // ];
+    const columns = [
+        {
+            label: t('name'),
+            key: 'name',
+        },
+        {
+            label: t('age'),
+            key: 'age',
+        },
+        {
+            label: t('gender'),
+            key: 'gender',
+        },
+        {
+            label: t('action'),
+            key: 'render',
+            render: () => {
+                const onClick = () => {
+                    alert('click')
+                }
+                return (
+                    <Button onClick={() => {onClick()}} theme={'default'} size={'normal'} disabled={false} type={'button'}>按钮</Button>
+                )
+            }
+        }
+    ]
+    const source = [
+        {
+            id: 1,
+            name: 'frank',
+            age: 18,
+            gender: 'male',
+        },
+        {
+            id: 2,
+            name: 'mary',
+            age: 20,
+            gender: 'male',
+        },
+        {
+            id: 3,
+            name: 'leo',
+            age: 1,
+            gender: 'male',
+        },
+        {
+            id: 4,
+            name: 'may',
+            age: 1,
+            gender: 'male',
+        }
+    ];
     return (
-        <div>
+        <div style={{width: '800px'}}>
             {t('table_simple')}
-            <Table>
-                <Column>
-                    <THead/>
-                    <TCell/>
-                </Column>
-                <TPagination/>
-            </Table>
+            <Table data={source} columns={columns}/>
+            <TPagination/>
         </div>
     )
 }

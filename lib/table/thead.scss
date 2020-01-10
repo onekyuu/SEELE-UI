@@ -1,5 +1,7 @@
 @import '../base/base';
 
 .seele-table-tHead {
-  border: 1px solid blue;
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-around;
 }
