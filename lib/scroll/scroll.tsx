@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import './scroll.scss';
 import classes, {classMaker} from "../helpers/classMaker";
-import scrollbarWidth from "../../example/scroll/getScrollBarWidth";
+import scrollbarWidth from "./getScrollBarWidth";
 import Icon from "../icon/icon";
 
 const componentName = 'Scroll';

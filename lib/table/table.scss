@@ -1,7 +1,78 @@
 @import '../base/base';
 
 .seele-table {
-  width: 100%;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  //border-bottom: 1px solid rgba(0, 0, 0, .3);
+  overflow: auto;
+  &-content {
+    display: flex;
+    width: 100%;
+  }
+  &-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &:first-child {
+      .seele-table-tHead {
+        border-left: 1px solid rgba(0, 0, 0, .3);
+      }
+      .seele-table-tCell {
+        border-left: 1px solid rgba(0, 0, 0, .3);
+      }
+    }
+  }
+  &-tHead {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, .3);
+    border-top: 1px solid rgba(0, 0, 0, .3);
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    background-color: $light-color;
+    padding: 0 4px;
+    &-content {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  &-tCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(0, 0, 0, .3);
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    padding: 0 4px;
+    height: 40px;
+    &-content {
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  &-action-content {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+  }
+  &-action {
+    padding: 0 8px;
+    border-right: 1px solid $main-color;
+    color: $light-main-color;
+    cursor: pointer;
+    font-size: 12px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      border: none;
+      padding-right: 0;
+    }
+  }
+  &-render-content {
+    height: 40px;
+    line-height: 40px;
+  }
 }
