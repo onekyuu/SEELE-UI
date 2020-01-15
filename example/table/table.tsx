@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from "../../lib/table/table";
 import { useTranslation } from 'react-i18next';
-import TPagination from "../../lib/table/tpagination";
+// import TPagination from "../../lib/table/tpagination";
 import Button from '../../lib/button/button';
 
 const TableExample = () => {
@@ -15,10 +15,17 @@ const TableExample = () => {
         {
             label: t('age'),
             key: 'age',
+            width: 140,
         },
         {
             label: t('gender'),
             key: 'gender',
+            width: 140,
+        },
+        {
+            label: t('address'),
+            key: 'address',
+            width: 400,
         },
         {
             label: t('render'),
@@ -31,7 +38,8 @@ const TableExample = () => {
                 return (
                     <Button onClick={() => onClick(rowData)} theme={'default'} size={'normal'} disabled={false} type={'button'}>按钮</Button>
                 )
-            }
+            },
+            width: 140,
         },
         {
             label: t('action'),
@@ -49,64 +57,73 @@ const TableExample = () => {
                         alert('delete: ' + param.id)
                     }
                 }
-            ]
+            ],
+            width: 140,
         }
     ]
     const source = [
         {
             id: 1,
-            name: 'frankfrankfrankfrankfrankfrankefrankefrankefrankefrankefranke',
+            name: 'frank',
             age: 18,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 2,
             name: 'mary',
             age: 20,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 3,
             name: 'leo',
             age: 1,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 4,
             name: 'may',
             age: 1,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 1,
-            name: 'frankfrankfrankfrankfrankfrankefrankefrankefrankefrankefranke',
+            name: 'frank',
             age: 18,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 2,
             name: 'mary',
             age: 20,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 3,
             name: 'leo',
             age: 1,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
         {
             id: 4,
             name: 'may',
             age: 1,
             gender: 'male',
+            address: '上海市普陀区金沙江路 1518 弄',
         },
     ];
     return (
-        <div>
+        <div style={{marginBottom: '30px'}}>
             {t('table_simple')}
             <Table data={source} columns={columns}/>
-            <TPagination/>
+            {/*<TPagination/>*/}
         </div>
     )
 }

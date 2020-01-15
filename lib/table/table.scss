@@ -1,18 +1,15 @@
 @import '../base/base';
 
 .seele-table {
-  display: flex;
   width: 100%;
-  //border-bottom: 1px solid rgba(0, 0, 0, .3);
+  white-space: nowrap;
   overflow: auto;
   &-content {
-    display: flex;
     width: 100%;
   }
   &-column {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    flex: 1;
     &:first-child {
       .seele-table-tHead {
         border-left: 1px solid rgba(0, 0, 0, .3);
@@ -38,7 +35,6 @@
   &-tCell {
     display: flex;
     align-items: center;
-    justify-content: center;
     border-right: 1px solid rgba(0, 0, 0, .3);
     border-bottom: 1px solid rgba(0, 0, 0, .3);
     padding: 0 4px;

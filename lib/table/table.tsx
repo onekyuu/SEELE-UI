@@ -11,7 +11,7 @@ interface IProps extends IStyledProps{
         key: string,
         render?: Function,
         actions?: Array<{title: string, callback: Function}>,
-        width?: number,
+        width: number,
     }>,
     height?: number,
     width?: number,
