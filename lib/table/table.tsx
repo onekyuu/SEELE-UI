@@ -12,56 +12,52 @@ interface IProps extends IStyledProps{
         render?: Function,
         actions?: Array<{title: string, callback: Function}>,
         width: number,
+        resizable?: boolean,
     }>,
     height?: number,
     width?: number,
 };
 
 const Table: SFC<IProps> = (props) => {
-    const {data, columns, height, width} = props;
-    // const columnWidth = width && width/columns.length
+    const {data, columns, height} = props;
     return (
-        <div className={sc('')} style={{height: height, width: width}}>
-            <div className={sc('content')}>
-                {columns.map((column, index) => {
-                    const columnKey = `column-${index}-${column.key}`;
-                    return (
-                        <div className={sc('column')} key={columnKey} style={{width: column.width}}>
-                            <div className={sc('tHead')}>
-                                <div className={sc('tHead-content')}>{column.label}</div>
-                            </div>
-                            <div className={sc('wrapper')}>
-                                {data.map((rowData, index) => {
-                                    const cellKey = `${columnKey}-cell-${index}`;
-                                    if (column.render) {
+        <div className={sc('')}>
+            <table className={sc('header')}>
+                <thead>
+                    <tr className={sc('row')}>
+                        {columns.map(column => (<th className={sc('cell')} key={column.key}>{column.label}</th>))}
+                    </tr>
+                </thead>
+            </table>
+            <div className={sc('content')} style={{height: height}}>
+                <table className={sc('body')}>
+                    <tbody>
+                        {data.map((row, index) => {
+                            const key = `row-${index}`
+                            return (
+                                <tr key={key} className={sc('row')}>{columns.map((column, index) => {
+                                    if (column.key === 'render' && column.render) {
+                                        const key = `render-${index}`;
                                         return (
-                                            <div className={sc('tCell')} key={cellKey}>
-                                                <div className={sc('render-content')}>{column.render(rowData)}</div>
-                                            </div>
+                                            <td className={sc('cell')} key={key}>{column.render(row)}</td>
                                         )
+                                    } else if (column.key === 'action' && column.actions) {
+                                        return (
+                                            <td className={sc('cell')} key={`${key}-actions`}>
+                                                {column.actions.map((action, index) => {
+                                                    const key = `action-${index}`;
+                                                    return (
+                                                        <span key={key} className={sc('cell-action')} onClick={() => action.callback(row)}>{action.title}</span>
+                                                    )
+                                                })}
+                                            </td>)
                                     }
-                                    if (column.actions && column.actions.length > 0) {
-                                        return (<div className={sc('tCell')} key={cellKey}>
-                                            <div className={sc('action-content')}>
-                                                {column.actions.map((action, index) => (
-                                                    <span
-                                                        className={sc('action')}
-                                                        onClick={() => action.callback(rowData)}
-                                                        key={`${cellKey}-action-${index}`}>
-                                                        {action.title}
-                                                    </span>))}
-                                            </div>
-                                        </div>)
-                                    }
-                                    return (
-                                        <div className={sc('tCell')} key={cellKey}>
-                                            <div className={sc('tCell-content')}>{rowData[column.key]}</div>
-                                        </div>)
-                                })}
-                            </div>
-                        </div>
-                    )
-                })}
+                                    return (<td className={sc('cell')} key={`${column.key}`}>{row[column.key]}</td>)
+                                })}</tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
             </div>
         </div>
     )
@@ -70,6 +66,6 @@ const Table: SFC<IProps> = (props) => {
 Table.displayName = componentName;
 Table.defaultProps = {
     width: 1000,
-    height: 300,
+    height: 200,
 }
 export default Table;

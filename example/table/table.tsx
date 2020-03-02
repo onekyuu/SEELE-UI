@@ -25,7 +25,7 @@ const TableExample = () => {
         {
             label: t('address'),
             key: 'address',
-            width: 400,
+            width: 300,
         },
         {
             label: t('render'),
@@ -33,7 +33,7 @@ const TableExample = () => {
             render: (rowData: {id: string}) => {
                 const onClick = (rowData: {id: string}) => {
                     console.log(rowData.id);
-                    alert('click' + rowData.id)
+                    alert('click id: ' + rowData.id)
                 };
                 return (
                     <Button onClick={() => onClick(rowData)} theme={'default'} size={'normal'} disabled={false} type={'button'}>按钮</Button>
