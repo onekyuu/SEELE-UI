@@ -122,7 +122,7 @@ const TableExample = () => {
     return (
         <div style={{marginBottom: '30px'}}>
             {t('table_simple')}
-            <Table data={source} columns={columns}/>
+            <Table data={source} columns={columns} height={300}/>
             {/*<TPagination/>*/}
         </div>
     )

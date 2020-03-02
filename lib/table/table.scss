@@ -1,27 +1,60 @@
 @import '../base/base';
+$border-color: #333333;
 
 .seele-table {
   position: relative;
+  border: 1px solid $border-color;
+  border-right: none;
+  overflow-x: auto;
+  &.gutterVisible {
+    border-right: 1px solid $border-color;
+  }
   &-header, &-body {
     table-layout: fixed;
     width: 100%;
     border-spacing: 0;
   }
+  &-header {
+    .seele-table-cell {
+      font-weight: normal;
+      color: #FFFFFF;
+    }
+  }
   &-content {
-    overflow: auto;
+    overflow-y: auto;
+  }
+  &-row {
+    &:last-child {
+      .seele-table-cell {
+        border-bottom: none;
+      }
+    }
   }
   &-cell {
-    border: 1px solid #333333;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 0 4px;
+    min-height: 32px;
     &-action {
-      color: $light-main-color;
+      font-size: 14px;
+      color: $light-color;
       cursor: pointer;
       margin-right: 4px;
+      padding-right: 4px;
+      border-right: 1px solid $light-main-color;
       &:last-child {
         margin-right: 0;
+        border: none;
       }
     }
     &.gutter {
       border: none;
+      border-top: 1px solid $border-color;
+    }
+    &.header {
+      background-color: $light-main-color;
+      font-size: 16px;
+      height: 48px;
     }
   }
 }

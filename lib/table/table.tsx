@@ -25,14 +25,15 @@ const Table: SFC<IProps> = (props) => {
     const ref = useRef<HTMLTableElement>(null);
     useEffect(() => {
         setTableHeight(ref.current!.getBoundingClientRect().height)
-    }, [])
+    }, []);
+    const gutterVisible = height && (height < tableHeight)
     return (
-        <div className={sc('')}>
+        <div className={classes(sc(''), gutterVisible && 'gutterVisible')}>
             <table className={sc('header')}>
                 <thead>
                     <tr className={sc('row')}>
-                        {columns.map(column => (<th className={sc('cell')} key={column.key}>{column.label}</th>))}
-                        {(height! < tableHeight) && <th className={classes(sc('cell'), 'gutter')} style={{width: scrollbarWidth()}}/>}
+                        {columns.map(column => (<th className={classes(sc('cell'), 'header')} key={column.key}>{column.label}</th>))}
+                        {gutterVisible && <th className={classes(sc('cell'), 'gutter')} style={{width: scrollbarWidth()}}/>}
                     </tr>
                 </thead>
             </table>
@@ -72,7 +73,6 @@ const Table: SFC<IProps> = (props) => {
 
 Table.displayName = componentName;
 Table.defaultProps = {
-    width: 1000,
-    height: 200,
+    width: 800,
 }
 export default Table;
