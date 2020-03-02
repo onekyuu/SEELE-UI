@@ -11,7 +11,7 @@ export default function scrollbarWidth() {
 
     body.appendChild(box);
 
-    const width = navigator.platform.indexOf('Mac') === 0 ? 16 : box.offsetWidth - box.clientWidth;
+    const width = navigator.platform.indexOf('Mac') === 0 ? 15 : box.offsetWidth - box.clientWidth;
 
     body.removeChild(box);
 

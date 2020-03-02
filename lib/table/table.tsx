@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './table.scss';
-import {classMaker} from "../helpers/classMaker";
+import classes, {classMaker} from "../helpers/classMaker";
+import scrollbarWidth from "../helpers/getScrollBarWidth";
 
 const componentName = 'Table';
 const sc = classMaker('seele-table');
@@ -20,17 +21,23 @@ interface IProps extends IStyledProps{
 
 const Table: SFC<IProps> = (props) => {
     const {data, columns, height} = props;
+    const [tableHeight, setTableHeight] = useState(0);
+    const ref = useRef<HTMLTableElement>(null);
+    useEffect(() => {
+        setTableHeight(ref.current!.getBoundingClientRect().height)
+    }, [])
     return (
         <div className={sc('')}>
             <table className={sc('header')}>
                 <thead>
                     <tr className={sc('row')}>
                         {columns.map(column => (<th className={sc('cell')} key={column.key}>{column.label}</th>))}
+                        {(height! < tableHeight) && <th className={classes(sc('cell'), 'gutter')} style={{width: scrollbarWidth()}}/>}
                     </tr>
                 </thead>
             </table>
             <div className={sc('content')} style={{height: height}}>
-                <table className={sc('body')}>
+                <table className={sc('body')} ref={ref}>
                     <tbody>
                         {data.map((row, index) => {
                             const key = `row-${index}`

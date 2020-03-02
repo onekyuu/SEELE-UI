@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import './scroll.scss';
 import classes, {classMaker} from "../helpers/classMaker";
-import scrollbarWidth from "./getScrollBarWidth";
+import scrollbarWidth from "../helpers/getScrollBarWidth";
 import Icon from "../icon/icon";
 
 const componentName = 'Scroll';
@@ -126,7 +126,7 @@ const Scroll: SFC<IProps> = (props) => {
         return () => {
             document.removeEventListener('mousemove', MouseMoveOnScrollBar);
             document.removeEventListener('mouseup', MouseUpOnScrollBar);
-            document.addEventListener('selectstart', onSelect)
+            document.removeEventListener('selectstart', onSelect)
         }
     }, []);
     const isVisible = isTouchDevice ? false : barVisible;

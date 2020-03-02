@@ -5,6 +5,7 @@
   &-header, &-body {
     table-layout: fixed;
     width: 100%;
+    border-spacing: 0;
   }
   &-content {
     overflow: auto;
@@ -18,6 +19,9 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+    &.gutter {
+      border: none;
     }
   }
 }
