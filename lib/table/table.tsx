@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './table.scss';
 import classes, {classMaker} from "../helpers/classMaker";
-import scrollbarWidth from "../helpers/getScrollBarWidth";
+import Scroll from "../scroll/scroll";
 
 const componentName = 'Table';
 const sc = classMaker('seele-table');
@@ -26,19 +26,26 @@ const Table: SFC<IProps> = (props) => {
     useEffect(() => {
         setTableHeight(ref.current!.getBoundingClientRect().height)
     }, []);
-    const gutterVisible = height && (height < tableHeight)
+    const gutterVisible = height && (height < tableHeight);
+    const blockVisible = height && (height > tableHeight);
     return (
-        <div className={classes(sc(''), gutterVisible && 'gutterVisible')}>
+        <div className={classes(sc(''), gutterVisible && 'gutterVisible', blockVisible && 'block')}>
             <table className={sc('header')}>
+                <colgroup>
+                    {columns.map(column => (<col style={{width: column.width}} key={column.key}/>))}
+                </colgroup>
                 <thead>
                     <tr className={sc('row')}>
                         {columns.map(column => (<th className={classes(sc('cell'), 'header')} key={column.key}>{column.label}</th>))}
-                        {gutterVisible && <th className={classes(sc('cell'), 'gutter')} style={{width: scrollbarWidth()}}/>}
+                        {gutterVisible && <th className={classes(sc('cell'), 'gutter')} style={{width: '12px', backgroundColor: '#e5e5e5'}}/>}
                     </tr>
                 </thead>
             </table>
-            <div className={sc('content')} style={{height: height}}>
+            <Scroll className={sc('content')} style={{height: height}}>
                 <table className={sc('body')} ref={ref}>
+                    <colgroup>
+                        {columns.map(column => (<col style={{width: column.width}} key={column.key}/>))}
+                    </colgroup>
                     <tbody>
                         {data.map((row, index) => {
                             const key = `row-${index}`
@@ -66,7 +73,7 @@ const Table: SFC<IProps> = (props) => {
                         })}
                     </tbody>
                 </table>
-            </div>
+            </Scroll>
         </div>
     )
 };

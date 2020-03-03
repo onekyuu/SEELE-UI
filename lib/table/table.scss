@@ -6,24 +6,44 @@ $border-color: #333333;
   border: 1px solid $border-color;
   border-right: none;
   overflow-x: auto;
+  &.block {
+    border-right: 1px solid $border-color;
+    .seele-table-header {
+      .seele-table-cell {
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    .seele-table-row {
+      &:last-child {
+        .seele-table-cell {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+    }
+  }
   &.gutterVisible {
     border-right: 1px solid $border-color;
   }
   &-header, &-body {
     table-layout: fixed;
-    width: 100%;
     border-spacing: 0;
   }
   &-header {
     .seele-table-cell {
       font-weight: normal;
       color: #FFFFFF;
+      &:last-child {
+        padding: 0;
+      }
     }
   }
   &-content {
     overflow-y: auto;
   }
   &-row {
+    position: relative;
     &:last-child {
       .seele-table-cell {
         border-bottom: none;
@@ -33,8 +53,7 @@ $border-color: #333333;
   &-cell {
     border-right: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-    padding: 0 4px;
-    min-height: 32px;
+    padding: 6px 4px;
     &-action {
       font-size: 14px;
       color: $light-color;
@@ -49,7 +68,10 @@ $border-color: #333333;
     }
     &.gutter {
       border: none;
-      border-top: 1px solid $border-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
     }
     &.header {
       background-color: $light-main-color;
