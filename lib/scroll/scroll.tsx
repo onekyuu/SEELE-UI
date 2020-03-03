@@ -168,7 +168,7 @@ const Scroll: SFC<IProps> = (props) => {
 Scroll.displayName = componentName;
 Scroll.defaultProps = {
     autoHide: false,
-    color: 'rgba(0, 0, 0, .2)',
+    color: '#b7b7b7',
     pullDownText: 'pull down to refresh',
 };
 export default Scroll;
