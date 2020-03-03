@@ -135,6 +135,7 @@ const Scroll: SFC<IProps> = (props) => {
             <div className={sc('inner')} style={{
                 right: -scrollbarWidth(),
                 transform: `translateY(${translateY}px)`,
+                paddingRight: `${scrollbarWidth() + 12}px`,
             }}
                  onScroll={onScroll}
                  onTouchStart={onTouchStart}
