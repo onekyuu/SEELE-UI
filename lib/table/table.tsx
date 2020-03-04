@@ -20,7 +20,7 @@ interface IProps extends IStyledProps{
 };
 
 const Table: SFC<IProps> = (props) => {
-    const {data, columns, height} = props;
+    const {data, columns, height, width} = props;
     const [tableHeight, setTableHeight] = useState(0);
     const ref = useRef<HTMLTableElement>(null);
     useEffect(() => {
@@ -28,21 +28,24 @@ const Table: SFC<IProps> = (props) => {
     }, []);
     const gutterVisible = height && (height < tableHeight);
     const blockVisible = height && (height > tableHeight);
+    const tableWidth = columns.map(c => c.width).reduce((total, acc) => {
+        return total + acc
+    });
     return (
-        <div className={classes(sc(''), gutterVisible && 'gutterVisible', blockVisible && 'block')}>
-            <table className={sc('header')}>
+        <div className={classes(sc(''), gutterVisible && 'gutterVisible', blockVisible && 'block')} style={{width: width}}>
+            <table className={sc('header')} style={{width: tableWidth}}>
                 <colgroup>
                     {columns.map(column => (<col style={{width: column.width}} key={column.key}/>))}
                 </colgroup>
                 <thead>
                     <tr className={sc('row')}>
                         {columns.map(column => (<th className={classes(sc('cell'), 'header')} key={column.key}>{column.label}</th>))}
-                        {gutterVisible && <th className={classes(sc('cell'), 'gutter')} style={{width: '12px', backgroundColor: '#e5e5e5'}}/>}
+                        {/*{gutterVisible && <th className={classes(sc('cell'), 'gutter')} style={{width: '12px', backgroundColor: '#e5e5e5'}}/>}*/}
                     </tr>
                 </thead>
             </table>
-            <Scroll className={sc('content')} style={{height: height}}>
-                <table className={sc('body')} ref={ref}>
+            <Scroll className={sc('content')} style={{height: height, width: tableWidth}}>
+                <table className={sc('body')} ref={ref} style={{width: tableWidth}}>
                     <colgroup>
                         {columns.map(column => (<col style={{width: column.width}} key={column.key}/>))}
                     </colgroup>
