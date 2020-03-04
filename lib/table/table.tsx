@@ -32,7 +32,7 @@ const Table: SFC<IProps> = (props) => {
         return total + acc
     });
     return (
-        <div className={classes(sc(''), gutterVisible && 'gutterVisible', blockVisible && 'block')} style={{width: width}}>
+        <div className={classes(sc(''), gutterVisible && 'gutterVisible', blockVisible && 'block')} style={{width: width && (width + 2)}}>
             <table className={sc('header')} style={{width: tableWidth}}>
                 <colgroup>
                     {columns.map(column => (<col style={{width: column.width}} key={column.key}/>))}
