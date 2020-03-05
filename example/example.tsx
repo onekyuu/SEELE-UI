@@ -92,7 +92,68 @@ const RenderDeviceAside: React.FunctionComponent<IProps> = (props) => {
             </Drawer>
         </div>
     )
-}
+};
+
+const RenderDesktopAside: React.FunctionComponent<IProps> = (props) => {
+    const {data} = props;
+    const { t } = useTranslation();
+    return (
+        <Aside className={'page-aside'}>
+            <div className={'list-container'}>
+                <div className={'list-title'}>{t('general')}</div>
+                <ul>
+                    {data.generalList.map((general, index) => {
+                        const key = `general-${index}`;
+                        return (
+                            <li key={key}>
+                                <NavLink to={general}>{t(`${general}_component`)}</NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+            <div className={'list-container'}>
+                <div className={'list-title'}>{t('layout')}</div>
+                <ul>
+                    {data.layoutList.map((layout, index) => {
+                        const key = `layout-${index}`;
+                        return (
+                            <li key={key}>
+                                <NavLink to={layout}>{t(`${layout}_component`)}</NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+            <div className={'list-container'}>
+                <div className={'list-title'}>{t('interaction')}</div>
+                <ul>
+                    {data.interactionList.map((interaction, index) => {
+                        const key = `interaction-${index}`;
+                        return (
+                            <li key={key}>
+                                <NavLink to={interaction}>{t(`${interaction}_component`)}</NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+            <div className={'list-container'}>
+                <div className={'list-title'}>{t('data')}</div>
+                <ul>
+                    {data.dataList.map((data, index) => {
+                        const key = `data-${index}`;
+                        return (
+                            <li key={key}>
+                                <NavLink to={data}>{t(`${data}_component`)}</NavLink>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+        </Aside>
+    )
+};
 
 const RenderNode: React.FunctionComponent = () =>{
     const { t } = useTranslation();
@@ -132,60 +193,7 @@ const RenderNode: React.FunctionComponent = () =>{
                 <Layout>
                     {isDevice
                         ? <RenderDeviceAside data={lists}/>
-                        : <Aside className={'page-aside'}>
-                            <div className={'list-container'}>
-                                <div className={'list-title'}>{t('general')}</div>
-                                <ul>
-                                    {lists.generalList.map((general, index) => {
-                                        const key = `general-${index}`;
-                                        return (
-                                            <li key={key}>
-                                                <NavLink to={general}>{t(`${general}_component`)}</NavLink>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                            <div className={'list-container'}>
-                                <div className={'list-title'}>{t('layout')}</div>
-                                <ul>
-                                    {lists.layoutList.map((layout, index) => {
-                                        const key = `layout-${index}`;
-                                        return (
-                                            <li key={key}>
-                                                <NavLink to={layout}>{t(`${layout}_component`)}</NavLink>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                            <div className={'list-container'}>
-                                <div className={'list-title'}>{t('interaction')}</div>
-                                <ul>
-                                    {lists.interactionList.map((interaction, index) => {
-                                        const key = `interaction-${index}`;
-                                        return (
-                                            <li key={key}>
-                                                <NavLink to={interaction}>{t(`${interaction}_component`)}</NavLink>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                            <div className={'list-container'}>
-                                <div className={'list-title'}>{t('data')}</div>
-                                <ul>
-                                    {lists.dataList.map((data, index) => {
-                                        const key = `data-${index}`;
-                                        return (
-                                            <li key={key}>
-                                                <NavLink to={data}>{t(`${data}_component`)}</NavLink>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </Aside>}
+                        : <RenderDesktopAside data={lists}/>}
                     <Panel className={`page-main ${isDevice === true ? 'device' : ''}`}>
                         <Route path="/" component={DocExample} exact={true}/>
                         <Route path="/button" component={ButtonExample}/>
