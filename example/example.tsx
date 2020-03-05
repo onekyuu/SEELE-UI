@@ -24,8 +24,11 @@ import ScrollDemo from "./scroll/scroll.demo";
 import DropdownDemo from "./dropdown/dropdown.demo";
 
 const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
-
-const RenderDeviceAside: React.FunctionComponent = () => {
+interface IProps extends IStyledProps{
+    data: {[Key: string]: Array<string>}
+}
+const RenderDeviceAside: React.FunctionComponent<IProps> = (props) => {
+    const {data} = props;
     const [visible, setVisible] = useState(false)
     const { t } = useTranslation();
     return (
@@ -36,57 +39,53 @@ const RenderDeviceAside: React.FunctionComponent = () => {
                     <div className={'list-container'}>
                         <div className={'list-title'}>{t('general')}</div>
                         <ul>
-                            <li>
-                                <NavLink to="/button">{t('button')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/icon">{t('icon')}</NavLink>
-                            </li>
+                            {data.generalList.map((general, index) => {
+                                const key = `general-${index}`;
+                                return (
+                                    <li key={key}>
+                                        <NavLink to={general}>{t(`${general}_component`)}</NavLink>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className={'list-container'}>
                         <div className={'list-title'}>{t('layout')}</div>
                         <ul>
-                            <li>
-                                <NavLink to="/grid">{t('grid')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/layout">{t('layout_component')}</NavLink>
-                            </li>
+                            {data.layoutList.map((layout, index) => {
+                                const key = `layout-${index}`;
+                                return (
+                                    <li key={key}>
+                                        <NavLink to={layout}>{t(`${layout}_component`)}</NavLink>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className={'list-container'}>
                         <div className={'list-title'}>{t('interaction')}</div>
                         <ul>
-                            <li>
-                                <NavLink to="/affix">{t('affix')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dialog">{t('dialog')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/drawer">{t('drawer')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/scroll">{t('scroll')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/dropdown">{t('dropdown')}</NavLink>
-                            </li>
+                            {data.interactionList.map((interaction, index) => {
+                                const key = `interaction-${index}`;
+                                return (
+                                    <li key={key}>
+                                        <NavLink to={interaction}>{t(`${interaction}_component`)}</NavLink>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className={'list-container'}>
                         <div className={'list-title'}>{t('data')}</div>
                         <ul>
-                            <li>
-                                <NavLink to="/form">{t('form')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/input">{t('input')}</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/table">{t('table')}</NavLink>
-                            </li>
+                            {data.dataList.map((data, index) => {
+                                const key = `data-${index}`;
+                                return (
+                                    <li key={key}>
+                                        <NavLink to={data}>{t(`${data}_component`)}</NavLink>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                 </Aside>
@@ -101,7 +100,13 @@ const RenderNode: React.FunctionComponent = () =>{
     const switchLanguage = (lang: string) => {
         localStorage.setItem('language', lang);
         window.location.reload();
-    }
+    };
+    const lists = {
+        generalList: ['button', 'icon'],
+        layoutList: ['grid', 'layout'],
+        interactionList: ['affix', 'dialog', 'drawer', 'scroll', 'dropdown'],
+        dataList: ['form', 'input', 'table'],
+    };
     return (
         <Router>
             <Layout className={'page'}>
@@ -126,62 +131,58 @@ const RenderNode: React.FunctionComponent = () =>{
                 </Header>
                 <Layout>
                     {isDevice
-                        ? <RenderDeviceAside/>
+                        ? <RenderDeviceAside data={lists}/>
                         : <Aside className={'page-aside'}>
                             <div className={'list-container'}>
                                 <div className={'list-title'}>{t('general')}</div>
                                 <ul>
-                                    <li>
-                                        <NavLink to="/button">{t('button')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/icon">{t('icon')}</NavLink>
-                                    </li>
+                                    {lists.generalList.map((general, index) => {
+                                        const key = `general-${index}`;
+                                        return (
+                                            <li key={key}>
+                                                <NavLink to={general}>{t(`${general}_component`)}</NavLink>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                             <div className={'list-container'}>
                                 <div className={'list-title'}>{t('layout')}</div>
                                 <ul>
-                                    <li>
-                                        <NavLink to="/grid">{t('grid')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/layout">{t('layout_component')}</NavLink>
-                                    </li>
+                                    {lists.layoutList.map((layout, index) => {
+                                        const key = `layout-${index}`;
+                                        return (
+                                            <li key={key}>
+                                                <NavLink to={layout}>{t(`${layout}_component`)}</NavLink>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                             <div className={'list-container'}>
                                 <div className={'list-title'}>{t('interaction')}</div>
                                 <ul>
-                                    <li>
-                                        <NavLink to="/affix">{t('affix')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/dialog">{t('dialog')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/drawer">{t('drawer')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/scroll">{t('scroll')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/dropdown">{t('dropdown')}</NavLink>
-                                    </li>
+                                    {lists.interactionList.map((interaction, index) => {
+                                        const key = `interaction-${index}`;
+                                        return (
+                                            <li key={key}>
+                                                <NavLink to={interaction}>{t(`${interaction}_component`)}</NavLink>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                             <div className={'list-container'}>
                                 <div className={'list-title'}>{t('data')}</div>
                                 <ul>
-                                    <li>
-                                        <NavLink to="/form">{t('form')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/input">{t('input')}</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/table">{t('table')}</NavLink>
-                                    </li>
+                                    {lists.dataList.map((data, index) => {
+                                        const key = `data-${index}`;
+                                        return (
+                                            <li key={key}>
+                                                <NavLink to={data}>{t(`${data}_component`)}</NavLink>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
                         </Aside>}
