@@ -25,80 +25,15 @@ import DropdownDemo from "./dropdown/dropdown.demo";
 
 const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
 interface IProps extends IStyledProps{
-    data: {[Key: string]: Array<string>}
+    data: {[Key: string]: Array<string>},
+    isDevice?: boolean,
 }
-const RenderDeviceAside: React.FunctionComponent<IProps> = (props) => {
-    const {data} = props;
-    const [visible, setVisible] = useState(false)
-    const { t } = useTranslation();
-    return (
-        <div className={'drawer-container'}>
-            <Button level={'primary'} className={'affix'} onClick={() => setVisible(true)}>{t('menu')}</Button>
-            <Drawer onClose={() => setVisible(false)} visible={visible}>
-                <Aside className={'page-aside device'}>
-                    <div className={'list-container'}>
-                        <div className={'list-title'}>{t('general')}</div>
-                        <ul>
-                            {data.generalList.map((general, index) => {
-                                const key = `general-${index}`;
-                                return (
-                                    <li key={key}>
-                                        <NavLink to={general}>{t(`${general}_component`)}</NavLink>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className={'list-container'}>
-                        <div className={'list-title'}>{t('layout')}</div>
-                        <ul>
-                            {data.layoutList.map((layout, index) => {
-                                const key = `layout-${index}`;
-                                return (
-                                    <li key={key}>
-                                        <NavLink to={layout}>{t(`${layout}_component`)}</NavLink>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className={'list-container'}>
-                        <div className={'list-title'}>{t('interaction')}</div>
-                        <ul>
-                            {data.interactionList.map((interaction, index) => {
-                                const key = `interaction-${index}`;
-                                return (
-                                    <li key={key}>
-                                        <NavLink to={interaction}>{t(`${interaction}_component`)}</NavLink>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className={'list-container'}>
-                        <div className={'list-title'}>{t('data')}</div>
-                        <ul>
-                            {data.dataList.map((data, index) => {
-                                const key = `data-${index}`;
-                                return (
-                                    <li key={key}>
-                                        <NavLink to={data}>{t(`${data}_component`)}</NavLink>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </Aside>
-            </Drawer>
-        </div>
-    )
-};
 
-const RenderDesktopAside: React.FunctionComponent<IProps> = (props) => {
-    const {data} = props;
+const RenderAside: React.FunctionComponent<IProps> = (props) => {
+    const {data, isDevice} = props;
     const { t } = useTranslation();
     return (
-        <Aside className={'page-aside'}>
+        <Aside className={`page-aside ${isDevice === true ? 'device' : ''}`}>
             <div className={'list-container'}>
                 <div className={'list-title'}>{t('general')}</div>
                 <ul>
@@ -162,6 +97,7 @@ const RenderNode: React.FunctionComponent = () =>{
         localStorage.setItem('language', lang);
         window.location.reload();
     };
+    const [visible, setVisible] = useState(false)
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
@@ -192,8 +128,13 @@ const RenderNode: React.FunctionComponent = () =>{
                 </Header>
                 <Layout>
                     {isDevice
-                        ? <RenderDeviceAside data={lists}/>
-                        : <RenderDesktopAside data={lists}/>}
+                        ? <div className={'drawer-container'}>
+                            <Button level={'primary'} className={'affix'} onClick={() => setVisible(true)}>{t('menu')}</Button>
+                            <Drawer onClose={() => setVisible(false)} visible={visible}>
+                                <RenderAside data={lists} isDevice={true}/>
+                            </Drawer>
+                        </div>
+                        : <RenderAside data={lists}/>}
                     <Panel className={`page-main ${isDevice === true ? 'device' : ''}`}>
                         <Route path="/" component={DocExample} exact={true}/>
                         <Route path="/button" component={ButtonExample}/>
