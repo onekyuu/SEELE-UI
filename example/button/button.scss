@@ -1,6 +1,19 @@
 @import '../../lib/base/base';
 
+.component-name {
+    margin-bottom: 12px;
+}
+.component-description {
+    margin-bottom: 36px;
+    font-size: 14px;
+}
+.title {
+    margin-bottom: 24px;
+}
 .buttonExample {
+    h4 {
+        margin-bottom: 12px;
+    }
     .seele-button {
         margin: 1em;
     }

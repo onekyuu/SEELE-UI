@@ -19,6 +19,13 @@ const zh_CNCommon = {
     menu: '菜单',
     table_component: 'Table/表格',
     dropdown_component: 'Dropdown/下拉菜单',
+    api: 'API',
+    examples: '代码演示',
+    null: '-',
+    property: '属性',
+    description: '说明',
+    type: '类型',
+    default: '默认值',
 }
 
 export default zh_CNCommon;

@@ -10,7 +10,7 @@ import DialogDemo from './dialog/dialog.demo';
 import IconDemo from './icon/icon.demo';
 import LayoutDemo from './layout/layout.demo';
 import Layout, {Header, Aside, Panel} from '../lib/layout/layout';
-import ButtonExample from './button/button';
+import ButtonDemo from './button/button.demo';
 import DocExample from './doc/doc';
 import {Icon} from '../lib';
 import InputDemo from "./input/input.demo";
@@ -137,7 +137,7 @@ const RenderNode: React.FunctionComponent = () =>{
                         : <RenderAside data={lists}/>}
                     <Panel className={`page-main ${isDevice === true ? 'device' : ''}`}>
                         <Route path="/" component={DocExample} exact={true}/>
-                        <Route path="/button" component={ButtonExample}/>
+                        <Route path="/button" component={ButtonDemo}/>
                         <Route path="/dialog" component={DialogDemo}/>
                         <Route path="/form" component={FormDemo}/>
                         <Route path="/grid" component={GridDemo}/>

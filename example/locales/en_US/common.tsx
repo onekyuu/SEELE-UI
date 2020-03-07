@@ -19,6 +19,13 @@ const en_USCommon = {
     menu: 'Menu',
     table_component: 'Table',
     dropdown_component: 'Dropdown',
+    api: 'API',
+    examples: 'Examples',
+    null: '-',
+    property: 'Property',
+    description: 'Description',
+    type: 'Type',
+    default: 'Default',
 }
 
 export default en_USCommon;
