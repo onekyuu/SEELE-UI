@@ -26,6 +26,7 @@ const zh_CNCommon = {
     description: '说明',
     type: '类型',
     default: '默认值',
+    basic_usage: '基础用法',
 }
 
 export default zh_CNCommon;

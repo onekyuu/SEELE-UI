@@ -8,6 +8,7 @@ const en_USIcon = {
     icon_width: 'The width of the svg element',
     icon_height: 'The height of the svg element',
     icon_style: 'The style of the svg element',
+    icon_set_style: 'Set the style of icon',
 }
 
 export default en_USIcon;

@@ -7,6 +7,7 @@ const zh_CNIcon = {
     icon_width: 'svg 元素宽度',
     icon_height: 'svg 元素高度',
     icon_style: 'svg 元素样式',
+    icon_set_style: '设置图标样式',
 }
 
 export default zh_CNIcon;

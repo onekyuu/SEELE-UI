@@ -1,3 +1,8 @@
+.example-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .component-suggest {
   font-size: 14px;
   margin-top: 12px;
@@ -5,7 +10,7 @@
 
 .iconExample {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   .icon-wrapper {
     display: flex;

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Table from "../../lib/table/table";
 import {getAPIColumns} from "../utils";
 import './icon.scss';
+import IconStyleExample from "./icon-style";
 
 const IconDemo = () => {
     const { t } = useTranslation();
@@ -57,6 +58,9 @@ const IconDemo = () => {
                 <h3 className={'title'}>{t('examples')}</h3>
                 <Demo code={require('!!raw-loader!./icon.tsx').default}>
                     <IconExample/>
+                </Demo>
+                <Demo code={require('!!raw-loader!./icon-style.tsx').default}>
+                    <IconStyleExample/>
                 </Demo>
                 <div className={'table-container'}>
                     <h3 className={'title'}>{t('api')}</h3>

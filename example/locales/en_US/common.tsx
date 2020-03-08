@@ -26,6 +26,7 @@ const en_USCommon = {
     description: 'Description',
     type: 'Type',
     default: 'Default',
+    basic_usage: 'Basic usage',
 }
 
 export default en_USCommon;
