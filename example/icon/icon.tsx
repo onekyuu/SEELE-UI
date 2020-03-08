@@ -1,18 +1,23 @@
 import React from 'react';
 import Icon from '../../lib/icon/icon';
+import './icon.scss';
 
 const IconExample: React.FunctionComponent = () => {
+    const iconLists = ['alipay', 'line', 'qq', 'qzone', 'skype',
+        'wechat-friend', 'wechat', 'weibo', 'loading', 'arrow-up',
+        'arrow-down', 'arrow-left', 'arrow-right', 'rising', 'falling',
+        'close', 'code', 'category', 'add', 'sami', 'link', 'warning',
+        'not-visible', 'viewlist'];
+
     return (
-        <div>
-            <Icon name="alipay"/>
-            <Icon name="line"/>
-            <Icon name="qq"/>
-            <Icon name="qzone"/>
-            <Icon name="skype"/>
-            <Icon name="wechat-friend"/>
-            <Icon name="wechat"/>
-            <Icon name="weibo"/>
-            <Icon name="loading"/>
+        <div className={'iconExample'}>
+
+            {iconLists.map(icon => (
+                <div className={'icon-wrapper'} key={icon}>
+                    <Icon name={icon}/>
+                    <span className={'icon-name'}>{icon}</span>
+                </div>
+            ))}
         </div>
     );
 }

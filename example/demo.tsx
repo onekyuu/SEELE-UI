@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '../lib/button/button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import './demo.scss';
+import Icon from "../lib/icon/icon";
 
 interface Props {
     code: string;
@@ -15,7 +16,10 @@ const Demo: React.FunctionComponent<Props> = (props) => {
     return (
         <div className={'demo'}>
             {props.children}
-            <Button onClick={() => setCodeVisible(!codeVisible)} className={'detail-button'}>{codeVisible ? '收起代码' : '显示代码'}</Button>
+            <Button onClick={() => setCodeVisible(!codeVisible)} className={'detail-button'}>
+                {codeVisible ? '收起代码' : '显示代码'}
+                <Icon name={'code'}/>
+            </Button>
             {codeVisible && code}
         </div>
     )

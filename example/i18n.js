@@ -20,6 +20,8 @@ import en_USScroll from "./locales/en_US/scroll";
 import zh_CNScroll from "./locales/zh_CN/scroll";
 import en_USDropdown from "./locales/en_US/dropdown";
 import zh_CNDropdown from "./locales/zh_CN/dropdown";
+import en_USIcon from "./locales/en_US/icon";
+import zh_CNIcon from "./locales/zh_CN/icon";
 
 const resources = {
     zh_CN: {
@@ -32,6 +34,7 @@ const resources = {
             ...zh_CNTable,
             ...zh_CNScroll,
             ...zh_CNDropdown,
+            ...zh_CNIcon,
             ...zh_CNDoc,
         }
     },
@@ -45,6 +48,7 @@ const resources = {
             ...en_USTable,
             ...en_USScroll,
             ...en_USDropdown,
+            ...en_USIcon,
             ...en_USDoc,
         },
     },

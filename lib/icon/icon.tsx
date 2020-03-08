@@ -9,13 +9,14 @@ const sc = classMaker('seele-icon')
 interface Props extends SVGAttributes<SVGElement> {
     name: string;
     size?: string;
-    theme?: string;
+    width?: string;
+    height?: string;
 }
 
 const Icon: SFC<Props> = (props) => {
-    const {className, ...restProps} = props;
+    const {className, width, height, fill, size, ...restProps} = props;
     return (
-        <svg className={classes(sc(''), sc(props.name), className)} {...restProps}>
+        <svg className={classes(sc(''), sc(props.name), className)} style={{width: width, height: height, fontSize: size}} {...restProps}>
           <use xlinkHref={`#${props.name}`}></use>
         </svg>
     )

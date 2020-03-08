@@ -1,0 +1,20 @@
+.component-suggest {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.iconExample {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    width: 100px;
+    .icon-name {
+      margin-top: 8px;
+    }
+  }
+}
