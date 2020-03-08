@@ -43,7 +43,7 @@ const IconDemo = () => {
         {
             property: 'style',
             description: t('icon_style'),
-            type: 'string',
+            type: 'object',
             default: '-',
         },
     ];
