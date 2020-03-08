@@ -8,7 +8,7 @@
     &-right {
       flex-direction: row-reverse;
       .seele-col {
-        @media screen and (min-width: 480px) {
+        @media screen and (max-width: 575px) {
           @for $i from 1 through 24 {
             &-xs-offset-#{$i} {
               margin-right: ($i/24) * 100%;;
@@ -43,7 +43,7 @@
             }
           }
         }
-        @media screen and (min-width: 1400px) {
+        @media screen and (min-width: 1600px) {
           @for $i from 1 through 24 {
             &-xxl-offset-#{$i} {
               margin-right: ($i/24) * 100%;;
