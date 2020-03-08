@@ -7,12 +7,14 @@ const EventButtonExample: React.FunctionComponent = () => {
     const { t } = useTranslation();
     const ClickHandler= () => {
         alert(t('clicked'))
-    }
+    };
+    const href = 'https://github.com/wky0615/SEELE-UI';
     return (
         <div className={'buttonExample'}>
             <h4>{t('event_button')}</h4>
             <div>
                 <Button onClick={ClickHandler}>{t('click_me')}</Button>
+                <Button type={'link'} href={href}>{t('link')}</Button>
             </div>
         </div>
     );
