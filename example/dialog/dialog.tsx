@@ -17,7 +17,7 @@ const DialogExample:React.FunctionComponent = () => {
     return (
         <div>
             <div>
-                <Button  className={'dialog-button'} onClick={e => setX(!x)}>{t('dialog_dialog')}</Button>
+                <Button className={'dialog-button'} onClick={e => setX(!x)}>{t('dialog_dialog')}</Button>
                 <Dialog visible={x} buttons={
                     [
                         <Button onClick={e => {setX(false)}}>{t('cancel')}</Button>,

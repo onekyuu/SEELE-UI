@@ -5,6 +5,7 @@ import GhostButtonExample from "./ghost-button";
 import DashedButtonExample from "./dashed-button";
 import TypeButtonExample from "./type-button";
 import IconButtonExample from "./icon-button";
+import EventButtonExample from "./event-button";
 import Table from "../../lib/table/table";
 import {getAPIColumns} from "../utils";
 import { useTranslation } from 'react-i18next';
@@ -117,6 +118,9 @@ const ButtonDemo: React.FunctionComponent = () => {
             </Demo>
             <Demo code={require('!!raw-loader!./icon-button.tsx').default}>
                 <IconButtonExample/>
+            </Demo>
+            <Demo code={require('!!raw-loader!./event-button.tsx').default}>
+                <EventButtonExample/>
             </Demo>
             <div className={'table-container'}>
                 <h3 className={'title'}>{t('api')}</h3>
