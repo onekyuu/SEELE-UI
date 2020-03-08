@@ -24,6 +24,8 @@ import en_USIcon from "./locales/en_US/icon";
 import zh_CNIcon from "./locales/zh_CN/icon";
 import en_USGrid from "./locales/en_US/grid";
 import zh_CNGrid from "./locales/zh_CN/grid";
+import en_USLayout from "./locales/en_US/layout";
+import zh_CNLayout from "./locales/zh_CN/layout";
 
 const resources = {
     zh_CN: {
@@ -38,6 +40,7 @@ const resources = {
             ...zh_CNDropdown,
             ...zh_CNIcon,
             ...zh_CNGrid,
+            ...zh_CNLayout,
             ...zh_CNDoc,
         }
     },
@@ -51,7 +54,9 @@ const resources = {
             ...en_USTable,
             ...en_USScroll,
             ...en_USDropdown,
+            ...en_USIcon,
             ...en_USGrid,
+            ...en_USLayout,
             ...en_USDoc,
         },
     },
