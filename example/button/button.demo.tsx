@@ -28,7 +28,7 @@ const ButtonDemo: React.FunctionComponent = () => {
         },
         {
             property: 'icon',
-            description: t('icon_description'),
+            description: t('button_icon_description'),
             type: 'string',
             default: '-',
         },
@@ -101,8 +101,10 @@ const ButtonDemo: React.FunctionComponent = () => {
     ];
     return(
         <div className={'demo-container'}>
-            <h2 className={'component-name'}>{t('button_component')}</h2>
-            <div className={'component-description'}>{t('button_description')}</div>
+            <div className={'component-detail'}>
+                <h2 className={'component-name'}>{t('button_component')}</h2>
+                <div className={'component-description'}>{t('button_description')}</div>
+            </div>
             <h3 className={'title'}>{t('examples')}</h3>
             <Demo code={require('!!raw-loader!./default-button.tsx').default}>
                 <DefaultButtonExample/>

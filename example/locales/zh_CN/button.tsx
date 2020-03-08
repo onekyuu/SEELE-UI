@@ -10,7 +10,7 @@ const zh_CNButton = {
     clicked: '按钮已点击',
     theme_description: '设置按钮的样式，可选值为 default ghost dashed',
     size_description: '设置按钮大小',
-    icon_description: '设置按钮的图标组件',
+    button_icon_description: '设置按钮的图标组件',
     iconPosition_description: '设置按钮的位置',
     iconColor_description: '设置按钮的颜色',
     shape_description: '设置按钮形状，可选值为 circle、 round 或者不设',

@@ -10,7 +10,7 @@ const en_USButton = {
     clicked: 'button clicked',
     theme_description: 'set the style of button, can be set to default ghost dashed',
     size_description: 'set the size of button',
-    icon_description: 'set the icon component of button',
+    button_icon_description: 'set the icon component of button',
     iconPosition_description: 'set the icon position component of button',
     iconColor_description: 'set the icon color component of button',
     shape_description: 'can be set to circle, round or omitted',
