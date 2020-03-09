@@ -28,6 +28,8 @@ const en_USCommon = {
     default: 'Default',
     basic_usage: 'Basic usage',
     link: 'Link',
+    hide_code: 'Hide code',
+    show_code: 'Show code',
 }
 
 export default en_USCommon;

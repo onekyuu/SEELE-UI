@@ -28,6 +28,8 @@ const zh_CNCommon = {
     default: '默认值',
     basic_usage: '基础用法',
     link: '链接',
+    hide_code: '隐藏代码',
+    show_code: '展示代码',
 }
 
 export default zh_CNCommon;
