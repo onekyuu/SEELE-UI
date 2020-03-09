@@ -1,17 +1,18 @@
 @import "../../lib/base/base";
 
+.drawerExample {
+  margin-left: 14px;
+  h4 {
+    margin-bottom: 12px;
+  }
+}
+
+.drawer-overview {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
 .right-text {
   text-align: right;
   margin-right: 10px;
-}
-
-.drawer-button {
-  margin: 6px;
-
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
 }
