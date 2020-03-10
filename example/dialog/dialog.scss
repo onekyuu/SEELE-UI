@@ -13,13 +13,12 @@
   font-size: 14px;
 }
 
-.dialog-button {
-  margin: 6px;
+p {
+  font-size: 14px;
+  margin-top: 12px;
+  color: rgba(0, 0, 0, .65);
+}
 
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
+.dialog-button {
+  margin: 6px 0;
 }

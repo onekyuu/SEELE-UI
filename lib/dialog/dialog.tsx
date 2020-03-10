@@ -12,11 +12,14 @@ interface Props extends IStyledProps {
     buttons?: Array<ReactElement>;
     onClose: React.MouseEventHandler;
     closeOnClickBg?: boolean;
+    showTitle?: boolean;
+    title?: string;
 }
 
 const sc = classMaker('seele-dialog');
 
 const Dialog: SFC<Props> = (props) => {
+    const {visible, buttons, showTitle, title} = props
     const onClose: React.MouseEventHandler = (e) => {
         props.onClose(e);
     };
@@ -27,21 +30,21 @@ const Dialog: SFC<Props> = (props) => {
         }
     };
 
-    const DialogNode = props.visible &&
+    const DialogNode = visible &&
         <Fragment>
             <div className={sc('bg')} onClick={closeOnClickBg}/>
             <div className={sc('')}>
                 <div className={sc('close')} onClick={onClose}>
                     <Icon name={'close'}/>
                 </div>
-                <header className={sc('header')}>
-                    提示
-                </header>
+                {showTitle && <header className={sc('header')}>
+                    {title}
+                </header>}
                 <main className={sc('main')}>
                     {props.children}
                 </main>
                 <footer className={sc('footer')}>
-                    {props.buttons && props.buttons.map((button, index) =>
+                    {buttons && buttons.map((button, index) =>
                         React.cloneElement(button, {key: index})
                     )}
                 </footer>
@@ -57,6 +60,8 @@ Dialog.displayName = componentName;
 
 Dialog.defaultProps = {
     closeOnClickBg: false,
+    showTitle: true,
+    title: 'Tips',
 };
 
 const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {

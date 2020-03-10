@@ -35,6 +35,18 @@ const DialogDemo: React.FunctionComponent = () => {
             type: 'boolean',
             default: 'false',
         },
+        {
+            property: 'showTitle',
+            description: t('dialog_showTitle'),
+            type: 'boolean',
+            default: 'true',
+        },
+        {
+            property: 'title',
+            description: t('dialog_title'),
+            type: 'string',
+            default: '\'Tips\'',
+        },
     ];
     return (
         <div className={'demo-container'}>

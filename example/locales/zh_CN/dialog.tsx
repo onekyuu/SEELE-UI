@@ -20,6 +20,10 @@ const zh_CNDialog = {
     dialog_buttons: '对话框中的按钮',
     dialog_onClose: '关闭对话框时的回调',
     dialog_closeOnClickBg: '是否可以通过点击背景遮罩关闭对话框',
+    dialog_showTitle: '对话框的标题是否可见',
+    dialog_title: '对话框标题内容',
+    dialog_with_title: '有标题的对话框',
+    dialog_without_title: '无标题的对话框',
 }
 
 export default zh_CNDialog;

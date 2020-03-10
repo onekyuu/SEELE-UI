@@ -24,6 +24,10 @@ const en_USDialog = {
     dialog_onClose: 'Callback when closing dialog',
     dialog_closeOnClickBg: 'Whether the dialog can be closed by clicking the' +
         ' background mask',
+    dialog_showTitle: 'Whether the title of dialog is visible or not',
+    dialog_title: 'Title of dialog',
+    dialog_with_title: 'Dialog with title',
+    dialog_without_title: 'Dialog without title',
 }
 
 export default en_USDialog;
