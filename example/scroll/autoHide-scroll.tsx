@@ -3,18 +3,15 @@ import Scroll from "../../lib/scroll/scroll";
 import { useTranslation } from 'react-i18next';
 import './scroll.scss';
 
-const ScrollExample = () => {
+const AutoHideScrollExample = () => {
     const { t } = useTranslation();
-    const onPull = () => {
-        console.log('pull')
-    }
     return (
         <div>
             <div className={"example"}>
-                <h2 className={"scroll-title"}>
-                    {t('scroll_example')}
-                </h2>
-                <Scroll className={"scroll-example"} style={{height: 300}} onPull={onPull}>
+                <h4 className={"scroll-title"}>
+                    {t('autoHide_scroll')}
+                </h4>
+                <Scroll className={"scroll-example"} style={{height: 300}} autoHide={true}>
                     <div>
                         <p>1</p>
                         <p>2</p>
@@ -63,4 +60,4 @@ const ScrollExample = () => {
     )
 }
 
-export default ScrollExample
+export default AutoHideScrollExample
