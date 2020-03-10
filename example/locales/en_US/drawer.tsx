@@ -1,6 +1,7 @@
 const en_USDrawer = {
     drawer_description: 'A panel which slides in from the edge of the screen.',
-    drawer_overview: 'aa',
+    drawer_overview: 'Drawer component does not provide the function of' +
+        ' prohibiting the window from scrolling under the floating layer. If necessary, please add it yourself',
     drawer_basic: 'Basic Drawer',
     drawer_position: 'Drawer with Custom Placement',
     drawer_visible: 'Whether the Drawer is visible or not.',
