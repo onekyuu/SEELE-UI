@@ -7,6 +7,20 @@
   }
 }
 
+.examples {
+  display: flex;
+  .drawer {
+    margin-right: 48px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+  }
+}
+
 .drawer-overview {
   font-size: 14px;
   margin-bottom: 24px;

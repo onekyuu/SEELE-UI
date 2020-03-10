@@ -34,6 +34,18 @@ const DrawerDemo = () => {
             type: 'string',
             default: '-',
         },
+        {
+            property: 'width',
+            description: t('drawer_width'),
+            type: 'string',
+            default: '\'20%\'',
+        },
+        {
+            property: 'height',
+            description: t('drawer_height'),
+            type: 'string',
+            default: '-',
+        },
     ];
     return (
         <div className={'demo-container'}>
