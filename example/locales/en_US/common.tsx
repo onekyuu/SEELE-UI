@@ -24,12 +24,17 @@ const en_USCommon = {
     null: '-',
     property: 'Property',
     description: 'Description',
+    addition: 'Addition',
     type: 'Type',
     default: 'Default',
     basic_usage: 'Basic usage',
     link: 'Link',
     hide_code: 'Hide code',
     show_code: 'Show code',
+    interface: 'Interface',
+    type_title: 'Type',
+    name: 'Name',
+    method: 'Method',
 }
 
 export default en_USCommon;

@@ -5,15 +5,15 @@ import Button from "../../lib/button/button";
 import './form.scss';
 import {useTranslation} from 'react-i18next';
 
-const WithLabelFormExample: React.FunctionComponent = () => {
+const WithoutLabelFormExample: React.FunctionComponent = () => {
     const {t} = useTranslation();
     const [formData, setFormData] = useState<FormValue>({
         username: '',
         password: '',
     });
     const [fields] = useState([
-        {name: 'username', label: '用户名', input: {type: 'text'}},
-        {name: 'password', label: '密码', input: {type: 'password'}},
+        {name: 'username', label: t('username'), input: {type: 'text'}},
+        {name: 'password', label: t('password'), input: {type: 'password'}},
     ]);
     const [errors, setErrors] = useState({});
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,7 +34,7 @@ const WithLabelFormExample: React.FunctionComponent = () => {
     };
     return (
         <div className={'formExample'}>
-            <h4>{t('form_with_label')}</h4>
+            <h4>{t('form_without_label')}</h4>
             <Form value={formData} fields={fields}
                   buttons={
                       <Fragment>
@@ -47,10 +47,10 @@ const WithLabelFormExample: React.FunctionComponent = () => {
                   errors={errors}
                   onSubmit={onSubmit}
                   onChange={(newData: FormValue) => setFormData(newData)}
-                  hasFormLabel={true}
+                  hasFormLabel={false}
             />
         </div>
     );
 };
 
-export default WithLabelFormExample;
+export default WithoutLabelFormExample;

@@ -1,5 +1,25 @@
 @import '../../lib/base/base';
 
+.formExample {
+  margin-left: 14px;
+}
+
+.method-container {
+  margin-bottom: 24px;
+}
+
+.table-container {
+  margin-bottom: 24px;
+  h4 {
+    margin: 24px 0 12px 0;
+  }
+  p {
+    font-size: 14px;
+    opacity: .9;
+    margin-bottom: 12px;
+  }
+}
+
 .form-button {
   margin: 6px;
 

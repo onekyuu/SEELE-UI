@@ -106,9 +106,10 @@ const RenderNode: React.FunctionComponent = () => {
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
-        interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],
+        interactionList: ['dialog', 'drawer', 'scroll'],
         dataList: ['form', 'input', 'table'],
     };
+    // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],
     return (
         <Router>
             <Layout className={'page'}>

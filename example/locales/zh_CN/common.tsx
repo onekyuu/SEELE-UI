@@ -24,12 +24,17 @@ const zh_CNCommon = {
     null: '-',
     property: '属性',
     description: '说明',
+    addition: '附加说明',
     type: '类型',
     default: '默认值',
     basic_usage: '基础用法',
     link: '链接',
     hide_code: '隐藏代码',
     show_code: '展示代码',
+    interface: 'Interface',
+    type_title: 'Type',
+    name: '名称',
+    method: 'Method',
 }
 
 export default zh_CNCommon;
