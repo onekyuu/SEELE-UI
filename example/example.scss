@@ -166,4 +166,33 @@ pre {
     box-shadow: 6px 0px 6px 0px rgba(0,0,0,0.3);
 }
 
+.device-node {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(49, 65, 153, .8);
+    height: 100vh;
+    flex-direction: column;
+    .tip {
+        color: #ffffff;
+        font-size: 20px;
+    }
+    .icon-container {
+        color: #ffffff;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+            font-size: 50px;
+        }
+        .input-hidden {
+            width: 0;
+            opacity: 0;
+        }
+    }
+    .copy-text {
+        color: #ffffff;
+    }
+}
 

@@ -23,7 +23,7 @@ import TableDemo from "./table/table.demo";
 import ScrollDemo from "./scroll/scroll.demo";
 import DropdownDemo from "./dropdown/dropdown.demo";
 
-const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
 
 interface IProps extends IStyledProps {
     data: { [Key: string]: Array<string> },
@@ -45,7 +45,7 @@ const RenderAside: React.FunctionComponent<IProps> = (props) => {
                                 <NavLink
                                     to={general}>{t(`${general}_component`)}</NavLink>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </div>
@@ -59,7 +59,7 @@ const RenderAside: React.FunctionComponent<IProps> = (props) => {
                                 <NavLink
                                     to={layout}>{t(`${layout}_component`)}</NavLink>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </div>
@@ -73,7 +73,7 @@ const RenderAside: React.FunctionComponent<IProps> = (props) => {
                                 <NavLink
                                     to={interaction}>{t(`${interaction}_component`)}</NavLink>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </div>
@@ -87,12 +87,27 @@ const RenderAside: React.FunctionComponent<IProps> = (props) => {
                                 <NavLink
                                     to={data}>{t(`${data}_component`)}</NavLink>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </div>
         </Aside>
-    )
+    );
+};
+
+const DeviceNode = () => {
+    const {t} = useTranslation();
+
+    return (
+        <div className={'device-node'}>
+            <p className={'tip'}>{t('device_tip')}</p>
+            <div className={'icon-container'}>
+                <Icon className={'icon'} name={'seele-logo'}
+                      style={{fill: '#ffffff'}}/>
+                <span>SEELE</span>
+            </div>
+        </div>
+    );
 };
 
 const RenderNode: React.FunctionComponent = () => {
@@ -102,7 +117,7 @@ const RenderNode: React.FunctionComponent = () => {
         localStorage.setItem('language', lang);
         window.location.reload();
     };
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(false);
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
@@ -110,68 +125,78 @@ const RenderNode: React.FunctionComponent = () => {
         dataList: ['form', 'input', 'table'],
     };
     // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],
+    // ${isDevice === true ? 'device' : ''}
     return (
-        <Router>
-            <Layout className={'page'}>
-                <Header className={`page-header ${isDevice === true ? 'device' :
-                    ''}`}>
-                    <div className={'page-logo-container'}>
-                        <Icon className={'page-logo'} name="seele-logo"/>
-                        <span className={'page-title'}>SEELE</span>
-                    </div>
-                    <div className={'page-links'}>
-                        <div className={'page-item'}>
-                            <NavLink to="/">{t('doc')}</NavLink>
-                        </div>
-                        <div className={'page-item'}>
-                            <a href="https://github.com/wky0615/SEELE-UI"
-                               target="_blank">GitHub</a>
-                        </div>
-                        <div className={'page-item'}>
-                            <Icon className={'language-icon'} name="language"/>
-                            <div className={`language ${language !== 'zh_CN' &&
-                            'show'}`}
-                                 onClick={() => switchLanguage('zh_cn')}>{t('chinese')}</div>
-                            <div className={`language ${language === 'zh_CN' &&
-                            'show'}`}
-                                 onClick={() => switchLanguage('en_us')}>{t('english')}</div>
-                        </div>
-                    </div>
-                </Header>
-                <Layout>
-                    {isDevice
-                        ? <div className={'drawer-container'}>
-                            <Button level={'primary'} className={'affix'}
-                                    onClick={() => setVisible(true)}>{t('menu')}</Button>
-                            <Drawer onClose={() => setVisible(false)}
-                                    visible={visible}>
-                                <RenderAside data={lists} isDevice={true}/>
-                            </Drawer>
-                        </div>
-                        : <RenderAside data={lists}/>}
-                    <Panel
-                        className={`page-main ${isDevice === true ? 'device' :
-                            ''}`}>
-                        <Route path="/" component={DocExample} exact={true}/>
-                        <Route path="/button" component={ButtonDemo}/>
-                        <Route path="/dialog" component={DialogDemo}/>
-                        <Route path="/form" component={FormDemo}/>
-                        <Route path="/grid" component={GridDemo}/>
-                        <Route path="/icon" component={IconDemo}/>
-                        <Route path="/layout" component={LayoutDemo}/>
-                        <Route path="/input" component={InputDemo}/>
-                        <Route path="/drawer" component={DrawerDemo}/>
-                        <Route path="/affix" component={AffixDemo}/>
-                        <Route path="/table" component={TableDemo}/>
-                        <Route path="/scroll" component={ScrollDemo}/>
-                        <Route path="/dropdown" component={DropdownDemo}/>
-                    </Panel>
-                </Layout>
-            </Layout>
-        </Router>
-    )
-}
+        <div>
+            {isDevice ? <DeviceNode/> :
+                <Router>
+                    <Layout className={'page'}>
+                        <Header className={`page-header }`}>
+                            <div className={'page-logo-container'}>
+                                <Icon className={'page-logo'}
+                                      name="seele-logo"/>
+                                <span className={'page-title'}>SEELE</span>
+                            </div>
+                            <div className={'page-links'}>
+                                <div className={'page-item'}>
+                                    <NavLink to="/">{t('doc')}</NavLink>
+                                </div>
+                                <div className={'page-item'}>
+                                    <a href="https://github.com/wky0615/SEELE-UI"
+                                       target="_blank">GitHub</a>
+                                </div>
+                                <div className={'page-item'}>
+                                    <Icon className={'language-icon'}
+                                          name="language"/>
+                                    <div className={`language ${language !==
+                                    'zh_CN' &&
+                                    'show'}`}
+                                         onClick={() => switchLanguage('zh_cn')}>{t('chinese')}</div>
+                                    <div className={`language ${language ===
+                                    'zh_CN' &&
+                                    'show'}`}
+                                         onClick={() => switchLanguage('en_us')}>{t('english')}</div>
+                                </div>
+                            </div>
+                        </Header>
+                        <Layout>
+                            {isDevice
+                                ? <div className={'drawer-container'}>
+                                    <Button level={'primary'}
+                                            className={'affix'}
+                                            onClick={() => setVisible(true)}>{t('menu')}</Button>
+                                    <Drawer onClose={() => setVisible(false)}
+                                            visible={visible}>
+                                        <RenderAside data={lists}
+                                                     isDevice={true}/>
+                                    </Drawer>
+                                </div>
+                                : <RenderAside data={lists}/>}
+                            <Panel
+                                className={`page-main`}>
+                                <Route path="/" component={DocExample}
+                                       exact={true}/>
+                                <Route path="/button" component={ButtonDemo}/>
+                                <Route path="/dialog" component={DialogDemo}/>
+                                <Route path="/form" component={FormDemo}/>
+                                <Route path="/grid" component={GridDemo}/>
+                                <Route path="/icon" component={IconDemo}/>
+                                <Route path="/layout" component={LayoutDemo}/>
+                                <Route path="/input" component={InputDemo}/>
+                                <Route path="/drawer" component={DrawerDemo}/>
+                                <Route path="/affix" component={AffixDemo}/>
+                                <Route path="/table" component={TableDemo}/>
+                                <Route path="/scroll" component={ScrollDemo}/>
+                                <Route path="/dropdown"
+                                       component={DropdownDemo}/>
+                            </Panel>
+                        </Layout>
+                    </Layout>
+                </Router>}
+        </div>
+    );
+};
 
 ReactDom.render(
     <RenderNode/>
-    , document.querySelector('#root'))
+    , document.querySelector('#root'));
