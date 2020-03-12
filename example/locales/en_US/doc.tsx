@@ -5,7 +5,7 @@ const en_USDoc = {
     installation_title: 'Installation',
     installed_text: 'SEELE-UI can be installed as an ',
     npm: 'npm package',
-    npm_code :'$ npm install --save seele-ui',
+    npm_code: '$ npm install --save seele-ui',
     prerequisites: 'Prerequisites',
     pre_description_one: 'SEELE-UI uses CSS Modules by default to import' +
         ' stylesheets written in SASS. In case you want to import the components already bundled with CSS, your module bundler should be able to require these SASS modules.',
@@ -18,12 +18,13 @@ const en_USDoc = {
         ' styles already bundled:',
     usage: `import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'seele-ui/lib/button';
+import { Button } from 'seele-ui';
 
 ReactDOM.render(
   <Button>Hello SEELE!</Button>,
   document.getElementById('app')
-);`
-}
+);`,
+    seele_description: 'SEELE - A open source UI libraries based on React and TypeScript, using React Hooks and functional programming.',
+};
 
 export default en_USDoc;

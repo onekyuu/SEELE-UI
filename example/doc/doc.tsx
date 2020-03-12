@@ -2,19 +2,23 @@ import React from 'react';
 import {classMaker} from "../../lib/helpers/classMaker";
 import './doc.scss';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const sc = classMaker('seele');
 
 const DocExample = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (<div className={sc('doc')}>
+        <div className={'seele-container'}>
+            <h2>{t('seele_description')}</h2>
+        </div>
         <div className={'page-title'}>{t('page_title')}</div>
         <div className={'page-description'}>{t('page_description')}</div>
         <div className={'installation'}>
             <div className={'title'}>{t('installation_title')}</div>
             <div className={'description'}>
-                {t('installed_text')}<a className={'link'} target={'_blank'} href={'https://www.npmjs.com/package/seele-ui'}>{t('npm')}</a>:
+                {t('installed_text')}<a className={'link'} target={'_blank'}
+                                        href={'https://www.npmjs.com/package/seele-ui'}>{t('npm')}</a>:
             </div>
             <SyntaxHighlighter language="javascript">
                 {t('npm_code')}
@@ -33,7 +37,7 @@ const DocExample = () => {
                 {t('usage')}
             </SyntaxHighlighter>
         </div>
-    </div>)
+    </div>);
 };
 
 export default DocExample;
