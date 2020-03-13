@@ -1,8 +1,8 @@
 const zh_CNInput = {
-    input_with_label: '带标签文本的输入框',
+    input_basic: '基础输入框',
     input_input: '输入框',
     input_with_placeholder: '带有占位符的输入框（Tips：此用法需保证 labelText 为空字符串或 false）',
-    input_placeholder: 'labelText为空字符串',
+    input_placeholder_example: 'labelText为空字符串',
     input_placeholder_is_false: 'labelText为false',
     input_with_different_size: '不同尺寸的输入框',
     input_with_different_length: '不同长度的输入框',
@@ -26,6 +26,18 @@ const zh_CNInput = {
     input_search: '搜索',
     input_time: '时间',
     input_url: '链接',
+    input_description: '通过鼠标或键盘输入内容，是最基础的表单域的包装。',
+    input_labelText: '输入框的标签',
+    input_labelPosition: '输入框标签的位置',
+    input_placeholder: '输入框的占位符',
+    input_size: '输入框的尺寸',
+    input_inputType: '输入框的类型',
+    input_before: '输入框前部元素',
+    input_after: '输入框后部元素',
+    input_length: '输入框可输入字符的长度',
+    input_disabled: '是否禁用输入框',
+    input_required: '输入框是否为必须',
+    input_onEnter: '输入时的回调',
 }
 
 export default zh_CNInput;

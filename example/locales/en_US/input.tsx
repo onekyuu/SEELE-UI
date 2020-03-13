@@ -1,8 +1,8 @@
 const en_USInput = {
-    input_with_label: 'Input  with label',
+    input_basic: 'Basic Input',
     input_input: 'Input',
     input_with_placeholder: 'Input with placeholder (Tips: this usage requires labelText to be an empty string or false)',
-    input_placeholder: 'labelText is an empty string',
+    input_placeholder_example: 'labelText is an empty string',
     input_placeholder_is_false: 'labelText is false',
     input_with_different_size: 'Input with different size',
     input_with_different_length: 'Input with different length',
@@ -26,6 +26,19 @@ const en_USInput = {
     input_search: 'search',
     input_time: 'time',
     input_url: 'url',
+    input_description: 'A basic widget for getting the user input is a text' +
+        ' field. Keyboard and mouse can be used for providing or changing data.',
+    input_labelText: 'The label of input',
+    input_labelPosition: 'The position of input label',
+    input_placeholder: 'The placeholder of input',
+    input_size: 'The size of input',
+    input_inputType: 'The type of input',
+    input_before: 'The element before the input',
+    input_after: 'The element after the input',
+    input_length: 'The length of input characters',
+    input_disabled: 'Whether disable the input',
+    input_required: 'Whether the input is required',
+    input_onEnter: 'Callback on input',
 }
 
 export default en_USInput;

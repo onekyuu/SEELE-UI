@@ -14,7 +14,7 @@ export interface Props extends Omit<React.InputHTMLAttributes<HTMLInputElement>,
     inputType?: 'text' | 'number' | 'password' | 'email' | 'date' | 'datetime-local' | 'search' | 'tel' | 'time' | 'url';
     before?: ReactChild;
     after?: ReactChild;
-    length?: number | string,
+    length?: number,
     disabled?: boolean,
     required?: boolean,
     onEnter?: React.KeyboardEventHandler<HTMLInputElement>;
@@ -60,8 +60,8 @@ const Input: SFC<Props> = (props) => {
 
 Input.displayName = componentName;
 Input.defaultProps = {
-    labelText: false,
     labelPosition: 'left',
     size: 'normal',
+    inputType: 'text',
 }
 export default Input;
