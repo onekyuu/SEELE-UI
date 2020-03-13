@@ -35,7 +35,7 @@ const en_USCommon = {
     type_title: 'Type',
     name: 'Name',
     method: 'Method',
-    device_tip: 'The official document is not compatible with the mobile terminal, please move to the PC to watch',
+    device_tip: '官方文档未适配移动端，请移至PC观看',
     copy_link: 'Click the icon and text above to copy document link',
 }
 
