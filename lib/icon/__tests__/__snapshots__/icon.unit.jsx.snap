@@ -4,6 +4,13 @@ exports[`icon UI 1`] = `
 <svg
   className="seele-icon seele-icon-alipay"
   name="alipay"
+  style={
+    Object {
+      "fontSize": undefined,
+      "height": undefined,
+      "width": undefined,
+    }
+  }
 >
   <use
     xlinkHref="#alipay"

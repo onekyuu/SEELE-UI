@@ -95,7 +95,7 @@ const RenderAside: React.FunctionComponent<IProps> = (props) => {
     );
 };
 
-const DeviceNode = () => {
+const DeviceNode: React.FunctionComponent = () => {
     const {t} = useTranslation();
 
     return (
