@@ -121,7 +121,7 @@ const RenderNode: React.FunctionComponent = () => {
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
-        interactionList: ['dialog', 'drawer', 'scroll'],
+        interactionList: ['dialog', 'drawer', 'dropdown', 'scroll'],
         dataList: ['form', 'input', 'table'],
     };
     // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],

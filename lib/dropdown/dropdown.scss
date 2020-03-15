@@ -1,1 +1,47 @@
 @import '../base/base';
+
+.seele-dropdown {
+  position: relative;
+  &-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  &-icon {
+    margin-right: 4px;
+    font-size: 12px;
+  }
+  &-overlay {
+    position: absolute;
+    display: none;
+    z-index: 99999;
+    box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.36);
+    &.bottomLeft {
+      top: calc(100% + 6px);
+    }
+    &.bottomCenter {
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.bottomRight {
+      top: calc(100% + 6px);
+      right: 0;
+    }
+    &.topLeft {
+      bottom: calc(100% + 6px);
+    }
+    &.topCenter {
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.topRight {
+      bottom: calc(100% + 6px);
+      right: 0;
+    }
+    &.visible {
+      display: flex;
+    }
+  }
+}
