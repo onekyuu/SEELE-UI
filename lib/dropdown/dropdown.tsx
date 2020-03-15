@@ -12,15 +12,15 @@ interface IProps extends IStyledProps {
     position?: 'topLeft' | 'topCenter' | 'topRight' | 'bottomLeft' | 'bottomCenter' | 'bottomRight',
     visible: boolean,
     onClick?: () => void,
-    onShow?: () => void,
-    onHide?: () => void,
-    onClickClose?: () => void,
+    onHoverShow?: () => void,
+    onHoverHide?: () => void,
+    onClickOutSide?: () => void,
     size?: 'large' | 'normal' | 'small',
     className?: string,
 }
 
 const Dropdown: SFC<IProps> = (props) => {
-    const {button, trigger, position, children, visible, onClick, onShow, onHide, onClickClose, className, size, ...rest} = props;
+    const {button, trigger, position, children, visible, onClick, onHoverShow, onHoverHide, onClickOutSide, className, size, ...rest} = props;
     const eventRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
     const timerRef = useRef<number | null>(null);
@@ -33,18 +33,18 @@ const Dropdown: SFC<IProps> = (props) => {
     const hoverHandler = () => {
         if (eventRef.current) {
             eventRef.current.addEventListener('mouseenter', () => {
-                onShow && onShow();
+                onHoverShow && onHoverShow();
             });
             eventRef.current.addEventListener('mouseleave', () => {
-                onHide && onHide();
+                onHoverHide && onHoverHide();
             });
         }
         if (overlayRef.current) {
             overlayRef.current.addEventListener('mouseenter', () => {
-                onShow && onShow();
+                onHoverShow && onHoverShow();
             });
             overlayRef.current.addEventListener('mouseleave', () => {
-                onHide && onHide();
+                onHoverHide && onHoverHide();
             });
         }
     };
@@ -64,9 +64,9 @@ const Dropdown: SFC<IProps> = (props) => {
 
     useEffect(() => {
         visibleChangeHandler();
-        if (trigger === 'click' && onClickClose) {
+        if (trigger === 'click' && onClickOutSide) {
             window.addEventListener('click', () => {
-                onClickClose();
+                onClickOutSide();
             });
         }
         return () => {
@@ -74,16 +74,16 @@ const Dropdown: SFC<IProps> = (props) => {
                 onClick && onClick();
             });
             eventRef.current!.removeEventListener('mouseenter', () => {
-                onShow && onShow();
+                onHoverShow && onHoverShow();
             });
             eventRef.current!.removeEventListener('mouseleave', () => {
-                onHide && onHide();
+                onHoverHide && onHoverHide();
             });
             overlayRef.current!.removeEventListener('mouseenter', () => {
-                onShow && onShow();
+                onHoverShow && onHoverShow();
             });
             overlayRef.current!.removeEventListener('mouseleave', () => {
-                onHide && onHide();
+                onHoverHide && onHoverHide();
             });
         };
     }, [visible]);
@@ -91,10 +91,12 @@ const Dropdown: SFC<IProps> = (props) => {
         <div className={sc('')}>
             <div className={classes(sc('button'), size)} ref={eventRef}>
                 {button}
-                <Icon className={sc('icon')} name={visible ? 'arrow-up' : 'arrow-down'}/>
+                <Icon className={sc('icon')}
+                      name={visible ? 'arrow-up' : 'arrow-down'}/>
             </div>
-            <div className={classes(sc('overlay'), className, position, visible &&
-                'visible')} ref={overlayRef} {...rest}>
+            <div
+                className={classes(sc('overlay'), className, position, visible &&
+                    'visible')} ref={overlayRef} {...rest}>
                 {children}
             </div>
         </div>

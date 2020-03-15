@@ -3,25 +3,24 @@ import Dropdown from "../../lib/dropdown/dropdown";
 import './dropdown.scss';
 import {useTranslation} from "react-i18next";
 
-const DropdownExample: React.FunctionComponent = () => {
+const ClickDropdownExample: React.FunctionComponent = () => {
     const {t} = useTranslation();
-    const [visible, setVisible] = useState(false);
-    const hoverButton = <div>hover me</div>;
+    const [clickVisible, setClickVisible] = useState(false);
+    const clickButton = <div>click me</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('hover-dropdown')}</h4>
+            <h4>{t('click-dropdown')}</h4>
             <div className={'wrapper'}>
-                <Dropdown button={hoverButton} trigger="hover"
+                <Dropdown button={clickButton} trigger="click"
                           position="bottomLeft"
-                          visible={visible}
-                          onHoverShow={() => setVisible(true)}
-                          onHoverHide={() => setVisible(false)}>
+                          visible={clickVisible}
+                          onClick={() => setClickVisible(!clickVisible)}>
                     <ul className={'dropdown-content'}>
                         <li>item 1</li>
                         <li>item 2</li>
                         <li>item 3</li>
                         <li>item 4</li>
-                        <li onClick={() => setVisible(false)}>item 5</li>
+                        <li onClick={() => setClickVisible(false)}>item 5</li>
                     </ul>
                 </Dropdown>
             </div>
@@ -29,4 +28,4 @@ const DropdownExample: React.FunctionComponent = () => {
     );
 };
 
-export default DropdownExample;
+export default ClickDropdownExample;
