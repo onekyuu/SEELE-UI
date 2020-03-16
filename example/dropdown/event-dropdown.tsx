@@ -3,24 +3,25 @@ import Dropdown from "../../lib/dropdown/dropdown";
 import './dropdown.scss';
 import {useTranslation} from "react-i18next";
 
-const ClickDropdownExample: React.FunctionComponent = () => {
+const EventDropdownExample: React.FunctionComponent = () => {
     const {t} = useTranslation();
-    const [clickVisible, setClickVisible] = useState(false);
+    const [eventVisible, setEventVisible] = useState(false);
     const clickButton = <div className={'dropdown-button'}>click me</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('click_dropdown')}</h4>
+            <h4>{t('event_dropdown')}</h4>
+            <p>{t('event_dropdown_desc')}</p>
             <div className={'wrapper'}>
                 <Dropdown button={clickButton} trigger="click"
                           position="bottomLeft"
-                          visible={clickVisible}
-                          onClick={() => setClickVisible(!clickVisible)}>
+                          visible={eventVisible}
+                          onClick={() => setEventVisible(!eventVisible)}>
                     <ul className={'dropdown-content'}>
-                        <li>item 1</li>
+                        <li onClick={() => alert('item clicked')}>item 1</li>
                         <li>item 2</li>
                         <li>item 3</li>
                         <li>item 4</li>
-                        <li onClick={() => setClickVisible(false)}>item 5</li>
+                        <li onClick={() => setEventVisible(false)}>item 5</li>
                     </ul>
                 </Dropdown>
             </div>
@@ -28,4 +29,4 @@ const ClickDropdownExample: React.FunctionComponent = () => {
     );
 };
 
-export default ClickDropdownExample;
+export default EventDropdownExample;

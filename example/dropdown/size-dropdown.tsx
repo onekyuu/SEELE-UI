@@ -8,12 +8,12 @@ const SizeDropdownExample: React.FunctionComponent = () => {
     const [smallVisible, setSmallVisible] = useState(false);
     const [normalVisible, setNormalVisible] = useState(false);
     const [largeVisible, setLargeVisible] = useState(false);
-    const smallButton = <div>small size</div>;
-    const normalButton = <div>normal size</div>;
-    const largeButton = <div>large size</div>;
+    const smallButton = <div className={'dropdown-button'}>small size</div>;
+    const normalButton = <div className={'dropdown-button'}>normal size</div>;
+    const largeButton = <div className={'dropdown-button'}>large size</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('size-dropdown')}</h4>
+            <h4>{t('size_dropdown')}</h4>
             <div className={'wrapper'}>
                 <Dropdown button={smallButton} trigger="click"
                           position="bottomLeft"

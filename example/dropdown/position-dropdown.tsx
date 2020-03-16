@@ -11,15 +11,15 @@ const PositionDropdownExample: React.FunctionComponent = () => {
     const [bottomLeftVisible, setBottomLeftVisible] = useState(false);
     const [bottomCenterVisible, setBottomCenterVisible] = useState(false);
     const [bottomRightVisible, setBottomRightVisible] = useState(false);
-    const topLeftButton = <div>topLeft</div>;
-    const topCenterButton = <div>topCenter</div>;
-    const topRightButton = <div>topRight</div>;
-    const bottomLeftButton = <div>bottomLeft</div>;
-    const bottomCenterButton = <div>bottomCenter</div>;
-    const bottomRightButton = <div>bottomRight</div>;
+    const topLeftButton = <div className={'dropdown-button position'}>topLeft</div>;
+    const topCenterButton = <div className={'dropdown-button position'}>topCenter</div>;
+    const topRightButton = <div className={'dropdown-button position'}>topRight</div>;
+    const bottomLeftButton = <div className={'dropdown-button position'}>bottomLeft</div>;
+    const bottomCenterButton = <div className={'dropdown-button position'}>bottomCenter</div>;
+    const bottomRightButton = <div className={'dropdown-button position'}>bottomRight</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('position-dropdown')}</h4>
+            <h4>{t('position_dropdown')}</h4>
             <div className={'wrapper'}>
                 <Dropdown button={topLeftButton} trigger="click"
                           position="topLeft"

@@ -6,10 +6,10 @@ import {useTranslation} from "react-i18next";
 const DropdownExample: React.FunctionComponent = () => {
     const {t} = useTranslation();
     const [visible, setVisible] = useState(false);
-    const hoverButton = <div>hover me</div>;
+    const hoverButton = <div className={'dropdown-button'}>hover me</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('hover-dropdown')}</h4>
+            <h4>{t('hover_dropdown')}</h4>
             <div className={'wrapper'}>
                 <Dropdown button={hoverButton} trigger="hover"
                           position="bottomLeft"
@@ -21,7 +21,7 @@ const DropdownExample: React.FunctionComponent = () => {
                         <li>item 2</li>
                         <li>item 3</li>
                         <li>item 4</li>
-                        <li onClick={() => setVisible(false)}>item 5</li>
+                        <li>item 5</li>
                     </ul>
                 </Dropdown>
             </div>

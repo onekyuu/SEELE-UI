@@ -6,10 +6,10 @@ import {useTranslation} from "react-i18next";
 const ClickOutSideDropdownExample: React.FunctionComponent = () => {
     const {t} = useTranslation();
     const [clickVisible, setClickVisible] = useState(false);
-    const clickButton = <div>click me</div>;
+    const clickButton = <div className={'dropdown-button'}>click me</div>;
     return (
         <div className={'dropDownExample'}>
-            <h4>{t('click-outside-dropdown')}</h4>
+            <h4>{t('click_outside_dropdown')}</h4>
             <div className={'wrapper'}>
                 <Dropdown button={clickButton} trigger="click"
                           position="bottomLeft"

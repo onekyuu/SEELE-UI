@@ -104,4 +104,9 @@ const Dropdown: SFC<IProps> = (props) => {
 };
 
 Dropdown.displayName = componentName;
+Dropdown.defaultProps = {
+    trigger: 'hover',
+    position: 'bottomLeft',
+    size: 'normal',
+};
 export default Dropdown;
