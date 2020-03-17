@@ -3,7 +3,6 @@ import classes, {classMaker} from "../helpers/classMaker";
 import './input.scss';
 import {ReactChild} from 'react';
 import {Omit} from "react-router";
-import {string} from "prop-types";
 
 const componentName = 'Input';
 const sc = classMaker('seele-input');
