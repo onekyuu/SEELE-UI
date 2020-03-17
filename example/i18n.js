@@ -28,6 +28,8 @@ import en_USLayout from "./locales/en_US/layout";
 import zh_CNLayout from "./locales/zh_CN/layout";
 import en_USDrawer from "./locales/en_US/drawer";
 import zh_CNDrawer from "./locales/zh_CN/drawer";
+import zh_CNTree from "./locales/zh_CN/tree";
+import en_USTree from "./locales/en_US/tree";
 
 const resources = {
     zh_CN: {
@@ -45,6 +47,7 @@ const resources = {
             ...zh_CNLayout,
             ...zh_CNDrawer,
             ...zh_CNDoc,
+            ...zh_CNTree,
         }
     },
     en_US: {
@@ -62,6 +65,7 @@ const resources = {
             ...en_USLayout,
             ...en_USDrawer,
             ...en_USDoc,
+            ...en_USTree,
         },
     },
 };

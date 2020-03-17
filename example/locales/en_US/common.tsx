@@ -37,6 +37,8 @@ const en_USCommon = {
     method: 'Method',
     device_tip: '官方文档未适配移动端，请移至PC观看',
     copy_link: 'Click the icon and text above to copy document link',
+    message_component: 'Message',
+    tree_component: 'Tree',
 }
 
 export default en_USCommon;

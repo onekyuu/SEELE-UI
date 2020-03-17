@@ -37,6 +37,8 @@ const zh_CNCommon = {
     method: 'Method',
     device_tip: '官方文档未适配移动端，请移至PC观看',
     copy_link: '点击上方图标及文字复制文档链接',
+    message_component: 'Message/消息提示',
+    tree_component: 'Tree/树形结构',
 }
 
 export default zh_CNCommon;

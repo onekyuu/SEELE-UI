@@ -22,6 +22,8 @@ import Button from "../lib/button/button";
 import TableDemo from "./table/table.demo";
 import ScrollDemo from "./scroll/scroll.demo";
 import DropdownDemo from "./dropdown/dropdown.demo";
+import MessageDemo from "./message/message.demo";
+import TreeDemo from "./tree/tree.demo";
 
 const isDevice = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
 
@@ -121,8 +123,8 @@ const RenderNode: React.FunctionComponent = () => {
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
-        interactionList: ['dialog', 'drawer', 'dropdown', 'scroll'],
-        dataList: ['form', 'input', 'table'],
+        interactionList: ['dialog', 'drawer', 'dropdown','message', 'scroll'],
+        dataList: ['form', 'input', 'table', 'tree'],
     };
     // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],
     // ${isDevice === true ? 'device' : ''}
@@ -189,6 +191,8 @@ const RenderNode: React.FunctionComponent = () => {
                                 <Route path="/scroll" component={ScrollDemo}/>
                                 <Route path="/dropdown"
                                        component={DropdownDemo}/>
+                                <Route path="/message" component={MessageDemo}/>
+                                <Route path="/tree" component={TreeDemo}/>
                             </Panel>
                         </Layout>
                     </Layout>
