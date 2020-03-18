@@ -12,6 +12,10 @@
       }
     }
   }
+  &-collapsed {
+    height: 0;
+    overflow: hidden;
+  }
   &-checkbox {
     margin: 0 8px;
   }
