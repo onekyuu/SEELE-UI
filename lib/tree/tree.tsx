@@ -11,7 +11,7 @@ const Tree: SFC<TreeProps> = (props) => {
     const {sourceData} = props;
     return (
         <div className={classes(sc(''))}>
-            {sourceData.map(item => <TreeItem item={item} level={0} treeProps={props}/>)}
+            {sourceData.map(item => <TreeItem item={item} level={0} treeProps={props} key={item.value}/>)}
         </div>
     );
 };

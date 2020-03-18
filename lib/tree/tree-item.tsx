@@ -2,6 +2,7 @@ import React, {ChangeEventHandler, useState} from "react";
 import Icon from "../icon/icon";
 import {classMaker} from "../helpers/classMaker";
 import {SourceItem, TreeProps} from "./SourceItem";
+import useUpdate from "../hooks/useUpdate";
 
 const sc = classMaker('seele-tree');
 interface Props {
@@ -31,13 +32,12 @@ const TreeItem: React.FC<Props> = (props) => {
         }
     };
     const [collapse, setCollapse] = useState(false);
+    useUpdate(collapse, () => {console.log(1)})
     return <div className={sc(classList)} key={item.value}>
-        <div className={sc('text')}>
+        <div className={sc('text')}  onClick={() => setCollapse(!collapse)}>
             {item.children && <span>
-                    {collapse ? <Icon onClick={() => setCollapse(!collapse)}
-                                      name="arrow-right"/> :
-                        <Icon onClick={() => setCollapse(!collapse)}
-                              name="arrow-down"/>
+                    {collapse ? <Icon name="arrow-right"/> :
+                        <Icon name="arrow-down"/>
                     }
                 </span>}
             {treeProps.icon}
@@ -49,7 +49,7 @@ const TreeItem: React.FC<Props> = (props) => {
         </div>
         <div className={sc({subItem: true, collapsed: collapse})}>
             {item.children?.map((subItem: SourceItem) => {
-                return <TreeItem item={subItem} level={level + 1} treeProps={treeProps}/>;
+                return <TreeItem item={subItem} level={level + 1} treeProps={treeProps} key={subItem.value}/>;
             })}
         </div>
     </div>;
