@@ -12,9 +12,12 @@
       }
     }
   }
-  &-collapsed {
-    height: 0;
+  &-subItem {
+    transition: height .4s;
     overflow: hidden;
+    &.close {
+      height: 0;
+    }
   }
   &-checkbox {
     margin: 0 8px;
