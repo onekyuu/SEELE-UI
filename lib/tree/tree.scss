@@ -19,6 +19,13 @@
       height: 0;
     }
   }
+  &-icon {
+    display: flex;
+    align-items: center;
+  }
+  &-content {
+    padding-left: 6px;
+  }
   &-checkbox {
     margin: 0 8px;
   }

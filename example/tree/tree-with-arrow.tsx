@@ -2,9 +2,8 @@ import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import './tree.scss';
 import Tree from "../../lib/tree/tree";
-// import Icon from "../../lib/icon/icon";
 
-const TreeExample = () => {
+const TreeWithArrowExample = () => {
     const {t} = useTranslation();
     const [treeData] = useState([
         {
@@ -40,17 +39,18 @@ const TreeExample = () => {
         <div className="treeExample">
             <div className={"example"}>
                 <h4 className={"tree-title"}>
-                    {t('basic_tree')}
+                    {t('arrow_tree')}
                 </h4>
                 <div style={{width: '200px'}}>
                     <Tree sourceData={treeData}
                           onChange={(checkedData: string[]) => setSelectedData(checkedData)}
                           selected={selectedData}
-                          multiple={true}/>
+                          multiple={true}
+                          arrow={true}/>
                 </div>
             </div>
         </div>
     );
 };
 
-export default TreeExample;
+export default TreeWithArrowExample;

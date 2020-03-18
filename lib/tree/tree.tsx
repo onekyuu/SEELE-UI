@@ -17,5 +17,7 @@ const Tree: SFC<TreeProps> = (props) => {
 };
 
 Tree.displayName = componentName;
-Tree.defaultProps = {};
+Tree.defaultProps = {
+    arrow: false,
+};
 export default Tree;

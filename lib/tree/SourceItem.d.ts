@@ -20,4 +20,6 @@ type singleType = {
 type TreeProps = {
     sourceData: SourceItem[],
     icon?: ReactElement,
+    arrow?: boolean,
+    isShowCheckbox?: boolean,
 } & (multiType | singleType)

@@ -15,6 +15,7 @@ interface Props {
 
 const TreeItem: React.FC<Props> = (props) => {
     const {item, level, treeProps} = props;
+    const {arrow, isShowCheckbox} = treeProps;
     const classList = {
         [`level-${level}`]: true,
         ['item']: true,
@@ -37,7 +38,7 @@ const TreeItem: React.FC<Props> = (props) => {
     const [collapse, setCollapse] = useState(false);
     const itemRef = useRef<HTMLDivElement>(null);
     useUpdate(collapse, () => {
-        if (!itemRef.current) return
+        if (!itemRef.current) return;
         if (collapse) {
             const {height} = itemRef.current.getBoundingClientRect();
             itemRef.current.style.height = height + 'px';
@@ -73,17 +74,18 @@ const TreeItem: React.FC<Props> = (props) => {
     });
     return <div className={sc(classList)} key={item.value}>
         <div className={sc('text')} onClick={() => setCollapse(!collapse)}>
-            {item.children && <span>
-                    {collapse ? <Icon name="arrow-right"/> :
-                        <Icon name="arrow-down"/>
+            {item.children && arrow && <span className={sc('icon')}>
+                    {collapse ? <Icon name="arrow-right" size={'14px'}/> :
+                        <Icon name="arrow-down" size={'14px'}/>
                     }
                 </span>}
             {treeProps.icon}
-            <input className={sc('checkbox')}
-                   type="checkbox"
-                   onChange={onChangeHandler}
-                   checked={checked}/>
-            {item.key}
+            {isShowCheckbox && <input className={sc('checkbox')}
+                                      type="checkbox"
+                                      onChange={onChangeHandler}
+                                      checked={checked}
+                                      onClick={(e) => e.stopPropagation()}/>}
+            <span className={sc('content')}>{item.key}</span>
         </div>
         <div className={sc({subItem: true, collapsed: collapse})} ref={itemRef}>
             {item.children?.map((subItem: SourceItem) => {
