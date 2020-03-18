@@ -123,10 +123,10 @@ const RenderNode: React.FunctionComponent = () => {
     const lists = {
         generalList: ['button', 'icon'],
         layoutList: ['grid', 'layout'],
-        interactionList: ['dialog', 'drawer', 'dropdown','message', 'scroll'],
+        interactionList: ['dialog', 'drawer', 'dropdown', 'scroll'],
         dataList: ['form', 'input', 'table', 'tree'],
     };
-    // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll'],
+    // interactionList: ['affix', 'dialog', 'drawer', 'dropdown', 'scroll','message'],
     // ${isDevice === true ? 'device' : ''}
     return (
         <div>
