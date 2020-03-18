@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import './tree.scss';
-import Tree, {SourceItem} from "../../lib/tree/tree";
+import Tree from "../../lib/tree/tree";
 // import Icon from "../../lib/icon/icon";
 
 const TreeExample = () => {
@@ -35,16 +35,9 @@ const TreeExample = () => {
         }
     ]);
     // const icon = <Icon name="arrow-up"/>
-    const [selectedData, setSelectedData] = useState(['1.1', '2.1',
-        '1.1.1']);
-    const [selected] = useState('1.1.1')
-    const onCheckboxChange = (item: SourceItem, isChecked: boolean) => {
-        if (isChecked) {
-            setSelectedData([...selectedData, item.value]);
-        } else {
-            setSelectedData(selectedData.filter(v => v !== item.value));
-        }
-    };
+    // const [selectedData, setSelectedData] = useState(['1.1', '2.1',
+    //     '1.1.1']);
+    const [selected, setSelected] = useState('1.1.1')
     return (
         <div>
             <div className={"example"}>
@@ -52,8 +45,9 @@ const TreeExample = () => {
                     {t('basic_tree')}
                 </h4>
                 <div style={{width: '200px'}}>
-                    <Tree sourceData={treeData} selected={selected}
-                          onChange={onCheckboxChange}/>
+                    <Tree sourceData={treeData}
+                          onChange={(checkedData: string) => setSelected(checkedData)}
+                          selected={selected}/>
                 </div>
             </div>
         </div>
