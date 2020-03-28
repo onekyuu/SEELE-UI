@@ -6,7 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SEELE - A React UI Library</title>
 </head>
+<style>
+  body {
+    font-family: Roboto, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
+    margin: 0;
+    padding: 0;
+  }
+  @keyframes bounce {
+    to{
+      transform: translateY(-16px) scale(1.03);
+    }
+  }
+  @-webkit-keyframes bounce { /*maxthon duplicate*/
+    to{
+      -webkit-transform: translateY(-16px) scale(1.03);
+    }
+  }
+  #root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce cubic-bezier(0.19,1.0,0.22,1.0) 1.5s alternate infinite;
+    -webkit-animation: bounce cubic-bezier(0.19,1.0,0.22,1.0) 1.5s alternate
+    infinite;
+  }
+  .logo-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-text {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .loading {
+    text-align: center;
+    font-size: 30px;
+    color: #303f9f;
+  }
+</style>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div>
+      <div class="logo">
+        <img class="logo-icon" src="./lib/icons/seele-logo.svg">
+        <span class="logo-text">SEELE</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
