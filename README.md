@@ -9,3 +9,6 @@
 SEELE-UI可以通过npm安装[npm package](https://www.npmjs.com/package/seele-ui):
 
 ```$ npm install --save seele-ui```
+
+#### 介绍
+SEELE-UI是一组React组件。 它由CSS模块驱动，用TypeScript编写，具有完整定义的类型，并与您的webpack工作流程协调地集成。 您可以浏览我们的文档网站并立即试用这些组件！
