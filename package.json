@@ -46,7 +46,7 @@
     "i18next": "^17.0.13",
     "jest": "^24.3.1",
     "jest-junit": "^6.3.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "raw-loader": "^2.0.0",
     "react-i18next": "^10.12.2",
     "react-syntax-highlighter": "^12.2.1",
