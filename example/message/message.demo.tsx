@@ -1,8 +1,7 @@
-import React from 'react';
 import Demo, {DemoFooter} from '../demo';
 import { useTranslation } from 'react-i18next';
-import Table from "../../lib/table/table";
-import {getAPIColumns} from "../utils";
+import MessageExample from './message';
+import * as React from 'react';
 
 const IconDemo = () => {
     const { t } = useTranslation();

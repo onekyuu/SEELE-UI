@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React  from 'react';
 import Demo, {DemoFooter} from '../demo';
 import BasicDrawerExample from "./basic-drawer";
 import {useTranslation} from "react-i18next";

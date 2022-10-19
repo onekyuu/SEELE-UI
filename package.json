@@ -1,5 +1,6 @@
 {
   "name": "seele-ui",
+  "homepage": "http://www.keyu.wang/seele-ui/#/",
   "version": "0.0.9",
   "description": "",
   "main": "dist/lib/index.js",
