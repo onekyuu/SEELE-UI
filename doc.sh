@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 yarn doc
 cd ../website
 mv -f ../SEELE/doc/* ./seele-ui
