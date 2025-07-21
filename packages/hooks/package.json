@@ -1,0 +1,13 @@
+{
+  "name": "@seele-ui/hooks",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "OneKyuu",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.2"
+}
