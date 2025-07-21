@@ -1,5 +1,5 @@
 {
-  "name": "@seele-ui",
+  "name": "seele-ui",
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
@@ -9,5 +9,8 @@
   "keywords": [],
   "author": "OneKyuu",
   "license": "ISC",
-  "packageManager": "pnpm@10.12.2"
+  "packageManager": "pnpm@10.12.2",
+  "dependencies": {
+    "@seele-ui/components": "workspace:*"
+  }
 }

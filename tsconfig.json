@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    // 基础设置
+    "target": "ESNext", // 支持现代 JS 特性
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    // 模块解析
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    // React 项目特有
+    "jsx": "react-jsx", // React 17+ JSX transform
+
+    // 严格模式
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // 路径别名（可选）
+    // "baseUrl": "./",
+    // "paths": {
+    //   "@/*": ["src/*"]
+    // },
+
+    // 输出控制
+    "noEmit": true // 不生成编译结果（交给 Vite）
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}
