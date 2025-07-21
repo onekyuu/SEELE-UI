@@ -1,0 +1,26 @@
+{
+  "name": "@seele-ui/docs",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "OneKyuu",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.2",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.0.1",
+    "@storybook/addon-a11y": "^9.0.17",
+    "@storybook/addon-docs": "^9.0.17",
+    "@storybook/addon-vitest": "^9.0.17",
+    "@storybook/react-vite": "^9.0.17",
+    "storybook": "^9.0.17",
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.54.1",
+    "@vitest/coverage-v8": "^3.2.4"
+  }
+}
