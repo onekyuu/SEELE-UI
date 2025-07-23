@@ -2,7 +2,7 @@
   "name": "@seele-ui/theme",
   "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
