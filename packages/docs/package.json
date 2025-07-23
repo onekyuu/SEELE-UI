@@ -2,11 +2,11 @@
   "name": "@seele-ui/docs",
   "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "keywords": [],
   "author": "OneKyuu",
