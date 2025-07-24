@@ -1,2 +1,78 @@
 /** index.css */
 @import "./reset.css";
+:root {
+  --color-gray-50: oklch(98.46% 0.002 247.84);
+  --color-gray-100: oklch(96.7% 0.003 264.54);
+  --color-gray-200: oklch(92.76% 0.006 264.53);
+  --color-gray-300: oklch(87.17% 0.009 258.34);
+  --color-gray-400: oklch(71.37% 0.019 261.32);
+  --color-gray-500: oklch(55.1% 0.023 264.36);
+  --color-gray-600: oklch(44.61% 0.026 256.8);
+  --color-gray-700: oklch(37.29% 0.031 259.73);
+  --color-gray-800: oklch(27.81% 0.03 256.85);
+  --color-gray-900: oklch(21.01% 0.032 264.66);
+
+  /* #52489c */
+  --color-ultra-violet: oklch(45.61% 0.132 285.33);
+  /* #9bb1ff */
+  --color-jordy-blue: oklch(77.39% 0.115 271.47);
+  /* #69dc9e */
+  --color-emerald: oklch(81.11% 0.138 157.61);
+  /* #e6af2e */
+  --color-sunray: oklch(78.45% 0.149 83.48);
+  /* #ff6663 */
+  --color-bittersweet: oklch(70.39% 0.188 24.28);
+  /* #0c0910 */
+  --color-night: oklch(14.74% 0.016 304.21);
+  /* #fafffd */
+  --color-mint-white: oklch(99.57% 0.006 170.45);
+
+  --color-primary: var(--color-primary, --color-ultra-violet);
+  --color-secondary: var(--color-secondary, --color-jordy-blue);
+  --color-success: var(--color-success, --color-emerald);
+  --color-warning: var(--color-warning, --color-sunray);
+  --color-danger: var(--color-danger, --color-bittersweet);
+  --color-black: var(--color-black, --color-night);
+  --color-white: var(--color-white, --color-mint-white);
+  --color-light: var(--color-light, --color-gray-100);
+  --color-dark: var(--color-dark, --color-gray-900);
+
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-family-base: var(--font-family-sans-serif);
+
+  --font-size-base: var(--font-size, 1rem);
+  --font-size-lg: calc(var(--font-size-base) * 1.25);
+  --font-size-sm: calc(var(--font-size-base) * 0.875);
+
+  --font-weight-lighter: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-base: calc(var(--font-size-base) * 1.5);
+  --line-height-lg: calc(var(--font-size-lg) * 1.5);
+  --line-height-sm: calc(var(--font-size-sm) * 1.5);
+
+  --h1-font-size: calc(var(--font-size-base) * 2.5);
+  --h2-font-size: calc(var(--font-size-base) * 2);
+  --h3-font-size: calc(var(--font-size-base) * 1.75);
+  --h4-font-size: calc(var(--font-size-base) * 1.5);
+  --h5-font-size: calc(var(--font-size-base) * 1.25);
+  --h6-font-size: var(--font-size-base);
+
+  --link-color: var(--primary);
+  --link-decorator: none;
+  /* Makes color 20% darker. */
+  --link-hover-color: color-mix(in oklch, var(--primary) 80%, black);
+  --link-hover-decorator: underline;
+
+  --body-bg-color: var(--color-white);
+  --body-text-color: var(--color-black);
+  --body-text-align: null;
+}
