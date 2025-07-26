@@ -1,0 +1,77 @@
+name: Test and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests
+        run: pnpm test
+
+  build:
+    name: Build docs
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build docs
+        run: pnpm docs:build
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: ./packages/docs/storybook-static
+
+  deploy:
+    name: Deploy to Aliyun Server
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download docs
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}
+
+      - name: Copy files to Aliyun server
+        run: |
+          scp -r ./ ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}@${{ secrets.ALIYUN_SERVER_IP }}:/var/www/seele-ui/docs
+
+      - name: Restart server or services
+        run: |
+          ssh ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
