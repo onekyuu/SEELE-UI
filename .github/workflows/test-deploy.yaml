@@ -74,4 +74,4 @@ jobs:
 
       - name: Restart server or services
         run: |
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }} 'sudo /bin/systemctl restart nginx'
