@@ -70,8 +70,8 @@ jobs:
 
       - name: Copy files to Aliyun server
         run: |
-          scp -r ./ ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }}:/var/www/seele-ui/docs
+          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./ ${{ secrets.ALIYUN_SSH_USER }}@${{ secrets.ALIYUN_SERVER_IP }}:/var/www/seele-ui/docs
 
       - name: Restart server or services
         run: |
-          ssh ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.ALIYUN_SSH_USER }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
