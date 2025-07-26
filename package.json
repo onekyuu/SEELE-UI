@@ -7,7 +7,7 @@
     "dev": "pnpm -filter @seele-ui/play run dev",
     "docs:dev": "pnpm -filter @seele-ui/docs run dev",
     "docs:build": "pnpm -filter @seele-ui/docs run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "keywords": [],
   "author": "OneKyuu",
