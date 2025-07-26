@@ -48,7 +48,7 @@ jobs:
         run: pnpm docs:build
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: ./packages/docs/storybook-static
@@ -59,7 +59,7 @@ jobs:
     needs: build
     steps:
       - name: Download docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docs
 
@@ -70,8 +70,8 @@ jobs:
 
       - name: Copy files to Aliyun server
         run: |
-          scp -r ./ ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}@${{ secrets.ALIYUN_SERVER_IP }}:/var/www/seele-ui/docs
+          scp -r ./ ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }}:/var/www/seele-ui/docs
 
       - name: Restart server or services
         run: |
-          ssh ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
+          ssh ${{ secrets.ALIYUN_USER }}@${{ secrets.ALIYUN_SERVER_IP }} 'systemctl restart nginx'
