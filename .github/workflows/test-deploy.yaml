@@ -64,7 +64,7 @@ jobs:
           name: docs
 
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.4
+        uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.ALIYUN_SSH_PRIVATE_KEY }}
 
