@@ -65,12 +65,10 @@ h6 {
   font-size: var(--se-h6-font-size);
   font-weight: var(--se-h6-font-weight);
 }
-p {
-  font-size: inherit;
-}
 
 p {
-  line-height: 1.8;
+  font-size: inherit;
+  line-height: var(--se-line-height-base);
 
   &:first-child {
     margin-top: 0;
