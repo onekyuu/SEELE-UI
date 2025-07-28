@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --coverage"
   },
   "keywords": [],
   "author": "OneKyuu",
@@ -12,13 +12,15 @@
   "packageManager": "pnpm@10.12.2",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "async-validator": "^4.2.5"
+    "async-validator": "^4.2.5",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/coverage-v8": "^3.2.4",
     "jsdom": "^26.1.0"
   }
 }
