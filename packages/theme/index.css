@@ -27,15 +27,15 @@
   /* #fafffd */
   --color-mint-white: oklch(99.57% 0.006 170.45);
 
-  --se-color-primary: var(--color-primary, --color-ultra-violet);
-  --se-color-secondary: var(--color-secondary, --color-jordy-blue);
-  --se-color-success: var(--color-success, --color-emerald);
-  --se-color-warning: var(--color-warning, --color-sunray);
-  --se-color-danger: var(--color-danger, --color-bittersweet);
-  --se-color-black: var(--color-black, --color-night);
-  --se-color-white: var(--color-white, --color-mint-white);
-  --se-color-light: var(--color-light, --color-gray-100);
-  --se-color-dark: var(--color-dark, --color-gray-900);
+  --se-color-primary: var(--color-primary, var(--color-ultra-violet));
+  --se-color-secondary: var(--color-secondary, var(--color-jordy-blue));
+  --se-color-success: var(--color-success, var(--color-emerald));
+  --se-color-warning: var(--color-warning, var(--color-sunray));
+  --se-color-danger: var(--color-danger, var(--color-bittersweet));
+  --se-color-black: var(--color-black, var(--color-night));
+  --se-color-white: var(--color-white, var(--color-mint-white));
+  --se-color-light: var(--color-light, var(--color-gray-100));
+  --se-color-dark: var(--color-dark, var(--color-gray-900));
 
   --se-font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -72,15 +72,38 @@
   --se-h5-font-weight: var(--se-font-weight-medium);
   --se-h6-font-weight: var(--se-font-weight-normal);
 
-  --se-link-color: var(--primary);
+  --se-text-color-primary: var(--color-gray-900);
+  --se-text-color-light: var(--color-gray-100);
+  --se-disabled-text-color: var(--color-gray-500);
+  --se-disabled-bg-color: var(--color-gray-200);
+
+  --se-link-color: var(--se-color-primary);
   --se-link-decorator: none;
   /* Makes color 20% darker. */
-  --se-link-hover-color: color-mix(in oklch, var(--primary) 80%, black);
+  --se-link-hover-color: color-mix(
+    in oklch,
+    var(--se-color-primary) 80%,
+    black
+  );
   --se-link-hover-decorator: underline;
 
   --se-body-bg-color: var(--color-white);
   --se-body-text-color: var(--color-black);
   --se-body-text-align: null;
 
-  --se-border-color: color-mix(in oklch, var(--primary) 80%, black);
+  --se-border-width: 1px;
+  --se-border-style: solid;
+  --se-border-color: color-mix(in oklch, var(--se-color-primary) 80%, black);
+  --se-border-color-light: color-mix(
+    in oklch,
+    var(--se-color-primary) 80%,
+    white
+  );
+  --se-border: var(--se-border-width) var(--se-border-style);
+  --se-border-radius-md: 0.375rem;
+  --se-border-radius-lg: 0.5rem;
+  --se-border-radius-sm: 0.25rem;
+
+  --se-transition-duration: 0.4s;
+  --se-transition-duration-fast: 0.2s;
 }

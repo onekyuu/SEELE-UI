@@ -8,7 +8,6 @@ const variants = [
   { name: "primary", className: "primary" },
   { name: "outline", className: "outline" },
   { name: "ghost", className: "ghost" },
-  { name: "link", className: "link" },
   { name: "text", className: "text" },
   { name: "danger", className: "danger" },
 ] as const;
@@ -27,6 +26,12 @@ describe("Button Component", () => {
     expect(btn).toHaveClass("se-btn lg");
   });
 
+  it("should support different sizes", () => {
+    render(<Button size="sm">Small Button</Button>);
+    const btn = screen.getByRole("button", { name: /small button/i });
+    expect(btn).toHaveClass("se-btn sm");
+  });
+
   it("should render icon if provided", () => {
     render(<Button icon={<span data-testid="icon" />}>With Icon</Button>);
     const icon = screen.getByTestId("icon");
@@ -38,6 +43,7 @@ describe("Button Component", () => {
     const btn = screen.getByRole("button", { name: /loading/i });
     expect(btn).toBeDisabled();
     expect(btn).toHaveAttribute("aria-busy", "true");
+    expect(btn).toBeDisabled();
     expect(btn.querySelector(".loader")).toBeInTheDocument();
   });
 
@@ -48,15 +54,27 @@ describe("Button Component", () => {
   });
 
   it("should support button type prop", () => {
-    render(<Button type="submit">Submit</Button>);
+    render(<Button btnType="submit">Submit</Button>);
     const btn = screen.getByRole("button", { name: /submit/i });
     expect(btn).toHaveAttribute("type", "submit");
+  });
+
+  it("should support button type prop", () => {
+    render(<Button btnType="reset">Reset</Button>);
+    const btn = screen.getByRole("button", { name: /reset/i });
+    expect(btn).toHaveAttribute("type", "reset");
   });
 
   it('should default to type="button"', () => {
     render(<Button>Default</Button>);
     const btn = screen.getByRole("button", { name: /default/i });
     expect(btn).toHaveAttribute("type", "button");
+  });
+
+  it("should support rounded prop", () => {
+    render(<Button rounded="md">Rounded</Button>);
+    const btn = screen.getByRole("button", { name: /rounded/i });
+    expect(btn).toHaveClass("se-btn md rounded-md");
   });
 
   it("should support aria-label for accessibility", () => {

@@ -4,7 +4,7 @@ body {
   font-weight: var(--se-font-weight-normal);
   font-size: var(--se-font-size-base);
   line-height: var(--se-line-height-base);
-  color: var(--se-color-primary);
+  color: var(--se-text-color-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;

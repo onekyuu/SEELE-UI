@@ -1,5 +1,146 @@
-/* style.css */
-.button {
-  background-color: blue;
-  color: red;
+.se-btn {
+  --se-btn-font-weight: var(--se-font-weight-normal);
+  --se-btn-border-color: var(--se-border-color);
+  --se-btn-bg-color: var(--se-color-primary);
+  --se-btn-text-color: var(--se-text-color-light);
+  --se-btn-line-height: var(--se-line-height-base);
+  --se-btn-disabled-text-color: var(--se-disabled-text-color);
+  --se-btn-disabled-bg-color: var(--se-disabled-bg-color);
+  --se-btn-disabled-border-color: var(--se-border-color-light);
+  --se-btn-hover-color: color-mix(in oklch, var(--se-color-primary) 80%, white);
+  --se-btn-active-text-color: var(--se-text-color-light);
+  --se-btn-active-color: color-mix(in oklch, var(--se-color-primary) 80%, white)
+  --se-btn-outline-text-color: var(--se-color-black);
+  --se-btn-outline-bg-color: var(--se-color-white);
+  --se-btn-outline-border-color: var(--se-color-black);
+}
+
+.se-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--se-btn-text-color);
+  line-height: var(--se-btn-line-height);
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--se-btn-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--se-btn-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--se-btn-bg-color);
+  border: var(--se-border);
+  border-color: var(--se-btn-border-color);
+  padding: 0 calc(1rem - 1px);
+  font-size: var(--se-font-size-base);
+  border-radius: var(--se-border-radius-md);
+  & + & {
+    margin-left: 0.75rem;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--se-btn-active-text-color);
+    border-color: var(--se-btn-hover-color);
+    background-color: var(--se-btn-hover-color);
+    outline: none;
+  }
+  &.outline {
+    color: var(--se-outline-text-color);
+    background-color: var(--se-outline-bg-color);
+    border-color: var(--se-outline-border-color);
+    &:hover,
+    &:focus,
+    &:active {
+      color: color-mix(in oklch, var(--se-color-primary) 80%, white);
+      border-color: color-mix(in oklch, var(--se-color-primary) 80%, white);
+    }
+  }
+  &.ghost {
+    background-color: transparent;
+    border-color: var(--se-color-primary);
+    color: var(--se-color-primary); 
+    &:hover,
+    &:focus,
+    &:active {
+      color: color-mix(in oklch, var(--se-color-primary) 70%, white);
+      border-color: color-mix(in oklch, var(--se-color-primary) 70%, white);
+    }
+  }
+  &.text {
+    color: var(--se-color-primary);
+    background-color: transparent;
+    border-color: transparent;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--se-color-light);
+      border-color: var(--se-color-light);
+    }
+  }
+  /*danger*/
+  &.danger {
+    color: var(--se-text-color-light);
+    background-color: var(--se-color-danger);
+    border-color: var(--se-color-danger);
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--se-text-color-light);
+      background-color: color-mix(in oklch, var(--se-color-danger) 90%, white);
+      border-color: color-mix(in oklch, var(--se-color-danger) 90%, white);
+    }
+  }
+  /*round*/
+  &.rounded-md {
+    border-radius: var(--se-border-radius-md);
+  }
+  &.rounded-lg {
+    border-radius: var(--se-border-radius-lg);
+  }
+  &.rounded-sm {
+    border-radius: var(--se-border-radius-sm);
+  }
+
+  /*disabled*/
+  &.loading,
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--se-btn-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--se-btn-disabled-bg-color);
+    border-color: var(--se-btn-disabled-border-color);
+  }
+  [class*="se-icon"] {
+    width: 1em;
+    height: 1em;
+    margin: 0 0.5em;
+  }
+  &.lg {
+    --se-btn-size: 40px;
+    height: var(--se-btn-size);
+    padding: 12px 19px;
+    font-size: var(--se-font-size-base);
+  }
+  &.sm {
+    --se-btn-size: 24px;
+    height: var(--se-btn-size);
+    padding: 5px 11px;
+    font-size: 12px;
+  
+    [class*="se-icon"] {
+      width: 12px;
+      height: 12px;
+    }
+  }
 }
