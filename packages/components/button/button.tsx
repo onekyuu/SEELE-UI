@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 const Button: FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
-  type = "button",
+  btnType = "button",
   icon,
   loading = false,
   disabled = false,
@@ -14,16 +14,20 @@ const Button: FC<ButtonProps> = ({
   children,
   className,
   "aria-label": ariaLabel,
+  rounded = "md",
 }) => {
   return (
     <button
       className={clsx("se-btn", className, {
         [variant]: true,
         [size]: true,
+        [`rounded-${rounded}`]: rounded !== "none",
+        loading: loading,
+        disabled: disabled,
       })}
-      type={type}
+      type={btnType}
       onClick={onClick}
-      disabled={disabled || loading}
+      disabled={disabled || loading ? true : void 0}
       aria-busy={loading}
       aria-label={ariaLabel}
     >

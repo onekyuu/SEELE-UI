@@ -1,16 +1,11 @@
 export type ButtonSize = "sm" | "md" | "lg";
-export type ButtonVariant =
-  | "primary"
-  | "outline"
-  | "ghost"
-  | "link"
-  | "text"
-  | "danger";
+export type ButtonVariant = "primary" | "outline" | "ghost" | "text" | "danger";
 export type ButtonType = "button" | "submit" | "reset";
+export type ButtonRounded = "none" | "sm" | "md" | "lg";
 export interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  type?: ButtonType;
+  btnType?: ButtonType;
   icon?: React.ReactNode;
   loading?: boolean;
   disabled?: boolean;
@@ -18,4 +13,5 @@ export interface ButtonProps {
   children?: React.ReactNode;
   className?: string;
   "aria-label"?: string;
+  rounded?: ButtonRounded;
 }
