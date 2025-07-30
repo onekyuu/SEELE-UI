@@ -38,7 +38,6 @@
   border-color: var(--se-btn-border-color);
   padding: 0 calc(1rem - 1px);
   font-size: var(--se-font-size-base);
-  border-radius: var(--se-border-radius-md);
   & + & {
     margin-left: 0.75rem;
   }
@@ -106,6 +105,9 @@
   &.rounded-sm {
     border-radius: var(--se-border-radius-sm);
   }
+  &.rounded-none {
+    border-radius: none;
+  }
 
   /*disabled*/
   &.loading,
@@ -127,20 +129,20 @@
     margin: 0 0.5em;
   }
   &.lg {
-    --se-btn-size: 40px;
+    --se-btn-size: 2.5rem;
     height: var(--se-btn-size);
     padding: 12px 19px;
     font-size: var(--se-font-size-base);
   }
   &.sm {
-    --se-btn-size: 24px;
+    --se-btn-size: 1.5rem;
     height: var(--se-btn-size);
     padding: 5px 11px;
-    font-size: 12px;
+    font-size: 0.75rem;
   
     [class*="se-icon"] {
-      width: 12px;
-      height: 12px;
+      width: 0.75rem;
+      height: 0.75rem;
     }
   }
 }

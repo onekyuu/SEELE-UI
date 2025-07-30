@@ -14,4 +14,6 @@ export interface ButtonProps {
   className?: string;
   "aria-label"?: string;
   rounded?: ButtonRounded;
+  useThrottle?: boolean;
+  throttleDelay?: number;
 }
