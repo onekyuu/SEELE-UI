@@ -65,6 +65,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docs
+          path: ./docs
 
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.1
