@@ -14,6 +14,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.12.2",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.19.9",
     "postcss-color-mix": "^1.1.0",

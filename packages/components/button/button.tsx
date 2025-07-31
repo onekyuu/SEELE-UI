@@ -3,6 +3,7 @@ import "./button.css";
 import { ButtonProps } from "./types";
 import { clsx } from "clsx";
 import { throttle } from "lodash-es";
+import { Icon } from "seele-ui";
 
 const Button: FC<ButtonProps> = ({
   variant = "primary",
@@ -37,8 +38,10 @@ const Button: FC<ButtonProps> = ({
       aria-busy={loading}
       aria-label={ariaLabel}
     >
-      {loading && <span className="loader" />}
-      {icon && <span className="icon">{icon}</span>}
+      {loading && (
+        <Icon icon="spinner" className="loading-icon" spin size="1x" />
+      )}
+      {icon && !loading && <span className="se-btn-icon">{icon}</span>}
       {children}
     </button>
   );

@@ -1,7 +1,7 @@
 export type ButtonSize = "sm" | "md" | "lg";
 export type ButtonVariant = "primary" | "outline" | "ghost" | "text" | "danger";
 export type ButtonType = "button" | "submit" | "reset";
-export type ButtonRounded = "none" | "sm" | "md" | "lg";
+export type ButtonRounded = "none" | "sm" | "md" | "lg" | "full";
 export interface ButtonProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
