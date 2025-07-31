@@ -37,7 +37,7 @@ const meta = {
     rounded: {
       control: {
         type: "select",
-        options: ["none", "sm", "md", "lg"],
+        options: ["none", "sm", "md", "lg", "full"],
       },
     },
     loading: {

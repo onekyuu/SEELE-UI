@@ -1,0 +1,16 @@
+.se-icon {
+  --se-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--se-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .se-icon-$(val) {
+    --se-icon-color: var(--se-color-$(val));
+  }
+}

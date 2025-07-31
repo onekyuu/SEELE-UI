@@ -1,32 +1,15 @@
 import "./App.css";
-import { Button } from "seele-ui";
+import { Button, Icon } from "seele-ui";
+import { faCoffee, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
     <>
-      <Button>Button</Button>
-      <Button variant="outline">Outline Button</Button>
-      <Button variant="text">Text Button</Button>
-      <Button variant="danger">Danger Button</Button>
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          backgroundColor: "#f0f0f0",
-          padding: "10px",
-        }}
-      >
-        <Button variant="ghost">Ghost Button</Button>
-      </div>
-      <Button size="sm">Small Button</Button>
-      <Button size="md">Medium Button</Button>
-      <Button size="lg">Large Button</Button>
-      <Button rounded="sm">Rounded Small Button</Button>
-      <Button rounded="md">Rounded Medium Button</Button>
-      <Button rounded="lg">Rounded Large Button</Button>
-      <Button loading>Loading Button</Button>
-      <Button disabled>Disabled Button</Button>
-      <Button icon={<span>🔍</span>}>Button with Icon</Button>
+      <Icon icon={faCoffee} type="success" size="3x" />
+      <Icon icon={faSpinner} type="danger" size="3x" />
+      <Icon icon={faSpinner} type="warning" size="3x" />
+      <Icon icon={faSpinner} type="primary" size="3x" />
+      <Icon icon={faSpinner} type="info" size="3x" />
     </>
   );
 }

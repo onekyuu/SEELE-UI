@@ -105,6 +105,9 @@
   &.rounded-sm {
     border-radius: var(--se-border-radius-sm);
   }
+  &.rounded-full {
+    border-radius: 9999px;
+  }
   &.rounded-none {
     border-radius: none;
   }
