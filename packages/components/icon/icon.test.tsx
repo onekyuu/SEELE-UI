@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import Icon from "./icon";
 import {
@@ -6,13 +6,6 @@ import {
   faHouse,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
-
-// mock FontAwesomeIcon（防止其内部逻辑影响测试）
-vi.mock("@fortawesome/react-fontawesome", () => ({
-  FontAwesomeIcon: (props: any) => (
-    <svg data-testid={`icon-${props.icon?.iconName}`} {...props} />
-  ),
-}));
 
 describe("Icon Component", () => {
   it("renders with base class", () => {
@@ -35,13 +28,14 @@ describe("Icon Component", () => {
   });
 
   it("renders FontAwesomeIcon inside", () => {
-    const { getByTestId } = render(<Icon icon={faSpinner} />);
-    expect(getByTestId("icon-spinner")).toBeTruthy();
+    const { container } = render(<Icon icon={faHouse} />);
+    expect(container.querySelector("i")?.querySelector("svg")).toBeTruthy();
   });
 
   it("passes props to FontAwesomeIcon", () => {
-    const { getByTestId } = render(<Icon icon={faHouse} spin />);
-    expect(getByTestId("icon-house").querySelector("svg")).toHaveClass(
+    const { container } = render(<Icon icon={faSpinner} spin />);
+
+    expect(container.querySelector("i")?.querySelector("svg")).toHaveClass(
       "fa-spin"
     );
   });
