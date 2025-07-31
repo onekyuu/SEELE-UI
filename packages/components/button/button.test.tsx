@@ -44,7 +44,7 @@ describe("Button Component", () => {
     expect(btn).toBeDisabled();
     expect(btn).toHaveAttribute("aria-busy", "true");
     expect(btn).toBeDisabled();
-    expect(btn.querySelector(".loader")).toBeInTheDocument();
+    expect(btn.querySelector(".se-btn-loading-icon")).toBeInTheDocument();
   });
 
   it("should be disabled when disabled prop is true", () => {

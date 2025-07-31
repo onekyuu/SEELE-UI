@@ -10,7 +10,7 @@ const Icon: FC<IconProps> = ({ type, color, ...rest }) => {
       className={clsx("se-icon", type && `se-icon-${type}`)}
       style={{ color: color ?? void 0 }}
     >
-      <FontAwesomeIcon {...rest} />
+      <FontAwesomeIcon className="se-icon-fontawesome" {...rest} />
     </i>
   );
 };
