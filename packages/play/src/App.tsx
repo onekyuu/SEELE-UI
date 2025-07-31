@@ -9,7 +9,7 @@ function App() {
       <Icon icon={faSpinner} type="danger" size="3x" />
       <Icon icon={faSpinner} type="warning" size="3x" />
       <Icon icon={faSpinner} type="primary" size="3x" />
-      <Icon icon={faSpinner} type="info" size="3x" />
+      <Icon icon={faSpinner} type="info" size="3x" spin />
     </>
   );
 }

@@ -39,7 +39,7 @@ const Button: FC<ButtonProps> = ({
       aria-label={ariaLabel}
     >
       {loading && (
-        <Icon icon="spinner" className="loading-icon" spin size="1x" />
+        <Icon icon="spinner" className="se-btn-loading-icon" spin size="1x" />
       )}
       {icon && !loading && <span className="se-btn-icon">{icon}</span>}
       {children}
