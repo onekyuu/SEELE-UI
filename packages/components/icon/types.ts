@@ -1,10 +1,5 @@
 import { IconProp, RotateProp } from "@fortawesome/fontawesome-svg-core";
 
-// export type IconProps = FontAwesomeIconProps & {
-//   type?: "primary" | "success" | "warning" | "danger" | "info";
-//   color?: string;
-// };
-
 export interface IconProps {
   border?: boolean;
   fixedWidth?: boolean;
