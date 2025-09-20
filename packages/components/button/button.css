@@ -112,8 +112,11 @@
     border-radius: none;
   }
 
+  &.loading {
+   cursor: not-allowed; 
+  }
+
   /*disabled*/
-  &.loading,
   &.disabled,
   &.disabled:hover,
   &.disabled:focus,
